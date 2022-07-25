@@ -1,0 +1,8 @@
+{
+  "label": "证书签发管理",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "证书签发、续期、吊销教程"
+  }
+}
