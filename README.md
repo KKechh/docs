@@ -1,6 +1,6 @@
 # HiCA Docs
 
-This website is built using [HiCA Docs](https://docs.hi.cn/), a ACME tls provider.
+This website is built using [HiCA Docs](https://docs.hi.cn/), an ACME tls provider.
 
 ### Installation
 
