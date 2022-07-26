@@ -4,22 +4,138 @@ sidebar_position: 3
 
 # 申请证书
 
-`acme.sh` 的证书申请
+请选择一个验证方式：
 
-## HiCA 优势
-- 通过ACME提供有效期为180天的证书（大多数厂商通过ACME提供的免费证书有效期为90天）
-- 提供免费IPv4证书和IPv6证书
-- 提供国内OCSP
-- 订阅模式支持一次付款多次自动化续签
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-### 特别的：
-HiCA 不提供 GUI 且暂不支持其它ACME客户端，请使用acme.sh。以下教程基于Linux
-- 经费有限，后端可能经常出现500等错误
-- 不支持.ru、.by、.su域名（DigiCert、Sectigo对俄罗斯、白俄罗斯禁运）。
-- IPv6 、.onion有效期90天（CA限制）。
+<Tabs>
+<TabItem value="dns-01" label="DNS 方式" default>
 
-## 基于 HTTP 验证申请域名或IP证书
-acme.sh 实现了 ACME 协议支持的所有验证协议. 一般有两种方式验证: http-01 和 dns-01 验证。http 方式需要在你的网站根目录下放置一个文件，来验证你的域名所有权,完成验证.。然后就可以生成证书了。
+## DNS (`dns-01`)
+
+根据 CA / B Forum 要求，通配符证书（例如 `*.example.com` 需要DNS验证。
+
+第一个输入的域名会作为证书的Common Name（即显示的颁发给：`*.example.com`），其余域名会按字母顺序排列，如有需要请把带 `*.` 的域名排到最前面。
+
+### 签发命令
+
+> 高亮的地方（**包括 `--dns dns_dp`**） 表示 DNS API 的凭据，您需要按照 [配置我的 DNS 模块 Key](configuration-your-dns-provider.md) 来设置）
+
+```js
+// highlight-start
+export DP_Id="1234"
+export DP_Key="sADDsdasdgdsf"
+// highlight-end
+
+acme.sh --issue \
+// highlight-start
+    --dns dns_dp \
+// highlight-end
+    -d \*.<域名1.com> \
+    -d <域名1.com> \
+    -d \*.<域名2.com> \
+    -d <域名2.com> \
+    --days 150 \
+    --server https://acme.hi.cn/directory
+```
+
+### 签发完成
+
+稍等片刻，提示签发成功即可下载证书，同样位于 `~/.acme.sh/your.domain`
+
+若提示 acme.sh 命令不存在，直接 cd 到 `/home/.acme.sh` 目录下相对路径执行命令即可。
+
+```js
+➜  ~ ~/.acme.sh/acme.sh --issue -d www1.hi.cn --dns dns_dp --server http://acme.hi.cn/directory --days 150 --force
+[2022年 7月27日 星期三 01时46分23秒 CST] Using CA: http://acme.hi.cn/directory
+[2022年 7月27日 星期三 01时46分23秒 CST] Single domain='www1.hi.cn'
+[2022年 7月27日 星期三 01时46分23秒 CST] Getting domain auth token for each domain
+[2022年 7月27日 星期三 01时46分26秒 CST] Getting webroot for domain='www1.hi.cn'
+[2022年 7月27日 星期三 01时46分26秒 CST] Verifying: www1.hi.cn
+[2022年 7月27日 星期三 01时46分31秒 CST] Success
+[2022年 7月27日 星期三 01时46分31秒 CST] Verify finished, start to sign.
+[2022年 7月27日 星期三 01时46分31秒 CST] Lets finalize the order.
+[2022年 7月27日 星期三 01时46分31秒 CST] Le_OrderFinalize='https://acme.hi.cn/acme/order/ElGBOq3VAhg5m4G4qknAzP/finalize'
+[2022年 7月27日 星期三 01时46分32秒 CST] Order status is processing, lets sleep and retry.
+[2022年 7月27日 星期三 01时46分32秒 CST] Retry after: 60
+[2022年 7月27日 星期三 01时47分34秒 CST] Polling order status: https://acme.hi.cn/acme/order/ElGBOq3VAhg5m4G4qknAzP
+[2022年 7月27日 星期三 01时47分35秒 CST] Downloading cert.
+[2022年 7月27日 星期三 01时47分35秒 CST] Le_LinkCert='https://acme.hi.cn/acme/order/ElGBOq3VAhg5m4G4qknAzP/download'
+[2022年 7月27日 星期三 01时47分36秒 CST] Cert success.
+// highlight-start
+-----BEGIN CERTIFICATE-----
+MIIGIDCCBQigAwIBAgIRAIJF7rZD8wiMCUp9OpWZuaAwDQYJKoZIhvcNAQELBQAw
+gY8xCzAJBgNVBAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAO
+BgNVBAcTB1NhbGZvcmQxGDAWBgNVBAoTD1NlY3RpZ28gTGltaXRlZDE3MDUGA1UE
+AxMuU2VjdGlnbyBSU0EgRG9tYWluIFZhbGlkYXRpb24gU2VjdXJlIFNlcnZlciBD
+QTAeFw0yMjA3MjYwMDAwMDBaFw0yMzAxMjIyMzU5NTlaMBUxEzARBgNVBAMTCnd3
+dzEuaGkuY24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDJov9JeWAq
+a34MT59sEcHIcV2hiKGII1XbBqmuhuJ+wYkl9s41TLL8Eg8zAJ0HpZOpUlp97dgT
+iH9y8RTx5bD4URThN8KRavX/V27z7aU1f7Y97RPAwFUwZvWCyD4hadZ7qFzuV+qI
+Mliy1c/wCqzvdtXzVbPJrL8+epJMBYZ/ObzH4WYgRflBm2C2H1XxOtlaSIhiPIxv
+GeEsYsbhbWP1misu6Ho9IELy2HM9sIdM6UxZmbioTqOqJZQVQxxu7bo8LV10HjRu
+5P+NwmlxmJY60CsZ9Kr27MaxDoy8/lBXcrQ13HCweu6Ds54VNT/BWMfE2x+XAD9Z
+lpW012aQ9qlJAgMBAAGjggLuMIIC6jAfBgNVHSMEGDAWgBSNjF7EVK2K4Xfpm/mb
+BeG4AY1h4TAdBgNVHQ4EFgQU/ZWYWFYw9RumXExZi13XD+lnTz0wDgYDVR0PAQH/
+BAQDAgWgMAwGA1UdEwEB/wQCMAAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUF
+BwMCMEkGA1UdIARCMEAwNAYLKwYBBAGyMQECAgcwJTAjBggrBgEFBQcCARYXaHR0
+cHM6Ly9zZWN0aWdvLmNvbS9DUFMwCAYGZ4EMAQIBMIGEBggrBgEFBQcBAQR4MHYw
+TwYIKwYBBQUHMAKGQ2h0dHA6Ly9jcnQuc2VjdGlnby5jb20vU2VjdGlnb1JTQURv
+bWFpblZhbGlkYXRpb25TZWN1cmVTZXJ2ZXJDQS5jcnQwIwYIKwYBBQUHMAGGF2h0
+dHA6Ly9vY3NwLnNlY3RpZ28uY29tMIIBgAYKKwYBBAHWeQIEAgSCAXAEggFsAWoA
+dgCt9776fP8QyIudPZwePhhqtGcpXc+xDCTKhYY069yCigAAAYI7nsONAAAEAwBH
+MEUCIQD9BFititX0FXUXA2VxEzlx9mNQJvhBHD+2RGXYYeKHFAIgYVE281cRzwZD
+VTiLRtc5gWnoKlDIGlFJj1XEXTFGltcAdwB6MoxU2LcttiDqOOBSHumEFnAyE4VN
+O9IrwTpXo1LrUgAAAYI7nsQWAAAEAwBIMEYCIQD1MpXGIFmvGd2hpKWu0+UDg76S
+R5dVyW6pRsNyHMewhAIhAO2Jbfk/45TC3DJQ8Qxib6mqmJEfDul6FPP7w51WRhOF
+AHcA6D7Q2j71BjUy51covIlryQPTy9ERa+zraeF3fW0GvW4AAAGCO57DJwAABAMA
+SDBGAiEA5VS/hffDwBwONvBuYxQR/Tp2Snx+pj+DUM9t6XsNqE4CIQDzac9vCcLN
+bxTcMmYZaVZkD62YZeFMWdwasKrWqRUncTAVBgNVHREEDjAMggp3d3cxLmhpLmNu
+MA0GCSqGSIb3DQEBCwUAA4IBAQAejJvX7VQc8LJAtn7scZP0BOtlYSQmfxFaIbZA
+BxKyIxpDanEJJDxLYeTZ6L8pW/xPa++Nq7gcg4DL1dQA9nnQ0Tmu8za4AjoZ1MHx
+BfEDAqoj53x2Wffg3EROq/P2TeOBl01onzKvkMtltawz613dsGJvHj2yoTO1HCsR
+473zCzYch+VL9fMuT8nk042mx1Kb0CZCeLphMZYBN+wV8M3JLb36FcRJzy3eEH4g
+kV+EB0tdnU7lxgRZFQNd1u9Sdtdpk9xuk1s+E5ITtIE7vKQ/LMul+PcPOf6L+38C
+SH7jOvH+p7k8CbrYFXFvZOGd5T8axCknS9xSSlfO602wiRR7
+-----END CERTIFICATE-----
+// highlight-end
+[2022年 7月27日 星期三 01时47分36秒 CST] Your cert is in: /Users/mac/.acme.sh/www1.hi.cn/www1.hi.cn.cer
+[2022年 7月27日 星期三 01时47分36秒 CST] Your cert key is in: /Users/mac/.acme.sh/www1.hi.cn/www1.hi.cn.key
+[2022年 7月27日 星期三 01时47分36秒 CST] The intermediate CA cert is in: /Users/mac/.acme.sh/www1.hi.cn/ca.cer
+[2022年 7月27日 星期三 01时47分36秒 CST] And the full chain certs is there: /Users/mac/.acme.sh/www1.hi.cn/fullchain.cer
+➜  ~
+```
+
+:pushpin:在签发超过限制（10个SAN和1个通配符）的证书时，会提示超出限制。
+
+```js
+➜  ~ ~/.acme.sh/acme.sh --issue -d www1.hi.cn -d www2.hi.cn -d www3.hi.cn -d www4.hi.cn -d www5.hi.cn -d www6.hi.cn -d www7.hi.cn -d www8.hi.cn -d www9.hi.cn -d www10.hi.cn -d www11.hi.cn --dns dns_dp --server http://acme.hi.cn/directory --days 150 --force
+[2022年 7月27日 星期三 01时49分53秒 CST] Using CA: http://acme.hi.cn/directory
+[2022年 7月27日 星期三 01时49分53秒 CST] Multi domain='DNS:www1.hi.cn,DNS:www2.hi.cn,DNS:www3.hi.cn,DNS:www4.hi.cn,DNS:www5.hi.cn,DNS:www6.hi.cn,DNS:www7.hi.cn,DNS:www8.hi.cn,DNS:www9.hi.cn,DNS:www10.hi.cn,DNS:www11.hi.cn'
+[2022年 7月27日 星期三 01时49分53秒 CST] Getting domain auth token for each domain
+// highlight-start
+[2022年 7月27日 星期三 01时49分55秒 CST] Create new order error. Le_OrderFinalize not found. {"type":"urn:ietf:params:acme:error:malformed","detail":"Free certificate does not support more than 10 FQDNs."}
+// highlight-end
+[2022年 7月27日 星期三 01时49分55秒 CST] Please add '--debug' or '--log' to check more details.
+[2022年 7月27日 星期三 01时49分55秒 CST] See: https://github.com/acmesh-official/acme.sh/wiki/How-to-debug-acme.sh
+➜  ~
+```
+
+:::tip 常见问题
+
+- 签发ECC证书：在命令行最后添加 `--keylength ec-256`（HiCA 暂时不支持，预计 8 月将支持）；
+- 对使用 DNS 验证的证书，不设置 DNS 模块的 ApiID 和 Key，将无法签发成功。
+:::
+
+
+</TabItem>
+
+<TabItem value="http-01" label="HTTP 方式">
+
+## HTTP (`http-01`)
+
+acme.sh http 方式需要在你的网站根目录下放置一个文件，来验证你的域名所有权,完成验证.。然后就可以生成证书了。
 
 注意：需要开启80端口（ACME协议限制）。
 
@@ -55,7 +171,7 @@ acme.sh --issue \
     --server https://acme.hi.cn/directory
 ```
 
-稍等片刻，提示签发成功即可下载证书，位于 ```/root/.acme.sh/你的域名``` 比如 ```/root/.acme.sh/11.4.5.14```
+稍等片刻，提示签发成功即可下载证书，位于 `/root/.acme.sh/你的域名` 比如 `/root/.acme.sh/11.4.5.14`
 
 若提示 acme.sh 命令不存在，直接 cd 到 /root 目录下的 .acme.sh 目录下只用相对路径执行命令即可。
 
@@ -87,94 +203,17 @@ acme.sh  --issue -d mydomain.com   --standalone --days 150 --server https://acme
 - 签发ECC证书：在命令行最后添加```--keylength ec-256``` 或 ```-k ec-256```
 - 对使用HTTP验证的证书，网站目录设置不正确就无法签发成功
 
-## 申请通配符证书
 
-根据ACME协议要求，通配符证书需要DNS验证
+</TabItem>
 
-acme.sh支持数十家DNS服务商的API，这里以阿里云、DNSPod和Cloudflare为例，其它服务商的教程可在网上很方便地找到
+<TabItem value="manual" label="手动模式">
 
-使用此方法可以便捷地申请多域名和通配符证书，也可以是多域名通配符证书。通配符小于等于一个且多域名少于等于十个的情况下Hi CA不会收费。
+:::danger
+HiCA **不支持** 手动添加 DNS、手动上传 HTTP 文本文件申请证书。您必须配置 DNS 模块或者配置网站目录自动申请！
+:::
 
-申请通配符证书有两种方式：手动更改DNS和使用API自动验证
-
-使用API自动验证可以在证书到期前自动续签证书，手动更改DNS则在证书到期时需要手动重新签发
-
-Hi CA 暂不支持手动添加DNS记录申请证书
-
-### 如何使用DNS API自动验证和续签证书
-
-DNS方式的真正强大之处在于可以使用域名解析商提供的API自动添加 TXT 记录完成验证。
-
-acme.sh 目前支持 Cloudflare，DNSPod，CloudXNS，Godaddy 以及 OVH 等数十种解析商的自动集成。
-
-以DNSPod为例, 你需要先登录到DNSPod账号, 生成你的 API ID 和 API Key， 都是免费的。然后：
-
-```
-export DP_Id="1234"
-export DP_Key="sADDsdasdgdsf"
-
-acme.sh   --issue   --dns dns_dp   -d aa.com  -d www.aa.com  --server https://acme.hi.cn/directory
-```
-
-证书就会自动生成了。这里给出的 api id 和 api key 会被自动记录下来，将来你在使用 dnspod api 的时候，就不需要再次指定了。直接生成就好了：
-
-```
-acme.sh  --issue   -d  mydomain2.com   --dns  dns_dp  --server https://acme.hi.cn/directory
-```
-
-更详细的 api 用法: https://github.com/Neilpang/acme.sh/blob/master/dnsapi/README.md
-
-所有支持的 DNS API： [配置我的 DNS 模块 Key](configuration-your-dns-provider.md)
-
-### 使用API签发证书
-
-第一个输入的域名会作为证书的Common Name（即显示的颁发给：```*.example.com```），其余域名会按字母顺序排列，如有需要请把带 ```*``` 的域名排到最前面。
-
-其余DNS API名称和参数可在acme.sh的相关文档查找到
-
-通用格式示例
-
-```bash
-acme.sh --issue -d \*.<域名1.com> -d <域名1.com> -d \*.<域名2.com> -d <域名2.com> --dns dns_服务商 --days 150 --server https://acme.hi.cn/directory
-```
-
-例如阿里云
-
-```bash
-acme.sh --issue -d \*.example.com -d example.com --dns dns_ali --days 150 --server https://acme.hi.cn/directory
-```
-
-腾讯云
-
-```
-acme.sh --issue --dns dns_dp -d \*.example.com -d example.com --days 150 --server https://acme.hi.cn/directory
-```
-
-CloudFlare
-
-```
-acme.sh --issue --dns dns_cf -d \*.example.com -d example.com --days 150 --server https://acme.hi.cn/directory
-```
-
-### 签发完成
-
-稍等片刻，提示签发成功即可下载证书，同样位于 ```~/.acme.sh/your.domain```
-
-若提示 acme.sh 命令不存在，直接 cd 到 家目录下的 ```.acme.sh``` 目录下只用相对路径执行命令即可。
-
-![image](https://user-images.githubusercontent.com/110012832/180938837-f754f0d5-04c2-418f-9fd7-023ee95303d3.png)
-
-:pushpin:在签发超过限制（10个SAN和1个通配符）的证书时，会看到如下界面
-
-![image](https://user-images.githubusercontent.com/110012832/180938990-58945fee-7c52-4943-b529-514bfbf6bcb2.png)
-
-仅支持支付宝扫码付款:moneybag:
-
-### 常见问题
-
-- :information_source:签发ECC证书：在命令行最后添加--keylength ec-256
-- :bell:添加 --ocsp 启用强制OCSP可能导致签发的证书不含CT记录
-- :warning::warning::warning:对使用DNS验证的证书，不设置DNS模块的ID和Key无法签发成功
+</TabItem>
+</Tabs>
 
 ## 安装证书
 
@@ -202,11 +241,11 @@ acme.sh --install-cert -d example.com \
 --reloadcmd     "service nginx force-reload"
 ```
 
-（一个小提醒，这里用的是 ```service nginx force-reload```，不是 ```service nginx reload```，据测试，```reload``` 并不会重新加载证书，所以用的 ```force-reload```）
+（一个小提醒，这里用的是 `service nginx force-reload`，不是 `service nginx reload`，据测试，`reload` 并不会重新加载证书，所以用的 `force-reload`）
 
-Nginx 的配置 ```ssl_certificate``` 使用 ```/etc/nginx/ssl/fullchain.cer```，而非 ```/etc/nginx/ssl/<domain>.cer```，否则 SSL Labs 的测试会报 Chain issues Incomplete 错误
+Nginx 的配置 `ssl_certificate` 使用 `/etc/nginx/ssl/fullchain.cer`，而非 `/etc/nginx/ssl/<domain>.cer`，否则 SSL Labs 的测试会报 Chain issues Incomplete 错误
 
-```--install-cert```命令可以携带很多参数，来指定目标文件。并且可以指定 reloadcmd，当证书更新以后，reloadcmd会被自动调用，让服务器生效
+`--install-cert`命令可以携带很多参数，来指定目标文件。并且可以指定 reloadcmd，当证书更新以后，reloadcmd会被自动调用，让服务器生效
 
 详细参数请参考: https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc
 
@@ -241,50 +280,3 @@ Le_RealKeyPath=/etc/acme/example.com/privkey.pem
 Le_ReloadCmd=service nginx force-reload
 Le_RealFullChainPath=/etc/acme/example.com/chain.pem
 ```
-
-## 更新 acme.sh
-
-目前由于 acme 协议和 letsencrypt CA 都在频繁的更新，因此 acme.sh 也需要经常更新以保持同步。
-
-升级 acme.sh 到最新版：
-
-```
-acme.sh --upgrade
-```
-
-如果你不想手动升级, 可以开启自动升级：
-
-```bash
-acme.sh  --upgrade  --auto-upgrade
-```
-
-之后, acme.sh 就会自动保持更新了
-
-你也可以随时关闭自动更新：
-
-```bash
-acme.sh --upgrade  --auto-upgrade  0
-```
-
-acme.sh最好能设置成自动更新，否则会出现api修改后无法更新证书的情况，也可以选择一段时间更新一次。总之遇到证书突然无法更新多半是acme.sh版本问题，尝试下更新版本，然后再尝试更新证书，一般都能解决
-
-```bash
-acme.sh --v
-```
-
-## 开启Debug模式
-
-如果出错, 请添加 debug log：
-
-```
-acme.sh  --issue  .....  --debug
-```
-
-或者：
-
-```
-acme.sh  --issue  .....  --debug  2
-```
-
-可参考： https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh
-https://github.com/Neilpang/acme.sh/wiki

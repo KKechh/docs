@@ -29,9 +29,11 @@ sidebar_position: 2
 :::
 
 
-```bash
+```js
+// highlight-start
 export DP_Id="DNSPOD API TOKEN ID"
 export DP_Key="DNSPOD API TOKEN KEY"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_dp \
@@ -60,9 +62,11 @@ acme.sh --issue \
 
 
 
-```bash
+```js
+// highlight-start
 export DPI_Id="DNSPOD国际 API TOKEN ID"
 export DPI_Key="DNSPOD国际 API TOKEN KEY"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_dpi \
@@ -91,9 +95,11 @@ acme.sh --issue \
 :::
 
 
-```bash
+```js
+// highlight-start
 export Ali_Key="阿里云API KEY"
 export Ali_Secret="阿里云API Secret"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_ali \
@@ -140,8 +146,10 @@ acme.sh --issue \
 :::
 
 
-```bash
+```js
+// highlight-start
 export CF_Token="API Token"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_cf \
@@ -163,9 +171,11 @@ acme.sh --issue \
 :::
 
 
-```bash
+```js
+// highlight-start
 export GD_Key=""
 export GD_Secret=""
+// highlight-end
 
 acme.sh --issue \
   --dns dns_gd \
@@ -186,9 +196,11 @@ acme.sh --issue \
 直接填入用户名密码，无需API Key
 :::
 
-```bash
+```js
+// highlight-start
 export HE_Username=""
 export HE_Password=""
+// highlight-end
 
 acme.sh --issue \
   --dns dns_he \
@@ -205,9 +217,11 @@ acme.sh --issue \
 
 <summary>京东云(JDCloud)</summary>
 
-```bash
+```js
+// highlight-start
 export JD_ACCESS_KEY_ID=""
 export JD_ACCESS_KEY_SECRET=""
+// highlight-end
 
 acme.sh --issue \
   --dns dns_jd \
@@ -224,9 +238,11 @@ acme.sh --issue \
 
 <summary>HexONET(1API)</summary>
 
-```bash
+```js
+// highlight-start
 export Hexonet_Login="username!roleId"
 export Hexonet_Password="rolePassword"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_hexonet \
@@ -248,9 +264,11 @@ acme.sh --issue \
 :::
 
 
-```bash
+```js
+// highlight-start
 export AWS_ACCESS_KEY_ID=""
 export AWS_SECRET_ACCESS_KEY=""
+// highlight-end
 
 acme.sh --issue \
   --dns dns_aws \
@@ -267,11 +285,13 @@ acme.sh --issue \
 
 <summary>Azure</summary>
 
-```bash
+```js
+// highlight-start
 export AZUREDNS_SUBSCRIPTIONID=""
 export AZUREDNS_TENANTID=""
 export AZUREDNS_APPID=""
 export AZUREDNS_CLIENTSECRET=""
+// highlight-end
 
 acme.sh --issue \
   --dns dns_azure \
@@ -288,8 +308,10 @@ acme.sh --issue \
 
 <summary>Linode</summary>
 
-```bash
+```js
+// highlight-start
 export LINODE_API_KEY="CHANGE TO YOUR LINODE_API_KEY"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_linode \
@@ -306,8 +328,10 @@ acme.sh --issue \
 
 <summary>Linode V4</summary>
 
-```bash
+```js
+// highlight-start
 export LINODE_V4_API_KEY="CHANGE TO YOUR LINODE_V4_API_KEY"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_linode_v4 \
@@ -324,10 +348,12 @@ acme.sh --issue \
 
 <summary>CloudNS</summary>
 
-```bash
+```js
+// highlight-start
 export CLOUDNS_AUTH_ID="CHANGE TO YOUR CLOUDNS_AUTH_ID"
 export CLOUDNS_SUB_AUTH_ID="CHANGE TO YOUR CLOUDNS_SUB_AUTH_ID"
 export CLOUDNS_AUTH_PASSWORD="CHANGE TO YOUR CLOUDNS_AUTH_PASSWORD"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_cloudns \
@@ -344,10 +370,12 @@ acme.sh --issue \
 
 <summary>CloudDNS</summary>
 
-```bash
+```js
+// highlight-start
 export CLOUDDNS_EMAIL="CHANGE TO YOUR CLOUDDNS_EMAIL"
 export CLOUDDNS_PASSWORD="CHANGE TO YOUR CLOUDDNS_PASSWORD"
 export CLOUDDNS_CLIENT_ID="CHANGE TO YOUR CLOUDDNS_CLIENT_ID"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_clouddns \
@@ -363,10 +391,12 @@ acme.sh --issue \
 
 <summary>Dyn.com</summary>
 
-```bash
+```js
+// highlight-start
 export DYN_Customer="customer"
 export DYN_Username="apiuser"
 export DYN_Password="secret"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_dyn \
@@ -383,9 +413,11 @@ acme.sh --issue \
 
 <summary>1984hosting</summary>
 
-```bash
+```js
+// highlight-start
 export One984HOSTING_Username="CHANGE TO YOUR 1984HOSTING Username"
 export One984HOSTING_Password="CHANGE TO YOUR 1984HOSTING Password"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_1984hosting \
@@ -402,11 +434,13 @@ acme.sh --issue \
 
 <summary>acmedns</summary>
 
-```bash
+```js
+// highlight-start
 export ACMEDNS_UPDATE_URL="CHANGE TO YOUR ACMEDNS_UPDATE_URL"
 export ACMEDNS_USERNAME="CHANGE TO YOUR ACMEDNS_USERNAME"
 export ACMEDNS_PASSWORD="CHANGE TO YOUR ACMEDNS_PASSWORD"
 export ACMEDNS_SUBDOMAIN="CHANGE TO YOUR ACMEDNS_SUBDOMAIN"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_acmedns \
@@ -423,10 +457,12 @@ acme.sh --issue \
 
 <summary>acmeproxy</summary>
 
-```bash
+```js
+// highlight-start
 export ACMEPROXY_ENDPOINT=""
 export ACMEPROXY_USERNAME=""
 export ACMEPROXY_PASSWORD=""
+// highlight-end
 
 acme.sh --issue \
   --dns dns_acmeproxy \
@@ -443,8 +479,10 @@ acme.sh --issue \
 
 <summary>active24</summary>
 
-```bash
+```js
+// highlight-start
 export ACTIVE24_Token="CHANGE TO YOUR Token"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_active24 \
@@ -461,8 +499,10 @@ acme.sh --issue \
 
 <summary>arvan</summary>
 
-```bash
+```js
+// highlight-start
 export Arvan_Token="CHANGE TO YOUR Token"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_arvan \
@@ -479,10 +519,12 @@ acme.sh --issue \
 
 <summary>autodns</summary>
 
-```bash
+```js
+// highlight-start
 export AUTODNS_USER="username"
 export AUTODNS_PASSWORD="password"
 export AUTODNS_CONTEXT="context"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_autodns \
@@ -499,9 +541,11 @@ acme.sh --issue \
 
 <summary>cn</summary>
 
-```bash
+```js
+// highlight-start
 export CN_User="CHANGE TO YOUR CN User"
 export CN_Password="CHANGE TO YOUR CN Password"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_cn \
@@ -518,11 +562,13 @@ acme.sh --issue \
 
 <summary>conoha</summary>
 
-```bash
+```js
+// highlight-start
 export CONOHA_Username=""
 export CONOHA_Password=""
 export CONOHA_TenantId=""
 export CONOHA_IdentityServiceApi=""
+// highlight-end
 
 acme.sh --issue \
   --dns dns_conoha \
@@ -539,9 +585,11 @@ acme.sh --issue \
 
 <summary>constellix</summary>
 
-```bash
+```js
+// highlight-start
 export CONSTELLIX_Key=""
 export CONSTELLIX_Secret=""
+// highlight-end
 
 acme.sh --issue \
   --dns dns_constellix \
@@ -558,10 +606,12 @@ acme.sh --issue \
 
 <summary>cyon</summary>
 
-```bash
+```js
+// highlight-start
 export CY_Username=""
 export CY_Password=""
 export CY_OTP_Secret=""
+// highlight-end
 
 acme.sh --issue \
   --dns dns_cyon \
@@ -578,7 +628,8 @@ acme.sh --issue \
 
 <summary>DirectAdmin</summary>
 
-```bash
+```js
+// highlight-start
 export DA_Api="https://remoteDAUsername:remoteDAPassword@DirectAdmin.domain:8443"
 export DA_Api_Insecure=1
 
@@ -597,8 +648,10 @@ acme.sh --issue \
 
 <summary>ddnss</summary>
 
-```bash
+```js
+// highlight-start
 export DDNSS_Token="CHANGE-TO-YOUR-DDNSS-TOKEN"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_ddnss \
@@ -615,9 +668,11 @@ acme.sh --issue \
 
 <summary>desec</summary>
 
-```bash
+```js
+// highlight-start
 export DEDYN_TOKEN="Your DEDYN TOKEN"
 export DEDYN_NAME="foobar.dedyn.io"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_desec \
@@ -634,9 +689,11 @@ acme.sh --issue \
 
 <summary>df</summary>
 
-```bash
+```js
+// highlight-start
 export DF_user="(your dyndnsfree.de username)"
 export DF_password="(your dyndnsfree.de password)"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_df \
@@ -653,8 +710,10 @@ acme.sh --issue \
 
 <summary>DigitalOcean</summary>
 
-```bash
+```js
+// highlight-start
 export DO_API_KEY="Change to your DigitalOcean KEY"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_dgon \
@@ -674,8 +733,10 @@ acme.sh --issue \
 API Key 可在[https://dnsimple.com/user](https://dnsimple.com/user)中获取。
 
 
-```bash
+```js
+// highlight-start
 export DNSimple_OAUTH_TOKEN="CHANGE TO YOUR TOKEN"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_dnsimple \
@@ -692,9 +753,11 @@ acme.sh --issue \
 
 <summary>Domain-Offensive / Resellerinterface / Domainrobot</summary>
 
-```bash
+```js
+// highlight-start
 export DO_PID="CHANGE TO YOUR PID"
 export DO_PW="CHANGE TO YOUR PW"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_do \
@@ -711,8 +774,10 @@ acme.sh --issue \
 
 <summary>Do.DE</summary>
 
-```bash
+```js
+// highlight-start
 export DO_LETOKEN="CHANGE TO YOUR Do.DE TOKEN"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_doapi \
@@ -729,9 +794,11 @@ acme.sh --issue \
 
 <summary>domeneshop</summary>
 
-```bash
+```js
+// highlight-start
 export DOMENESHOP_Token="CHANGE TO DOMENESHOP Token"
 export DOMENESHOP_Secret="CHANGE TO DOMENESHOP Secret"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_domeneshop \
@@ -748,8 +815,10 @@ acme.sh --issue \
 
 <summary>DreamHost DNS</summary>
 
-```bash
+```js
+// highlight-start
 export DH_API_KEY="CHANGE TO YOUR KEY"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_dreamhost \
@@ -766,8 +835,10 @@ acme.sh --issue \
 
 <summary>duckdns</summary>
 
-```bash
+```js
+// highlight-start
 export DuckDNS_Token="CHANGE TO YOUR DuckDNS Token"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_duckdns \
@@ -784,9 +855,11 @@ acme.sh --issue \
 
 <summary>durabledns</summary>
 
-```bash
+```js
+// highlight-start
 export DD_API_User="xxxxx"
 export DD_API_Key="xxxxxx"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_durabledns \
@@ -803,9 +876,11 @@ acme.sh --issue \
 
 <summary>Dynu</summary>
 
-```bash
+```js
+// highlight-start
 export Dynu_ClientId="Change to your Dynu Client ID"
 export Dynu_Secret="Change to your Dynu Secret"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_dynu \
@@ -822,7 +897,8 @@ acme.sh --issue \
 
 <summary>DynV6</summary>
 
-```bash
+```js
+// highlight-start
 export KEY="path/to/keyfile" # Change to your DynV6 private key file here
 
 acme.sh --issue \
@@ -840,9 +916,11 @@ acme.sh --issue \
 
 <summary>easydns</summary>
 
-```bash
+```js
+// highlight-start
 export EASYDNS_Key="xxxxxxxxxxxxxxxxxxxxxxxx"
 export EASYDNS_Token="xxxxxxxxxxxxxxxxxxxxxxxx"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_easydns \
@@ -859,9 +937,11 @@ acme.sh --issue \
 
 <summary>euserv</summary>
 
-```bash
+```js
+// highlight-start
 export EUSERV_Username="username"
 export EUSERV_Password="password"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_euserv \
@@ -878,9 +958,11 @@ acme.sh --issue \
 
 <summary>exoscale</summary>
 
-```bash
+```js
+// highlight-start
 export EXOSCALE_API_KEY="Change to your EXOSCALE API KEY"
 export EXOSCALE_SECRET_KEY="Change to your EXOSCALE SECRET KEY"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_exoscale \
@@ -897,9 +979,11 @@ acme.sh --issue \
 
 <summary>freedns</summary>
 
-```bash
+```js
+// highlight-start
 export FREEDNS_User="change to your freedns username"
 export FREEDNS_Password="change to your freedns password"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_freedns \
@@ -916,8 +1000,10 @@ acme.sh --issue \
 
 <summary>Gandi LiveDNS</summary>
 
-```bash
+```js
+// highlight-start
 export GANDI_LIVEDNS_KEY="Change to your Gandi Livedns KEY"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_gandi_livedns \
@@ -934,9 +1020,11 @@ acme.sh --issue \
 
 <summary>Gratisdns.com</summary>
 
-```bash
+```js
+// highlight-start
 export GDNSDK_Username="change to your GDNSDK Username"
 export GDNSDK_Password="change to your GDNSDK Password"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_gdnsdk \
@@ -955,8 +1043,10 @@ acme.sh --issue \
 API Key 可以在 [Hetzner](https://dns.hetzner.com/settings/api-token) 的页面找到。
 
 
-```bash
+```js
+// highlight-start
 export HETZNER_Token="Change to your HETZNER Token"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_hetzner \
@@ -973,7 +1063,8 @@ acme.sh --issue \
 
 <summary>hostingde</summary>
 
-```bash
+```js
+// highlight-start
 export HOSTINGDE_ENDPOINT='https://secure.hosting.de'
 export HOSTINGDE_APIKEY='xxxxx'
 
@@ -992,9 +1083,11 @@ acme.sh --issue \
 
 <summary>infoblox</summary>
 
-```bash
+```js
+// highlight-start
 export Infoblox_Creds=""
 export Infoblox_Server="Your-InfobloxServer.com"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_infoblox \
@@ -1011,9 +1104,11 @@ acme.sh --issue \
 
 <summary>internetbs</summary>
 
-```bash
+```js
+// highlight-start
 export INTERNETBS_API_KEY="Change to your INTERNETBS API KEY"
 export INTERNETBS_API_PASSWORD="Change to your INTERNETBS API PASSWORD"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_internetbs \
@@ -1030,9 +1125,11 @@ acme.sh --issue \
 
 <summary>inwx</summary>
 
-```bash
+```js
+// highlight-start
 export INWX_User="username"
 export INWX_Password="password"
+// highlight-end
 
 acme.sh --issue \
   --dns dns_inwx \
@@ -1049,7 +1146,8 @@ acme.sh --issue \
 
 <summary>ispconfig</summary>
 
-```bash
+```js
+// highlight-start
 export ISPC_User="remoteUser"
 export ISPC_Password="remotePassword"
 export ISPC_Api="https://ispc.domain.tld:8080/remote/json.php"

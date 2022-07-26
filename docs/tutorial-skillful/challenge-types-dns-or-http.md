@@ -20,13 +20,17 @@ HiCA 不支持 `tls-alpn-01` 验证类型，只支持 `dns-01`、`http-01`。
 
 ### **DNS 验证**: 
 
-:::danger 警告
-HiCA 申请通配符证书必须使用 `dns-01` 验证。
-:::
+<details>
+<summary> 介绍 </summary>
 
 通过申请人给域名添加一条DNS解析，来证明自己的申请资格。
 
 ACME 中 DNS 验证定义为 `dns-01`。
+
+:::danger 警告
+HiCA 申请通配符证书必须使用 `dns-01` 验证。
+:::
+
 
 下述验证类型均属于DNS验证：
 
@@ -67,8 +71,6 @@ export DP_Id=<你的DNSPod的API ID>
 export DP_Key=<你的DNSPod的API Key>
 ```
 
-常见DNS的API Key可以在 [配置我的 DNS 模块 Key](configuration-your-dns-provider.md) 找到：
-
 #### 优点：
   - 您可以使用此验证方式来颁发包含通配符域名的证书。
   - 即使您有多个 Web 服务器，它也能正常工作。
@@ -78,15 +80,23 @@ export DP_Key=<你的DNSPod的API Key>
   - 您的 DNS 提供商可能不提供 API。
   - 您的 DNS API 可能无法提供有关更新时间的信息。
 
+</details>
+
+DNS 验证进阶教程请见 [配置我的 DNS 模块 Key](configuration-your-dns-provider.md)。
+
+
 ### **文件验证（HTTP 验证或 HTTPS验证）**: 
 
-:::danger 警告
-ACME 不支持 `HTTPS` 验证(:443)，只支持 `HTTP`(:80)。
-:::
+<details>
+<summary>介绍</summary>
 
 选择此验证，CA会要求申请人往服务器上传一份文本文件（内容有要求）来证明申请人的域名控制资格。
 
 ACME 中 DNS 验证定义为 `http-01`。
+
+:::danger 警告
+ACME 不支持 `HTTPS` 验证(:443)，只支持 `HTTP`(:80)。
+:::
 
 #### 优点：
   - 它可以轻松地自动化进行而不需要关于域名配置的额外知识。
@@ -98,18 +108,27 @@ ACME 中 DNS 验证定义为 `http-01`。
   - 我们不允许您使用此验证方式来颁发通配符证书。
   - 您如果有多个 Web 服务器，则必须确保该文件在所有这些服务器上都可用。
 
+</details>
+
 ### **TLS ALPN验证**: 
 
-:::danger 警告
-ACME 支持 `tls-alpn-01` 验证，但HiCA不支持。
-:::
+<details>
+<summary>介绍</summary>
 
 ACME 中 DNS 验证定义为 `tls-alpn-01`。
 
 因为HiCA不支持此验证方式，所以此处不详细介绍。
 
+:::danger 警告
+ACME 支持 `tls-alpn-01` 验证，但HiCA不支持。
+:::
+
+</details>
 
 ### **邮箱验证**: 
+
+<details>
+<summary>介绍</summary>
 
 :::danger 警告
 ACME 不支持邮箱验证（因为无法自动化）。
@@ -126,6 +145,8 @@ ACME 不支持邮箱验证（因为无法自动化）。
   * 域名注册时候的WHOIS管理员邮箱
     * 国际域名因为ICANN合规要求，基本都开了Whois Privacy，现在已经查询不到
     * CN域名没有遵守Whois Privacy，暂时还可以用WHOIS邮箱
+
+</details>
 
 ### 总结
 
