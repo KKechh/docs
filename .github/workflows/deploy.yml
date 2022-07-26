@@ -45,6 +45,26 @@ jobs:
           remote_path: /www/wwwroot/www1.hi.cn
           args: '-o ConnectTimeout=5'
 
+      - name: Upload to s_chengdu1
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          server: ${{ secrets.SSH_SERVER_ORION_CHENGDU }}
+          username: ${{ secrets.SSH_USERNAME }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          local_path: './build.zip'
+          remote_path: /www/wwwroot/www1.hi.cn
+          args: '-o ConnectTimeout=5'
+
+      - name: Upload to s_guangzhou1
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          server: ${{ secrets.SSH_SERVER_ORION_GUANGZHOU }}
+          username: ${{ secrets.SSH_USERNAME }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          local_path: './build.zip'
+          remote_path: /www/wwwroot/www1.hi.cn
+          args: '-o ConnectTimeout=5'
+
       - name: Uncompress zip to s_singapore1
         uses: appleboy/ssh-action@master
         with:
@@ -57,10 +77,60 @@ jobs:
             unzip -o build.zip
             rm -rf build.zip
 
+      - name: Uncompress zip to s_chengdu1
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_SERVER_ORION_CHINA_CHENGDU }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /www/wwwroot/www1.hi.cn
+            unzip -o build.zip
+            rm -rf build.zip
+
+      - name: Uncompress zip to s_guangzhou1
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_SERVER_ORION_CHINA_GUANGZHOU }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /www/wwwroot/www1.hi.cn
+            unzip -o build.zip
+            rm -rf build.zip
+
       - name: Enable latest build to s_singapore1
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_SERVER_ORION_SINGAPORE }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /www/wwwroot/www1.hi.cn
+            rm -rf index.html
+            mv index2.html index.html
+            cd ..
+
+      - name: Enable latest build to s_chengdu1
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_SERVER_ORION_CHINA_CHENGDU }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /www/wwwroot/www1.hi.cn
+            rm -rf index.html
+            mv index2.html index.html
+            cd ..
+
+      - name: Enable latest build to s_guangzhou1
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_SERVER_ORION_CHINA_GUANGZHOU }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
