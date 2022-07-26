@@ -68,7 +68,7 @@ jobs:
       - name: Uncompress zip to s_singapore1
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_SERVER_ORION_SINGAPORE }}
+          server: ${{ secrets.SSH_SERVER_ORION_SINGAPORE }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
@@ -80,7 +80,7 @@ jobs:
       - name: Uncompress zip to s_chengdu1
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_SERVER_ORION_CHINA_CHENGDU }}
+          server: ${{ secrets.SSH_SERVER_ORION_CHINA_CHENGDU }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
