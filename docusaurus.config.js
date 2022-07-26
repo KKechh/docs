@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'HiCA帮助中心',
+  title: 'HiCA 官网',
   tagline: 'HiCA是一家纯ACME的数字证书供应商',
-  url: 'https://docs.hi.cn',
+  url: 'https://www.hi.cn',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -55,7 +55,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'HiCA帮助中心',
+        title: 'HiCA 官网',
         logo: {
           alt: 'HiCA Logo',
           src: 'img/logo.svg',
@@ -69,8 +69,13 @@ const config = {
           },
           {to: '/blog', label: '博客', position: 'left'},
           {
+            label: 'Github/HiCA-docs',
             href: 'https://github.com/HiCA-ACME/docs',
-            label: 'GitHub',
+            position: 'right',
+          },
+          {
+            label: 'Github/ACME.sh',
+            href: 'https://github.com/acmesh-official/acme.sh',
             position: 'right',
           },
         ],
@@ -79,11 +84,15 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: '文档',
+            title: 'Library',
             items: [
               {
                 label: '教程',
                 to: '/docs/intro',
+              },
+              {
+                label: '合作申请',
+                href: 'https://docs.qq.com/form/page/DY2JIWkF6ZXVJaHhP',
               },
             ],
           },
@@ -104,17 +113,17 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: '官网 Repo',
+                href: 'https://github.com/HiCA-ACME/docs',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/HiCA-ACME/docs',
+                label: 'ACME.sh Repo',
+                href: 'https://github.com/acmesh-official/acme.sh',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} HiCA, All rights reserved. 沪ICP备20022337号-17. <br/> <small>Note: the ACME logo and affliated graphics are registered trademarks of ISRG.</small>`,
       },
       prism: {
         theme: lightCodeTheme,

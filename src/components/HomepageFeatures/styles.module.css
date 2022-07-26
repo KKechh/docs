@@ -1,11 +1,33 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 2rem 0rem;
   width: 100%;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+@media only screen and (min-width: 960px) {
+  .features {
+    display: flex;
+    align-items: center;
+    padding: 2rem 5rem;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .features {
+    display: flex;
+    align-items: center;
+    padding: 2rem 20rem;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 2040px) {
+  .features {
+    display: flex;
+    align-items: center;
+    padding: 2rem 40rem;
+    width: 100%;
+  }
 }
