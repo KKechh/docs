@@ -4,12 +4,15 @@ sidebar_position: 1
 
 # 安装 acme.sh
 
+:::tip 提示
 Linux 建议切换到root模式，可以减少证书安装时的问题
 
 ```bash
 sudo su
 ```
-注意：MacOS 推荐不用切换到root更简单。
+
+注意：MacOS 推荐不用切换到 root。
+:::
 
 ```bash
 curl https://get.acme.sh | sh -s email=my@example.com
