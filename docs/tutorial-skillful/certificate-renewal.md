@@ -11,3 +11,15 @@ sidebar_position: 4
 
 您唯一需要关心的是证书续费成功后的服务重启异常导致的服务中断。
 :::
+
+
+如果使用自动HTTP验证或DNS API方式签发了证书，且正确设置cron（定时任务），那么acme.sh会在每天零点自动检查所有证书的有效期，若距离到期小于30天则自动续签
+
+请确保 cronjob 正确安装, 看起来是类似这样的：
+
+```bash
+crontab  -l
+56 * * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
+```
+
+如果cron未生效请到网上查找“Linux怎么添加定时任务”
