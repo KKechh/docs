@@ -80,6 +80,9 @@ const config = {
           },
         ],
       },
+      sidebar: {
+        hideable: true,
+      },
       footer: {
         style: 'dark',
         links: [
