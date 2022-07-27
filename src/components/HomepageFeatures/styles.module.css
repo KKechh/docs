@@ -9,7 +9,7 @@
   .features {
     display: flex;
     align-items: center;
-    padding: 2rem 5rem;
+    padding: 3rem 5rem;
     width: 100%;
   }
 }
@@ -18,7 +18,7 @@
   .features {
     display: flex;
     align-items: center;
-    padding: 2rem 20rem;
+    padding: 4rem 20rem;
     width: 100%;
   }
 }
@@ -27,7 +27,7 @@
   .features {
     display: flex;
     align-items: center;
-    padding: 2rem 40rem;
+    padding: 5rem 40rem;
     width: 100%;
   }
 }

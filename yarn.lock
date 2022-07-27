@@ -1454,7 +1454,7 @@
     "@types/react" "*"
     prop-types "^15.6.2"
 
-"@docusaurus/theme-classic@2.0.0-rc.1":
+"@docusaurus/theme-classic@2.0.0-rc.1", "@docusaurus/theme-classic@^2.0.0-rc.1":
   version "2.0.0-rc.1"
   resolved "https://registry.npmmirror.com/@docusaurus/theme-classic/-/theme-classic-2.0.0-rc.1.tgz#4ab30745e6b03b0f277837debae786a0a83aee6a"
   integrity sha512-qNiz7ieeq3AC+V8TbW6S63pWLJph1CbzWDDPTqxDLHgA8VQaNaSmJM8S92pH+yKALRb9u14ogjjYYc75Nj2JmQ==
