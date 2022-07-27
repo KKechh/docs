@@ -22,4 +22,4 @@ crontab  -l
 56 * * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
 ```
 
-如果cron未生效请到网上查找“Linux怎么添加定时任务”
+如果cron未生效请到 [百度搜索“Linux怎么添加定时任务”](https://www.baidu.com/s?wd=Linux%E6%80%8E%E4%B9%88%E6%B7%BB%E5%8A%A0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1) 或者 [Google搜索“Linux怎么添加定时任务”](https://www.google.com/search?q=Linux%E6%80%8E%E4%B9%88%E6%B7%BB%E5%8A%A0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1)。`acme.sh` 任务为：`"/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null`

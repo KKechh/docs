@@ -94,6 +94,10 @@ const config = {
                 label: '合作申请',
                 href: 'https://docs.qq.com/form/page/DY2JIWkF6ZXVJaHhP',
               },
+              {
+                label: '服务条款',
+                href: 'https://www1.hi.cn/EULA/',
+              },
             ],
           },
           {
