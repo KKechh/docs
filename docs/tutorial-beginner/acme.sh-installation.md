@@ -2,7 +2,13 @@
 sidebar_position: 1
 ---
 
-# 安装 acme.sh
+# 安装 ACME.sh
+
+:::danger 重要信息
+按照我们的服务条款，您只能使用 `ACME.sh` 来访问 HiCA。
+
+其他 ACME 客户端请勿尝试！更请不要使用任何机构组织、个人提供的 GUI 工具。欢迎举报： [report-abuse@corp.hi.cn](mailto:report-abuse@corp.hi.cn)。
+:::
 
 :::tip 提示
 Linux 建议切换到root模式，可以减少证书安装时的问题
@@ -14,11 +20,13 @@ sudo su
 注意：MacOS 推荐不用切换到 root。
 :::
 
+运行安装脚本。
+
 ```bash
 curl https://get.acme.sh | sh -s email=my@example.com
 ```
 
-如果上面官方下载地址失败 或者 太慢，可以选用国内的备用地址
+如果上面官方下载地址失败 或者 太慢，可以选用国内的备用地址：
 
 ```bash
 curl https://gitcode.net/cert/cn-acme.sh/-/raw/master/install.sh?inline=false | sh -s email=my@example.com
@@ -64,7 +72,9 @@ acme.sh最好能设置成自动更新，否则会出现api修改后无法更新�
 acme.sh --v
 ```
 
-## 开启Debug模式
+## 报错处理
+
+**报错需要先开启 debug**
 
 如果出错, 请添加 debug log：
 
@@ -78,5 +88,9 @@ acme.sh  --issue  .....  --debug
 acme.sh  --issue  .....  --debug  2
 ```
 
-可参考： https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh
-https://github.com/Neilpang/acme.sh/wiki
+可参考： 
+- [https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh](https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh)
+- [https://github.com/Neilpang/acme.sh/wiki](https://github.com/Neilpang/acme.sh/wiki)
+
+
+> `acme.sh` 安装错误的问题，不要反馈给 HiCA。您需要自行看情况，决定需不需要反馈给 [ACME.sh 官方](https://github.com/acmesh-official/acme.sh/issues/new) 。
