@@ -10,9 +10,9 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="dns-01" label="DNS 方式" default>
+<TabItem value="dns-01" label="DNS 验证" default>
 
-## DNS (`dns-01`)
+## DNS 验证 / `dns-01` 申请方式
 
 根据 CA / B Forum 要求，通配符证书（例如 `*.example.com` 需要DNS验证。
 
@@ -131,9 +131,9 @@ SH7jOvH+p7k8CbrYFXFvZOGd5T8axCknS9xSSlfO602wiRR7
 
 </TabItem>
 
-<TabItem value="http-01" label="HTTP 方式">
+<TabItem value="http-01" label="HTTP 文件验证">
 
-## HTTP (`http-01`)
+## HTTP 文件验证 / `http-01` 申请方式
 
 acme.sh http 方式需要在你的网站根目录下放置一个文件，来验证你的域名所有权,完成验证.。然后就可以生成证书了。
 
@@ -203,6 +203,16 @@ acme.sh  --issue -d mydomain.com   --standalone --days 150 --server https://acme
 - 签发ECC证书：在命令行最后添加```--keylength ec-256``` 或 ```-k ec-256```
 - 对使用HTTP验证的证书，网站目录设置不正确就无法签发成功
 
+
+</TabItem>
+
+<TabItem value="tls-alpn-01" label="TLS-ALPN 验证方式">
+
+:::danger
+HiCA **不支持** `tls-alpn-01` 申请证书。所以请不要尝试 `caddy` 了。
+
+您必须使用 `acme.sh` 配置 DNS 模块或者配置网站目录自动申请！
+:::
 
 </TabItem>
 
@@ -280,3 +290,6 @@ Le_RealKeyPath=/etc/acme/example.com/privkey.pem
 Le_ReloadCmd=service nginx force-reload
 Le_RealFullChainPath=/etc/acme/example.com/chain.pem
 ```
+## 引用说明
+
+> 使用 HiCA 签发免费的半年 IP / 通配符域名 SSL 证书 —— TaurusXin 的独立博客：https://taurusxin.com/hica-ssl/
