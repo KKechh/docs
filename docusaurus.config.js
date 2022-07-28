@@ -138,12 +138,12 @@ const config = {
       },
       algolia: {
         // Algolia 提供的应用 ID
-        appId: 'YOUR_APP_ID',
+        appId: 'IHG7P8FXJD',
 
         //  公开 API 密钥：提交它没有危险
-        apiKey: 'YOUR_SEARCH_API_KEY',
+        apiKey: 'b06124bff438110f9dfc2b1228276eac',
 
-        indexName: 'YOUR_INDEX_NAME',
+        indexName: 'HiCA-docs',
 
         // 可选：见下文
         contextualSearch: true,
