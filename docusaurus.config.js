@@ -130,7 +130,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} HiCA, All rights reserved. 沪ICP备20022337号-17. <br/> <small>Note: the ACME logo and affliated graphics are registered trademarks of ISRG.</small>`,
+        copyright: `Copyright © ${new Date().getFullYear()} HiCA, All rights reserved. <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备20022337号-17</a>. <br/> <small>Note: the ACME logo and affliated graphics are registered trademarks of ISRG.</small>`,
       },
       prism: {
         theme: lightCodeTheme,
