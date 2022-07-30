@@ -2,56 +2,58 @@
 sidebar_position: 1
 ---
 
-# 教程介绍
+# Introduction
 
-全面了解 HiCA 以及 ACME **只需要 15 分钟**！
+To know about HiCA + ACME **in only 15 minutes**！
 
-如果您第一次使用，建议您从 [初次使用](/docs/category/初次使用) 分类开始阅读； 或直接阅读 [证书签发管理](/docs/category/证书签发管理)。
+If it's your first time to use, we recommend your reading shall starts from [starter](/docs/category/初次使用) chapter; or you can read [certificate management](/docs/category/证书签发管理) directly。
 
-## 什么是 ACME
+## What is ACME
 
-ACME (rfc**8555**) 是由 ISRG 起草的 PKIX 证书自动化管理的标准，其定义了一套完整的证书验证、签发、续期更新、吊销等协议，用于管理证书的生命周期。
-其特点是减少人工干预，提高安全性，提高系统的可靠性。
+ACME (rfc**8555**) was a PKIX standard drafted by ISRG(Internet security research group), which defined a serial about certificate validation(challenge)、issuance、renewal updates、revocation and etc... protocols, can be used to management certificate's lifecycle.
+The feature of ACME is automatic, humancost reducement and security+stablity enhancement.
 
-详细的ACME定义，可以在 [RFC8555: Automatic Certificate Management Environment (ACME)](https://tools.ietf.org/html/rfc8555) 查阅到。
+The details of definition of ACME, shall read at [RFC8555: Automatic Certificate Management Environment (ACME)](https://tools.ietf.org/html/rfc8555).
 
-## 什么是 HiCA
+## What is HiCA
 
-HiCA 是由“公钥认证服务（重庆）有限公司”运营的数字证书品牌项目，HiCA 诞生于 2022 年 7 月。
+HiCA is operated by "PKI(Chongqing) Limited"(公钥认证服务（重庆）有限公司), which founded at Jul 2022.
 
 <details>
-<summary>关于“公钥认证服务（重庆）有限公司”</summary>
+<summary>More about "PKI(Chongqing) Limited"</summary>
 
-- 成立于: <b>2022 年 7 月 5 日</b>
-- 注册号: <b>91500108MAACDXG09T</b>
-- 注册资本: <b>100 万</b>
-- 注册地: <b>重庆</b>
-- 主营业务:
-  1. <b>证书(HTTPS证书、代码签名）零售</b>
-  2. <b>证书自动化</b>
+- Organization Name: <b>公钥认证服务（重庆）有限公司</b>
+- Director: <b>Sue</b>
+- Established At: <b>5th, Jul 2022</b>
+- Registration Number: <b>91500108MAACDXG09T</b>
+- Initial Capital: <b>1 million (Chinese Yuan) </b>
+- Offical Location: <b>Chongqing</b>
+- Business scope:
+  1. <b>TLS Certificates retail(HTTPS Certificates、 S/Mime、 Code Signing and Verified Mark Certificates)</b>
+  2. <b>TLS Certificates automaticlly solutions</b>
   3. <b>ePKI (enterprise PKI)</b>
   4. <b>mPKI (managed PKI)</b>
-  5. <b>subCA (CA品牌定制)</b>
-  6. <b>TLS 数字证书批发业务 (免费给经销商提供销售站 + ACME 接入服务，零代码接入！)</b>
+  5. <b>subordinate CA (custom brand)</b>
+  6. <b>TLS wholesale(offer salesfront + acme, for no cost + no code!)</b>
 
 </details>
 
-HiCA 专注于提供 “Browserless TLS distribution” 方案研究 + 推广（所以我们用户协议禁止任何机构未经授权基于 HiCA 开发申请证书的 Web UI、桌面程序以及 APP 或小程序）。
+HiCA is focused on “Browserless TLS distribution” solution research + campaign(and that's the reason we disabled ourself and our resellers to provide HiCA's TLS certificates via any kind of UI, such as Web UI、desktop software and APP, mini-programs).
 
-## HiCA 特点
+## Features of HiCA
 
-:::tip HiCA 相比其他 ACME 提供者，具有明显的优势
+:::tip HiCA has absolute advantages than other ACME or Free ssl provider
 
-**优势**
+**Advantages**
 
-- 通过 ACME 提供有效期为 180 天的证书（大多数厂商通过 ACME 提供的免费证书有效期为 90 天）；
-- 提供 IPv4 证书和 IPv6 证书；
-- 提供国内 OCSP，具有更高合规性和更好的服务质量（TLS 握手更快）；
-- 订阅模式支持一次付款多次自动化续签；
+- Provide 180 days certificates via ACME(mostly vendor provide 90 days certificates);
+- Provide IPv4 or IPv6 certificates(no other CA provide by ACME);
+- Provide China accelerated OCSP/CRL(better performance, TLS handshake will be faster);
+- Support multi-year certificates(subscription payment or pay once);
 
 :::
 
-## 请勿滥用
+## Abuse warning
 
 <details>
 <summary>

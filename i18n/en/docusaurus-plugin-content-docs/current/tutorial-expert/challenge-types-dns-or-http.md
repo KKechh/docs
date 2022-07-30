@@ -2,17 +2,17 @@
 sidebar_position: 1
 ---
 
-# FQDN 验证
+# FQDN Validation
 
-什么是 FQDN 验证? 如何选择验证类型? `dns-01` 还是 `http-01` ?
+What's validation for your domains(FQDN), and what type should i use between `dns-01` and `http-01`?
 
 :::tip 提示
-HiCA 不支持 `tls-alpn-01` 验证类型，只支持 `dns-01`、`http-01`。
+HiCA doesn't support `tls-alpn-01`, but supports `dns-01`、`http-01`.
 :::
 
-## 什么是 FQDN 验证，为什么要验证？
+## What is validation of FQDN, and why?
 
-作为公网可信证书的签发机构，CA 需要解决一个问题：怎么确定申请人的身份对申请的网站域名拥有控制权？
+As a public-trusted CA, we must solve a problem: how to proof you are the webmaster of your website?
 
 因为 CA 要避免心怀诡异的人申请到你网站的证书（比方说如果黑客申请到了 `*.google.com` 的证书，那么就会威胁到 Google 业务的安全！
 
