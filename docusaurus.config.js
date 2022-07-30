@@ -135,7 +135,7 @@ const config = {
               },
               {
                 label: '服务条款',
-                href: 'https://www1.hi.cn/EULA/',
+                href: '/EULA',
               },
             ],
           },

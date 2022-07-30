@@ -21,8 +21,8 @@ View the certificate stored by the current acme.sh client
 
 ```bash title="revoke certificate"
 #revoke certificate
-acme.sh --revoke -d [common name of certificate] --server https://acme.hi.cn/directory
+acme.sh --revoke -d <common name of certificate> --server https://acme.hi.cn/directory
 
 #Remove this certificate from the acme.sh directory
-acme.sh --remove -d [common name of certificate] --server https://acme.hi.cn/directory
+acme.sh --remove -d <common name of certificate> --server https://acme.hi.cn/directory
 ````

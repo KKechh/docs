@@ -6,7 +6,7 @@ sidebar_position: 1
 
 全面了解 HiCA 以及 ACME **只需要 15 分钟**！
 
-如果您第一次使用，建议您从 [初次使用](/docs/category/初次使用) 分类开始阅读； 或直接阅读 [证书签发管理](/docs/category/证书签发管理)。
+如果您第一次使用，建议您从 [开始上手](/docs/category/开始上手) 分类开始阅读； 或直接阅读 [证书签发管理](/docs/category/证书签发管理)。
 
 ## 什么是 ACME
 
@@ -58,7 +58,7 @@ HiCA 专注于提供 “Browserless TLS distribution” 方案研究 + 推广（
 <b>为了保证 HiCA 的服务质量，我们加了些防滥用限制</b> (展开了解详情)
 </summary>
 
-:::info **以下是条款限制**，具体请见我们的 [用户协议](https://www1.hi.cn/EULA/)。
+:::info **以下是条款限制**，具体请见我们的 [用户协议](/EULA)。
 
 - 只能使用 `acme.sh` 申请数字证书，不得使用 GUI 且暂不支持其它ACME客户端访问 `https://acme.hi.cn` 的任何服务！
 - 不利用本服务从事Web入侵防护、CC防护等防护售卖业务！

@@ -48,21 +48,21 @@ If shows `acme.sh` command was not found and you've installed `acme.sh`, please 
 
 ```js
 ➜  ~ ~/.acme.sh/acme.sh --issue -d www1.hi.cn --dns dns_dp --server http://acme.hi.cn/directory --days 150 --force
-[2022年 7月27日 星期三 01时46分23秒 CST] Using CA: http://acme.hi.cn/directory
-[2022年 7月27日 星期三 01时46分23秒 CST] Single domain='www1.hi.cn'
-[2022年 7月27日 星期三 01时46分23秒 CST] Getting domain auth token for each domain
-[2022年 7月27日 星期三 01时46分26秒 CST] Getting webroot for domain='www1.hi.cn'
-[2022年 7月27日 星期三 01时46分26秒 CST] Verifying: www1.hi.cn
-[2022年 7月27日 星期三 01时46分31秒 CST] Success
-[2022年 7月27日 星期三 01时46分31秒 CST] Verify finished, start to sign.
-[2022年 7月27日 星期三 01时46分31秒 CST] Lets finalize the order.
-[2022年 7月27日 星期三 01时46分31秒 CST] Le_OrderFinalize='https://acme.hi.cn/acme/order/ElGBOq3VAhg5m4G4qknAzP/finalize'
-[2022年 7月27日 星期三 01时46分32秒 CST] Order status is processing, lets sleep and retry.
-[2022年 7月27日 星期三 01时46分32秒 CST] Retry after: 60
-[2022年 7月27日 星期三 01时47分34秒 CST] Polling order status: https://acme.hi.cn/acme/order/ElGBOq3VAhg5m4G4qknAzP
-[2022年 7月27日 星期三 01时47分35秒 CST] Downloading cert.
-[2022年 7月27日 星期三 01时47分35秒 CST] Le_LinkCert='https://acme.hi.cn/acme/order/ElGBOq3VAhg5m4G4qknAzP/download'
-[2022年 7月27日 星期三 01时47分36秒 CST] Cert success.
+[Wed, July 27, 2022 01:46:23 CST] Using CA: http://acme.hi.cn/directory
+[Wed, July 27, 2022 01:46:23 CST] Single domain='www1.hi.cn'
+[Wed, July 27, 2022 01:46:23 CST] Getting domain auth token for each domain
+[Wed, July 27, 2022 01:46:26 CST] Getting webroot for domain='www1.hi.cn'
+[Wed, July 27, 2022 01:46:26 CST] Verifying: www1.hi.cn
+[Wed, July 27, 2022 01:46:31 CST] Success
+[Wed, July 27, 2022 01:46:31 CST] Verify finished, start to sign.
+[Wed, July 27, 2022 01:46:31 CST] Lets finalize the order.
+[Wed, July 27, 2022 01:46:31 CST] Le_OrderFinalize='https://acme.hi.cn/acme/order/ElGBOq3VAhg5m4G4qknAzP/finalize'
+[Wed, July 27, 2022 01:46:32 CST] Order status is processing, lets sleep and retry.
+[Wed, July 27, 2022 01:46:32 CST] Retry after: 60
+[Wed, July 27, 2022 01:47:34 CST] Polling order status: https://acme.hi.cn/acme/order/ElGBOq3VAhg5m4G4qknAzP
+[Wed, July 27, 2022 01:47:35 CST] Downloading cert.
+[Wed, July 27, 2022 01:47:35 CST] Le_LinkCert='https://acme.hi.cn/acme/order/ElGBOq3VAhg5m4G4qknAzP/download'
+[Wed, July 27, 2022 01:47:36 CST] Cert success.
 // highlight-start
 -----BEGIN CERTIFICATE-----
 MIIGIDCCBQigAwIBAgIRAIJF7rZD8wiMCUp9OpWZuaAwDQYJKoZIhvcNAQELBQAw
@@ -100,10 +100,10 @@ kV+EB0tdnU7lxgRZFQNd1u9Sdtdpk9xuk1s+E5ITtIE7vKQ/LMul+PcPOf6L+38C
 SH7jOvH+p7k8CbrYFXFvZOGd5T8axCknS9xSSlfO602wiRR7
 -----END CERTIFICATE-----
 // highlight-end
-[2022年 7月27日 星期三 01时47分36秒 CST] Your cert is in: /Users/mac/.acme.sh/www1.hi.cn/www1.hi.cn.cer
-[2022年 7月27日 星期三 01时47分36秒 CST] Your cert key is in: /Users/mac/.acme.sh/www1.hi.cn/www1.hi.cn.key
-[2022年 7月27日 星期三 01时47分36秒 CST] The intermediate CA cert is in: /Users/mac/.acme.sh/www1.hi.cn/ca.cer
-[2022年 7月27日 星期三 01时47分36秒 CST] And the full chain certs is there: /Users/mac/.acme.sh/www1.hi.cn/fullchain.cer
+[Wed, July 27, 2022 01:47:36 CST] Your cert is in: /Users/mac/.acme.sh/www1.hi.cn/www1.hi.cn.cer
+[Wed, July 27, 2022 01:47:36 CST] Your cert key is in: /Users/mac/.acme.sh/www1.hi.cn/www1.hi.cn.key
+[Wed, July 27, 2022 01:47:36 CST] The intermediate CA cert is in: /Users/mac/.acme.sh/www1.hi.cn/ca.cer
+[Wed, July 27, 2022 01:47:36 CST] And the full chain certs is there: /Users/mac/.acme.sh/www1.hi.cn/fullchain.cer
 ➜  ~
 ```
 
@@ -111,14 +111,14 @@ SH7jOvH+p7k8CbrYFXFvZOGd5T8axCknS9xSSlfO602wiRR7
 
 ```js
 ➜  ~ ~/.acme.sh/acme.sh --issue -d www1.hi.cn -d www2.hi.cn -d www3.hi.cn -d www4.hi.cn -d www5.hi.cn -d www6.hi.cn -d www7.hi.cn -d www8.hi.cn -d www9.hi.cn -d www10.hi.cn -d www11.hi.cn --dns dns_dp --server http://acme.hi.cn/directory --days 150 --force
-[2022年 7月27日 星期三 01时49分53秒 CST] Using CA: http://acme.hi.cn/directory
-[2022年 7月27日 星期三 01时49分53秒 CST] Multi domain='DNS:www1.hi.cn,DNS:www2.hi.cn,DNS:www3.hi.cn,DNS:www4.hi.cn,DNS:www5.hi.cn,DNS:www6.hi.cn,DNS:www7.hi.cn,DNS:www8.hi.cn,DNS:www9.hi.cn,DNS:www10.hi.cn,DNS:www11.hi.cn'
-[2022年 7月27日 星期三 01时49分53秒 CST] Getting domain auth token for each domain
+[Wed, July 27, 2022 01:49:53 CST] Using CA: http://acme.hi.cn/directory
+[Wed, July 27, 2022 01:49:53 CST] Multi domain='DNS:www1.hi.cn,DNS:www2.hi.cn,DNS:www3.hi.cn,DNS:www4.hi.cn,DNS:www5.hi.cn,DNS:www6.hi.cn,DNS:www7.hi.cn,DNS:www8.hi.cn,DNS:www9.hi.cn,DNS:www10.hi.cn,DNS:www11.hi.cn'
+[Wed, July 27, 2022 01:49:53 CST] Getting domain auth token for each domain
 // highlight-start
-[2022年 7月27日 星期三 01时49分55秒 CST] Create new order error. Le_OrderFinalize not found. {"type":"urn:ietf:params:acme:error:malformed","detail":"Free certificate does not support more than 10 FQDNs."}
+[Wed, July 27, 2022 01:49:55 CST] Create new order error. Le_OrderFinalize not found. {"type":"urn:ietf:params:acme:error:malformed","detail":"Free certificate does not support more than 10 FQDNs."}
 // highlight-end
-[2022年 7月27日 星期三 01时49分55秒 CST] Please add '--debug' or '--log' to check more details.
-[2022年 7月27日 星期三 01时49分55秒 CST] See: https://github.com/acmesh-official/acme.sh/wiki/How-to-debug-acme.sh
+[Wed, July 27, 2022 01:49:55 CST] Please add '--debug' or '--log' to check more details.
+[Wed, July 27, 2022 01:49:55 CST] See: https://github.com/acmesh-official/acme.sh/wiki/How-to-debug-acme.sh
 ➜  ~
 ```
 

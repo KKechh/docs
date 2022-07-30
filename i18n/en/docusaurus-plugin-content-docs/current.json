@@ -3,13 +3,13 @@
     "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.tutorialSidebar.category.初次使用": {
+  "sidebar.tutorialSidebar.category.开始上手": {
     "message": "Getting Started",
-    "description": "The label for category 初次使用 in sidebar tutorialSidebar"
+    "description": "The label for category getting started in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.初次使用.link.generated-index.description": {
+  "sidebar.tutorialSidebar.category.开始上手.link.generated-index.description": {
     "message": "Documents for starter",
-    "description": "The generated-index page description for category 初次使用 in sidebar tutorialSidebar"
+    "description": "The generated-index page description for category getting started in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.证书签发管理": {
     "message": "Certificate Manangement",

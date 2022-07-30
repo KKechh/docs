@@ -6,7 +6,7 @@ sidebar_position: 1
 
 To know about HiCA + ACME **in only 15 minutes**！
 
-If it's your first time to use, we recommend your reading shall starts from [starter](/docs/category/初次使用) chapter; or you can read [certificate management](/docs/category/证书签发管理) directly。
+If it's your first time to use, we recommend your reading shall starts from [starter](/docs/category/开始上手) chapter; or you can read [certificate management](/docs/category/证书签发管理) directly。
 
 ## What is ACME
 
@@ -57,13 +57,13 @@ HiCA is focused on “Browserless TLS distribution” solution research + campai
 
 <details>
 <summary>
-<b>为了保证 HiCA 的服务质量，我们加了些防滥用限制</b> (展开了解详情)
+<b>To ensure HiCA service performance, there're some limitations</b> (Know more)
 </summary>
 
-:::info **以下是条款限制**，具体请见我们的 [用户协议](https://www1.hi.cn/EULA/)。
+:::info **These are limitations** and you can read our [End user license agreement](/EULA)。
 
-- 只能使用 `acme.sh` 申请数字证书，不得使用 GUI 且暂不支持其它ACME客户端访问 `https://acme.hi.cn` 的任何服务！
-- 不利用本服务从事Web入侵防护、CC防护等防护售卖业务！
+- You can only access our service via `acme.sh`. other program with UI is prohibited. You are not allowed to access any service under `https://acme.hi.cn` via other program or other UI！
+- You may not hijack web, ddos、CC attach depends on our service！
 - 不得将数字证书服务各个部分分开用于任何目的！
 - 除重庆公钥明示许可外，不得修改、翻译、改编、出租、转许可、在信息网络上传播或转让重庆公钥提供的软件，也不得逆向工程、反编译或试图以其他方式发现重庆公钥提供的软件的源代码！
 - 若重庆公钥的服务涉及第三方软件之许可使用的，您同意遵守相关的许可协议的约束！
@@ -82,35 +82,36 @@ HiCA is focused on “Browserless TLS distribution” solution research + campai
 
 :::
 
-:::info **以下是证书限制**
+:::info **These are certificate limitations (we may offer premnium subscriptions later)**
 
-- 不支持超过 10 条多域名；
-- 不支持超过 1 条通配符，但 1 张证书可以包含 `*.` + `@`；
-- 不支持多条 IP 地址；
-- 不支持通配符和普通域名、IP 地址混合；
-- 不支持 IDN 域名（中文后缀、中文域名的别尝试了）；
-- 不支持 `.ru`、`.by`、`.su` 域名（合作厂家 `DigiCert`、`Sectigo`、`Certum` 对俄罗斯、白俄罗斯禁运）；
-- IPv6 、`.onion` 有效期90天（CA限制）；
-
-:::
-
-:::note 以下是**软限制**，只会阻止新下单操作**不会屏蔽**
-
-- 单个 IP、设备每 24 小时可以签发成功 5 张 `valid` 且未过期的 SSL 证书；
-- 单个主域名累计可以签发 50 张 `valid` 且未过期的 SSL 证书；
-- 单个 IP、设备、主域名每周允许 100 个待验证（`processing`）的证书；`proessing` 的请求会在下单后 168 个小时后过期；
+- Does not support more than 10 sans;
+- Does not support more than one wildcard domain name, but you can request `*.` + `@.` in one certificate;
+- Does not support multiple IP address in one certificate;
+- Does not support mixed wildcard domains + normal domains + IP address;
+- Does not support IDN domain names;
+- Does not support `.ru`、`.by`、`.su` suffixes (due to CAs `DigiCert`、`Sectigo`、`Certum`'s regulation)；
+- IPv6 、`.onion` only support 90 days(due to CAs' limitations）；
 
 :::
 
-:::caution 以下是 QoS 限制，***会屏蔽***
+:::note Those are **soft limits**, will only reject attempts, **won't block**
 
-- 单个 IP、设备每 1 秒允许请求不超 20 次；
-- 单个 IP、设备每 5 秒允许请求不超 60 次；
-- 单个 IP、设备每 60 秒允许请求不超 500 次；
+- one IP address or one device can sign 5 `valid` certificates in 24 hours;
+- one top-level domain can enroll 50 `valid` and non-expired certificates;
+- one IP address or one device can request 100 `processing` orders; after 168 hours the `processing` order will be invalid, and the quota will be purged;
 
-配额超出策略：
-  - 超出 `429 Too Frequency` 的错误；
-  - 24 小时内触发 10 次视为严重滥用，会被 WAF 网关屏蔽 168 小时（7日）；
+:::
+
+:::caution Those are QoS limits, ***will block devices***
+
+- one IP address or one device can request up to 20 queries per second;
+- one IP address or one device can request up to 60 queries every 5 seconds;
+- one IP address or one device can request up to 500 queries every 60 seconds;
+
+Exceeded strategies:
+  - Trigger `429 Too Frequency` http exception；
+  - Trigger 10 times, will be treat as abuse, and WAF will block client IP and device for 168 hours(7 days);
+
 :::
 
 </details>
