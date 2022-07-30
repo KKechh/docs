@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.初次使用": {
+    "message": "Starter",
+    "description": "The label for category 初次使用 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.初次使用.link.generated-index.description": {
+    "message": "Documents for starter",
+    "description": "The generated-index page description for category 初次使用 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.证书签发管理": {
+    "message": "Certificate Manangement",
+    "description": "The label for category 证书签发管理 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.证书签发管理.link.generated-index.description": {
+    "message": "Certificate issuance、renewal and revocation",
+    "description": "The generated-index page description for category 证书签发管理 in sidebar tutorialSidebar"
+  }
+}

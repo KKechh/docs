@@ -14,6 +14,10 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
+  scripts: [
+    '/js/livechat.js',
+  ],
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'HiCA', // Usually your GitHub org/user name.
@@ -23,8 +27,8 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'zh-Hans',
-    locales: ['en'],
+    defaultLocale: 'zh-CN',
+    locales: ['zh-CN', 'en'],
   },
 
   presets: [
@@ -69,7 +73,7 @@ const config = {
           },
           { to: '/blog', label: '博客', position: 'left' },
           {
-            label: 'Github/HiCA-docs',
+            label: 'Github/HiCA',
             href: 'https://github.com/HiCA-ACME/docs',
             position: 'right',
           },
@@ -77,6 +81,20 @@ const config = {
             label: 'Github/ACME.sh',
             href: 'https://github.com/acmesh-official/acme.sh',
             position: 'right',
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+            dropdownItemsAfter: [
+              {
+                type: 'html',
+                value: '<hr style="margin: 0.3rem 0;">',
+              },
+              {
+                href: 'https://github.com/HiCA-ACME/docs/issues/1',
+                label: 'Help Us Translate',
+              },
+            ],
           },
         ],
       },

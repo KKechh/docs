@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "HiCA official website",
+    "description": "The title in the navbar"
+  },
+  "item.label.教程": {
+    "message": "Tutorials",
+    "description": "Navbar item with label Tutorials"
+  },
+  "item.label.博客": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Github/HiCA": {
+    "message": "Github/HiCA",
+    "description": "Navbar item with label Github/HiCA-docs"
+  },
+  "item.label.Github/ACME.sh": {
+    "message": "Github/ACME.sh",
+    "description": "Navbar item with label Github/ACME.sh"
+  }
+}

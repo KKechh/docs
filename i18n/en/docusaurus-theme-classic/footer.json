@@ -1,0 +1,46 @@
+{
+  "link.title.Library": {
+    "message": "Library",
+    "description": "The title of the footer links column with title=Library in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.教程": {
+    "message": "Tutorials",
+    "description": "The label of footer link with label=教程 linking to /docs/intro"
+  },
+  "link.item.label.合作申请": {
+    "message": "Cooperate",
+    "description": "The label of footer link with label=合作申请 linking to https://docs.qq.com/form/page/DY2JIWkF6ZXVJaHhP"
+  },
+  "link.item.label.服务条款": {
+    "message": "Term Of Service",
+    "description": "The label of footer link with label=服务条款 linking to https://www1.hi.cn/EULA/"
+  },
+  "link.item.label.Telegram 群": {
+    "message": "Telegram Group",
+    "description": "The label of footer link with label=Telegram 群 linking to https://t.me/+O20ETkdFppVhN2Q1"
+  },
+  "link.item.label.Wechat 群": {
+    "message": "Wechat Group",
+    "description": "The label of footer link with label=Wechat 群 linking to https://www1.hi.cn/upload/wx-qun.jpeg"
+  },
+  "link.item.label.官网 Repo": {
+    "message": "HiCA-docs Repo",
+    "description": "The label of footer link with label=官网 Repo linking to https://github.com/HiCA-ACME/docs"
+  },
+  "link.item.label.ACME.sh Repo": {
+    "message": "ACME.sh Repo",
+    "description": "The label of footer link with label=ACME.sh Repo linking to https://github.com/acmesh-official/acme.sh"
+  },
+  "copyright": {
+    "message": "Copyright © 2022 HiCA, All rights reserved. <a href=\"https://beian.miit.gov.cn/\" target=\"_blank\">沪ICP备20022337号-17</a>. <br/> <small>Note: the ACME logo and affliated graphics are registered trademarks of ISRG.</small>",
+    "description": "The footer copyright"
+  }
+}
