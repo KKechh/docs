@@ -10,17 +10,17 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="dns-01" label="DNS Challenge" default>
+<TabItem value="dns-01" label="DNS" default>
 
 ## DNS Challenge / `dns-01`
 
-根据 CA / B Forum 要求，通配符证书（例如 `*.example.com` 需要DNS验证。
+Acordding BR(Base requirements) to CA / B Forum, the Wildcard `*.example.com` must be validated by `dns-01` challenge.
 
-第一个输入的域名会作为证书的Common Name（即显示的颁发给：`*.example.com`），其余域名会按字母顺序排列，如有需要请把带 `*.` 的域名排到最前面。
+The first input domain will become certificate's Common Name (CN). so we suggest you input `*.example.com` first, and the others will be sorted by ASCII orders.
 
-### 签发命令
+### Issuance of Certificate
 
-> 高亮的地方（**包括 `--dns dns_dp`**） 表示 DNS API 的凭据，您需要按照 [配置我的 DNS 模块 Key](configuration-your-dns-provider.md) 来设置）
+> Highlight **includes `--dns dns_dp`**）were the DNS API credentials. See how to configure your [DNS Module and DNS Key](configuration-your-dns-provider.md).
 
 ```js
 // highlight-start
@@ -32,19 +32,19 @@ acme.sh --issue \
 // highlight-start
     --dns dns_dp \
 // highlight-end
-    -d \*.<域名1.com> \
-    -d <域名1.com> \
-    -d \*.<域名2.com> \
-    -d <域名2.com> \
+    -d \*.<Domain1.com> \
+    -d <Domain1.com> \
+    -d \*.<Domain2.com> \
+    -d <Domain2.com> \
     --days 150 \
     --server https://acme.hi.cn/directory
 ```
 
-### 签发完成
+### Issuance successfully
 
-稍等片刻，提示签发成功即可下载证书，同样位于 `~/.acme.sh/your.domain`
+Hold few minutes, your certificate will be signed under `~/.acme.sh/your.domain`.
 
-若提示 acme.sh 命令不存在，直接 cd 到 `/home/.acme.sh` 目录下相对路径执行命令即可。
+If shows `acme.sh` command was not found and you've installed `acme.sh`, please change dir into (cd) `/home/.acme.sh` and retry.
 
 ```js
 ➜  ~ ~/.acme.sh/acme.sh --issue -d www1.hi.cn --dns dns_dp --server http://acme.hi.cn/directory --days 150 --force
@@ -107,7 +107,7 @@ SH7jOvH+p7k8CbrYFXFvZOGd5T8axCknS9xSSlfO602wiRR7
 ➜  ~
 ```
 
-:pushpin:在签发超过限制（10个SAN和1个通配符）的证书时，会提示超出限制。
+:pushpin: If reach limits(10 SAN or 1 Wildcard), it will shows error like:
 
 ```js
 ➜  ~ ~/.acme.sh/acme.sh --issue -d www1.hi.cn -d www2.hi.cn -d www3.hi.cn -d www4.hi.cn -d www5.hi.cn -d www6.hi.cn -d www7.hi.cn -d www8.hi.cn -d www9.hi.cn -d www10.hi.cn -d www11.hi.cn --dns dns_dp --server http://acme.hi.cn/directory --days 150 --force
@@ -122,30 +122,30 @@ SH7jOvH+p7k8CbrYFXFvZOGd5T8axCknS9xSSlfO602wiRR7
 ➜  ~
 ```
 
-:::tip 常见问题
+:::tip FAQ
 
-- 签发ECC证书：在命令行最后添加 `--keylength ec-256`（HiCA 暂时不支持，预计 8 月将支持）；
-- 对使用 DNS 验证的证书，不设置 DNS 模块的 ApiID 和 Key，将无法签发成功。
+- ECC: append `--keylength ec-256` after your command (temporary does not support, until Oct ends);
+- For `dns-01` challenge, it won't success if you skipped DNS ApiID + Key setup.
 :::
 
 
 </TabItem>
 
-<TabItem value="http-01" label="HTTP 文件验证">
+<TabItem value="http-01" label="HTTP">
 
-## HTTP 文件验证 / `http-01` 申请方式
+## HTTP Challenge / `http-01`
 
-acme.sh http 方式需要在你的网站根目录下放置一个文件，来验证你的域名所有权,完成验证.。然后就可以生成证书了。
+`acme.sh` http challenge will generate a plain text file under your website folder, to verify the ownership of your website. after it, your certificate will be signed.
 
-注意：需要开启80端口（ACME协议限制）。
+Warning: you must keep your 80 port open(due to limits of ACME protocol).
 
-```bash title="提示"
-acme.sh --issue -d [你的IP/域名] --webroot [网站根目录] --days 150 --server https://acme.hi.cn/directory
+```bash
+acme.sh --issue -d <Domain1/IP> -d <Domain2> --webroot <Website_AbsulotePath_Dir> --days 150 --server https://acme.hi.cn/directory
 ```
 
-正确格式例如
+For examlpe:
 
-```bash title="域名格式，注意如果需要 www. 或 @. 请务必手工指定，否则证书不会包含"
+```bash title="Domain format, www. + @. must provide manually if you need them all"
 acme.sh --issue \
     -d www.example.com \
     -d example.com \
@@ -155,7 +155,7 @@ acme.sh --issue \
     --server https://acme.hi.cn/directory
 ```
 
-```bash title="IPv4格式"
+```bash title="IPv4 format"
 acme.sh --issue \
     -d 11.4.5.14 \
     --webroot /www/wwwroot/114514 \
@@ -163,7 +163,7 @@ acme.sh --issue \
     --server https://acme.hi.cn/directory
 ```
 
-```bash title="IPv6格式"
+```bash title="IPv6 format, no [ or ]"
 acme.sh --issue \
     -d 1145:1419:1981:0114:5141:9198:1011:4514 \
     --webroot /home/wwwroot/ \
@@ -171,99 +171,96 @@ acme.sh --issue \
     --server https://acme.hi.cn/directory
 ```
 
-稍等片刻，提示签发成功即可下载证书，位于 `/root/.acme.sh/你的域名` 比如 `/root/.acme.sh/11.4.5.14`
+And hold minutes, your certificate will be signed under `/root/.acme.sh/<Your domain>`, for example `/root/.acme.sh/11.4.5.14`
 
-若提示 acme.sh 命令不存在，直接 cd 到 /root 目录下的 .acme.sh 目录下只用相对路径执行命令即可。
+If shows `acme.sh` command not found, please change dir (cd) to `/root/.acme.sh/` to execute.
 
-只需要指定域名, 并指定域名所在的网站根目录. acme.sh 会全自动的生成验证文件, 并放到网站的根目录, 然后自动完成验证. 最后会聪明的删除验证文件. 整个过程没有任何副作用。
+Only needs provide domain(s) and website dir, `acme.sh` will automatic verification file into website dir, and sign certificate.
 
-如果你用的 apache服务器, acme.sh 还可以智能的从 apache的配置中自动完成验证, 你不需要指定网站根目录：
+If you are using apache server, `acme.sh` will automatic finish verification and no website dir need to provide:
 
 ```bash
 acme.sh --issue  -d mydomain.com --apache --days 150 --server https://acme.hi.cn/directory
 ```
 
-如果你使用Nginx或者反代，acme.sh还可以智能地更改Nginx配置文件自动完成验证，从而不需要指定网站根目录：
+Or nginx:
 
 ```bash
 acme.sh --issue  -d mydomain.com --nginx --days 150 --server https://acme.hi.cn/directory
 ```
 
-注意，无论是 apache 还是 nginx 模式，acme.sh在完成验证之后，会恢复到之前的状态，都不会私自更改你本身的配置。好处是你不用担心配置被搞坏，也有一个缺点，你需要自己配置 ssl 的配置，否则只能成功生成证书，你的网站还是无法访问https。但是为了安全, 你还是自己手动改配置吧。
+Note that no matter in apache or nginx mode, after acme.sh completes the verification, it will be restored to the previous state and will not change your own configuration privately. The advantage is that you don't have to worry about the configuration being broken. There is also a disadvantage. You need to configure the ssl configuration yourself, otherwise you can only successfully generate a certificate, and your website still cannot access https. But for safety, you should change the configuration manually.
 
-如果你还没有运行任何 web 服务，80 端口是空闲的，那么 acme.sh 还能假装自己是一个webserver，临时监听80 端口，完成验证：
-
+If you haven't run any web service yet, and port 80 is free, then acme.sh can pretend to be a webserver and temporarily listen on port 80 to complete the verification:
 ```
 acme.sh  --issue -d mydomain.com   --standalone --days 150 --server https://acme.hi.cn/directory
 ```
 
-更高级的用法请参考: https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert
-### 常见问题
-- IP证书只能通过HTTP验证签发，因此只能签发单域名证书，不能为多个IP签发一张证书
-- 签发ECC证书：在命令行最后添加```--keylength ec-256``` 或 ```-k ec-256```
-- 对使用HTTP验证的证书，网站目录设置不正确就无法签发成功
-
+For more advanced usage, please refer to: https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert
+### common problem
+- IP certificates can only be issued through HTTP verification, so only a single domain name certificate can be issued, and one certificate cannot be issued for multiple IPs
+- Issue ECC certificate: add `--keylength ec-256` or `-k ec-256` at the end of the command line
+- For certificates that use HTTP authentication, if the website directory is not set correctly, they cannot be issued successfully
 
 </TabItem>
 
-<TabItem value="tls-alpn-01" label="TLS-ALPN 验证方式">
+<TabItem value="tls-alpn-01" label="TLS-ALPN">
 
 :::danger
-HiCA **不支持** `tls-alpn-01` 申请证书。所以请不要尝试 `caddy` 了。
+HiCA **does not support** `tls-alpn-01`, so stop using from `caddy` + `HiCA` to avoid wasting your time.
 
-您必须使用 `acme.sh` 配置 DNS 模块或者配置网站目录自动申请！
+Insteadly, You must use `acme.sh` + DNS or Website Dir to sign your certificate.
 :::
 
 </TabItem>
 
-<TabItem value="manual" label="手动模式">
+<TabItem value="manual" label="Manual Mode">
 
 :::danger
-HiCA **不支持** 手动添加 DNS、手动上传 HTTP 文本文件申请证书。您必须配置 DNS 模块或者配置网站目录自动申请！
+HiCA  **does not support** Manual mode DNS or HTTP file verification.
 :::
 
 </TabItem>
 </Tabs>
+## Install certificate
 
-## 安装证书
+To install the certificate is to let the web server load the certificate file in the acme.sh directory that was just obtained.
 
-安装证书就是让网页服务器加载刚刚获取的在acme.sh目录下的证书文件
+For users who use panels such as Pagoda, it is necessary to manually copy the certificate (full_chain.pem and key.pem, open in plain text mode), and fill in manually on the panel
 
-对使用宝塔等面板的用户来说，需要手动复制证书（full_chain.pem和key.pem，以纯文本模式打开），到面板上手动填写
+For users who use Nginx and Apache directly, certificates can be automatically installed, and other web servers can go to their respective community/commercial company websites to find documentation
 
-对直接使用Nginx和Apache的用户来说，可以自动安装证书，使用其它网页服务器可以到各自的社区/商业公司网站查找文档
+Note that the certificates generated by default are placed in the installation directory: `~/.acme.sh/`, please do not use the files in this directory directly, for example: do not directly use the files below for the nginx/apache configuration file. The files here are for internal use, and the directory structure may change
 
-注意, 默认生成的证书都放在安装目录下：```~/.acme.sh/```，请不要直接使用此目录下的文件，例如：不要直接让 nginx/apache 的配置文件使用这下面的文件。这里面的文件都是内部使用，而且目录结构可能会变化
+The way to automate this is to use the `--install-cert` command, specifying the target location, and the certificate file will be copied to the appropriate location, for example:
 
-实现自动化的方法是使用 ```--install-cert``` 命令,并指定目标位置，然后证书文件会被复制到相应的位置，例如：
-
-```
+````
 acme.sh --install-cert -d example.com \
---cert-file      /path/to/certfile/in/apache/cert.pem  \
---key-file       /path/to/keyfile/in/apache/key.pem  \
+--cert-file /path/to/certfile/in/apache/cert.pem \
+--key-file /path/to/keyfile/in/apache/key.pem \
 --fullchain-file /path/to/fullchain/certfile/apache/fullchain.pem \
---reloadcmd     "service apache2 force-reload"
-```
-```
+--reloadcmd "service apache2 force-reload"
+````
+````
 acme.sh --install-cert -d example.com \
---key-file       /path/to/keyfile/in/nginx/key.pem  \
+--key-file /path/to/keyfile/in/nginx/key.pem \
 --fullchain-file /path/to/fullchain/nginx/cert.pem \
---reloadcmd     "service nginx force-reload"
-```
+--reloadcmd "service nginx force-reload"
+````
 
-（一个小提醒，这里用的是 `service nginx force-reload`，不是 `service nginx reload`，据测试，`reload` 并不会重新加载证书，所以用的 `force-reload`）
+(A small reminder, `service nginx force-reload` is used here, not `service nginx reload`. According to the test, `reload` does not reload the certificate, so `force-reload` is used)
 
-Nginx 的配置 `ssl_certificate` 使用 `/etc/nginx/ssl/fullchain.cer`，而非 `/etc/nginx/ssl/<domain>.cer`，否则 SSL Labs 的测试会报 Chain issues Incomplete 错误
+Nginx configuration `ssl_certificate` uses `/etc/nginx/ssl/fullchain.cer` instead of `/etc/nginx/ssl/<domain>.cer`, otherwise SSL Labs test will report Chain issues Incomplete error
 
-`--install-cert`命令可以携带很多参数，来指定目标文件。并且可以指定 reloadcmd，当证书更新以后，reloadcmd会被自动调用，让服务器生效
+The `--install-cert` command can take many parameters to specify the target file. And you can specify reloadcmd. When the certificate is updated, reloadcmd will be automatically called to make the server take effect.
 
-详细参数请参考: https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc
+For detailed parameters, please refer to: https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc
 
-值得注意的是，这里指定的所有参数都会被自动记录下来, 并在将来证书自动更新以后，被再次自动调用
+It is worth noting that all parameters specified here will be automatically recorded, and will be automatically called again after the certificate is automatically renewed in the future
 
-当然你也可以手动复制证书到目标位置，但是这样无法实现自动更新证书
+Of course, you can also manually copy the certificate to the target location, but this cannot automatically update the certificate
 
-### 查看已安装证书信息
+### View installed certificate information
 
 ```
 acme.sh --info -d example.com
@@ -290,6 +287,6 @@ Le_RealKeyPath=/etc/acme/example.com/privkey.pem
 Le_ReloadCmd=service nginx force-reload
 Le_RealFullChainPath=/etc/acme/example.com/chain.pem
 ```
-## 引用说明
+## Citations
 
-> 使用 HiCA 签发免费的半年 IP / 通配符域名 SSL 证书 —— TaurusXin 的独立博客：https://taurusxin.com/hica-ssl/
+> Use HiCA to issue free half-year IP/wildcard domain name SSL certificate - TaurusXin's independent blog: https://taurusxin.com/hica-ssl/

@@ -66,7 +66,7 @@ acme.sh --issue \
 
 The DNS API requires API permissions, so we need `export XX_API=<API_KEY>...` to set it.
 
-```bash title="设置 DNS API"
+```bash title="Set up DNS API"
 export DP_Id=<你的DNSPod的API ID>
 export DP_Key=<你的DNSPod的API Key>
 ```

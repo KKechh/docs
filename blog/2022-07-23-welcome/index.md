@@ -1,6 +1,6 @@
 ---
 slug: Hello-HiCA
-title:  Hello world, Hello HiCA！
+title: 你好世界。你好 HiCA！
 authors: [sue]
 tags: [HiCA, ACME, 免费证书, 免费SSL, 免费通配符SSL]
 ---

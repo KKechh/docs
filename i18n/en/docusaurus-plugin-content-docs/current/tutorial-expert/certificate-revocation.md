@@ -4,25 +4,25 @@ sidebar_position: 4
 
 # Certificate Revocation
 
-如何作废您申请下来的证书
+How to void the certificate you applied for
 
-:::danger 注意
-此操作会导致您的服务不可访问！
+:::danger Note
+This action will render your service inaccessible!
 :::
 
 
-输入
+enter
 
-```bash title="查询当前所有证书"
+```bash title="Query all current certificates"
 acme.sh --list
-```
+````
 
-查看当前acme.sh客户端存放的证书
+View the certificate stored by the current acme.sh client
 
-```bash title="吊销证书"
-#吊销证书
-acme.sh  --revoke -d [证书的通用名] --server https://acme.hi.cn/directory
+```bash title="revoke certificate"
+#revoke certificate
+acme.sh --revoke -d [common name of certificate] --server https://acme.hi.cn/directory
 
-#从acme.sh目录中移除此证书
-acme.sh  --remove -d [证书的通用名] --server https://acme.hi.cn/directory
-```
+#Remove this certificate from the acme.sh directory
+acme.sh --remove -d [common name of certificate] --server https://acme.hi.cn/directory
+````

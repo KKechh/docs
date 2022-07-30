@@ -42,12 +42,12 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl: ({locale, docPath}) => {
             const nextVersionDocsDirPath = 'docs';
-            if (locale !== 'en') {
-              return `https://github.com/HiCA-ACME/docs/tree/master/i18n/en/docusaurus-plugin-content-docs/current/${nextVersionDocsDirPath}/${docPath}`;
+            if (locale !== 'zh-CN') {
+              return `https://github.com/HiCA-ACME/docs/edit/master/i18n/en/docusaurus-plugin-content-docs/current/${docPath}`;
             }
             // We want users to submit doc updates to the upstream/next version!
             // Otherwise we risk losing the update on the next release.
-            return `https://github.com/HiCA-ACME/docs/tree/master/${nextVersionDocsDirPath}/${docPath}`;
+            return `https://github.com/HiCA-ACME/docs/edit/master/${nextVersionDocsDirPath}/${docPath}`;
           },
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,  
@@ -58,12 +58,12 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl: ({locale, blogPath}) => {
             const nextVersionBlogDirPath = 'blog';
-            if (locale !== 'en') {
-              return `https://github.com/HiCA-ACME/docs/tree/master/i18n/en/docusaurus-plugin-content-blog/current/${nextVersionBlogDirPath}/${blogPath}`;
+            if (locale !== 'zh-CN') {
+              return `https://github.com/HiCA-ACME/docs/edit/master/i18n/en/docusaurus-plugin-content-blog/current/${blogPath}`;
             }
             // We want users to submit doc updates to the upstream/next version!
             // Otherwise we risk losing the update on the next release.
-            return `https://github.com/HiCA-ACME/docs/tree/master/${nextVersionBlogDirPath}/${blogPath}`;
+            return `https://github.com/HiCA-ACME/docs/edit/master/${nextVersionBlogDirPath}/${blogPath}`;
           },
         },
         theme: {

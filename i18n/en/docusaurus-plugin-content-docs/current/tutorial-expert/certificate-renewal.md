@@ -4,22 +4,22 @@ sidebar_position: 4
 
 # Certificate Renewal
 
-`acme.sh` 证书续期+自动
+`acme.sh` certificate renewal + automatic
 
-:::info 注意
-`acme.sh` 默认会自动添加定时作业每150天凌晨一点续期证书。您基本不需要修改配置即可不间断业务。
+:::info Note
+`acme.sh` will automatically add a cron job by default to renew the certificate every 150 days at 1am. You basically do not need to modify the configuration for uninterrupted business.
 
-您唯一需要关心的是证书续费成功后的服务重启异常导致的服务中断。
+The only thing you need to care about is the service interruption caused by the abnormal restart of the service after the certificate renewal is successful.
 :::
 
 
-如果使用自动HTTP验证或DNS API方式签发了证书，且正确设置cron（定时任务），那么acme.sh会在每天零点自动检查所有证书的有效期，若距离到期小于30天则自动续签
+If the certificate is issued using automatic HTTP verification or DNS API, and cron (timed task) is set correctly, then acme.sh will automatically check the validity period of all certificates at 0:00 every day, and automatically renew if the expiration date is less than 30 days.
 
-请确保 cronjob 正确安装, 看起来是类似这样的：
+Make sure cronjob is installed correctly, it looks like this:
 
 ```bash
-crontab  -l
+crontab -l
 56 * * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
-```
+````
 
-如果cron未生效请到 [百度搜索“Linux怎么添加定时任务”](https://www.baidu.com/s?wd=Linux%E6%80%8E%E4%B9%88%E6%B7%BB%E5%8A%A0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1) 或者 [Google搜索“Linux怎么添加定时任务”](https://www.google.com/search?q=Linux%E6%80%8E%E4%B9%88%E6%B7%BB%E5%8A%A0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1)。`acme.sh` 任务为：`"/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null`
+If cron does not take effect, please go to [Baidu search "How to add scheduled tasks in Linux"](https://www.baidu.com/s?wd=Linux%E6%80%8E%E4%B9%88%E6%B7% BB%E5%8A%A0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1) or [Google search "How to add scheduled tasks in Linux"](https://www .google.com/search?q=Linux%E6%80%8E%E4%B9%88%E6%B7%BB%E5%8A%A0%E5%AE%9A%E6%97%B6%E4%BB %BB%E5%8A%A1). `acme.sh` task is: `"/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null`
