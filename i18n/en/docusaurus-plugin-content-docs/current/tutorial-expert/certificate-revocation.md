@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# 证书作废
+# Certificate Revocation
 
 如何作废您申请下来的证书
 

@@ -4,7 +4,7 @@
     "description": "The label for version current"
   },
   "sidebar.tutorialSidebar.category.初次使用": {
-    "message": "Starter",
+    "message": "Getting Started",
     "description": "The label for category 初次使用 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.初次使用.link.generated-index.description": {

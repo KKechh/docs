@@ -6,158 +6,155 @@ sidebar_position: 1
 
 What's validation for your domains(FQDN), and what type should i use between `dns-01` and `http-01`?
 
-:::tip 提示
+:::tip
 HiCA doesn't support `tls-alpn-01`, but supports `dns-01`、`http-01`.
 :::
 
 ## What is validation of FQDN, and why?
 
-As a public-trusted CA, we must solve a problem: how to proof you are the webmaster of your website?
+As a public-trusted CA, we must solve a problem: **how to proof you are the webmaster of your website?**
 
-因为 CA 要避免心怀诡异的人申请到你网站的证书（比方说如果黑客申请到了 `*.google.com` 的证书，那么就会威胁到 Google 业务的安全！
+Because the CA wants to prevent malicious people from applying for your website's certificate (for example, if a hacker applies for a `*.google.com` certificate, then it will threaten the security of Google business!
 
-于是，早年的 CA 就想到了以下策略：
+Therefore, the CA in the early thought of strategies:
 
-### **DNS 验证**: 
+### **DNS Challenge(DNS Validation)**: 
 
 <details>
-<summary> 介绍 </summary>
+<summary> Introduction </summary>
 
-通过申请人给域名添加一条DNS解析，来证明自己的申请资格。
+Ask for registrant to create a DNS record, to proof the ownership of the website.
 
-ACME 中 DNS 验证定义为 `dns-01`。
+ACME's DNS challenge was defined `dns-01`.
 
-:::danger 警告
-HiCA 申请通配符证书必须使用 `dns-01` 验证。
+:::danger warning
+In HiCA, wildcard certificate must `dns-01` challenge.
 :::
 
 
-下述验证类型均属于DNS验证：
+Those situation are DNS validations:：
 
-```bash title="ACME 样式"
+```bash title="in ACME"
 _acme-challenge.<YOUR_DOMAIN>   TXT   tn7UzQBPFq03WOrAs9lyGsOLfWVeZvzikU8.TpQY6VzddC6ZI3A1wtia
 ```
 
-```bash title="DigiCert 样式"
+```bash title="in DigiCert"
 _dnsauth.<YOUR_DOMAIN>   TXT   fD2WaHbkRDkRk4tbS1n91LGV6Mh8rbaJPtr
 ```
 
-```bash title="Sectigo、SSL.com 样式"
+```bash title="in Sectigo、SSL.com"
 _203E9A41095FD4DC3C7EC8F877CF83CE.<YOUR_DOMAIN>   CNAME   3FB6CDD546409985A0A193EE8BDDF8DE.A041DF8B9192FCBEC0C585EF51FF0FEB.CC65A.trust-provider.com
 ```
 
-```bash title="GlobalSign 样式"
+```bash title="in GlobalSign"
 @.<YOUR_DOMAIN>       TXT   globalsign-domain-verification=FkSDOqIL1EPGT1rrbV9DsaS3R5xKh6m2Pw0FsmzrjZ
 ```
 
-> 题外话：关于为什么解析主机头要么为 `@` 要么为 `_` 开头，可以见我们研究人员这篇文章：[《趣话 PKI/CA (一) 申请证书验证为何以“_“开头》](https://zhuanlan.zhihu.com/p/348254463?)。
+> Off topic: For why parsing host headers either start with `@` or `_`, see this article by our researchers：[《Interesting PKI/CA (1) Why does the application for certificate verification begin with "_"》](https://zhuanlan.zhihu.com/p/348254463?)。
 
 
-在解析完成后，申请人需要告知CA，CA去查询对应的 DNS 主机，如果解析值匹配，就认为申请人有资格。
+After the resolution is completed, the applicant needs to inform the CA, and the CA will query the corresponding DNS host. If the resolution value matches, the applicant is considered eligible.
 
-在 `acme.sh` + `HiCA` 中，使用 dns 验证的使用方式为:
-```bash title="注意，此处尚未执行设置 DNS API 的命令，所以是错误的！"
+In `acme.sh` + `HiCA`, the way to use dns authentication is:
+```bash title="Note that the command to set up the DNS API has not been executed here, so it is wrong!"
 acme.sh --issue \
-  -d "<YOUR_DOMAIN>" \ # 这里放入你的域名，可以通配符，比如 `*.example.com`
-  --dns dns_dp \ # 这里放入你的 DNS 提供商，比如 dns_dp（DNSPod）、dns_cf（CloudFlare)
-  --days=150 \ # 第150天自动续期
+  -d "<YOUR_DOMAIN>" \ # Put your domain name here, you can wildcard, such as `*.example.com`
+  --dns dns_dp \ # Put your DNS provider here, like dns_dp (DNSPod), dns_cf (CloudFlare)
+  --days=150 \ # Automatic renewal on day 150
   --server https://acme.hi.cn/directory
 ```
 
-而 DNS API 是需要 API 权限的，所以，我们需要 `export XX_API=<API_KEY>...` 来设置。
+The DNS API requires API permissions, so we need `export XX_API=<API_KEY>...` to set it.
 
 ```bash title="设置 DNS API"
 export DP_Id=<你的DNSPod的API ID>
 export DP_Key=<你的DNSPod的API Key>
 ```
 
-#### 优点：
-  - 您可以使用此验证方式来颁发包含通配符域名的证书。
-  - 即使您有多个 Web 服务器，它也能正常工作。
-
-#### 缺点：
-  - 在 Web 服务器上保留 API 凭据存在风险。
-  - 您的 DNS 提供商可能不提供 API。
-  - 您的 DNS API 可能无法提供有关更新时间的信息。
+#### shortcoming:
+  - There is a risk of keeping API credentials on the web server.
+  - Your DNS provider may not provide the API.
+  - Your DNS API may not be able to provide information about the update time.
 
 </details>
 
-DNS 验证进阶教程请见 [配置我的 DNS 模块 Key](configuration-your-dns-provider.md)。
+Please refer to [Configure My DNS Module Key](configuration-your-dns-provider.md) for the advanced DNS verification tutorial.
 
 
-### **文件验证（HTTP 验证或 HTTPS验证）**: 
+### **File Challenge (HTTP or HTTPS Validation)**:
 
 <details>
-<summary>介绍</summary>
+<summary>introduce</summary>
 
-选择此验证，CA会要求申请人往服务器上传一份文本文件（内容有要求）来证明申请人的域名控制资格。
+If this verification is selected, the CA will require the applicant to upload a text file (content required) to the server to prove the applicant's domain name control qualification.
 
-ACME 中 DNS 验证定义为 `http-01`。
+DNS validation in ACME is defined as `http-01`.
 
-:::danger 警告
-ACME 不支持 `HTTPS` 验证(:443)，只支持 `HTTP`(:80)。
+:::danger warning
+ACME does not support `HTTPS` authentication (:443), only `HTTP` (:80).
 :::
 
-#### 优点：
-  - 它可以轻松地自动化进行而不需要关于域名配置的额外知识。
-  - 它允许托管服务提供商为通过 CNAME 指向它们的域名颁发证书。
-  - 它适用于现成的 Web 服务器。
+#### advantage:
+   - It can be easily automated without additional knowledge about domain name configuration.
+   - It allows hosting providers to issue certificates for domains that point to them via CNAME.
+   - It works with off-the-shelf web servers.
 
-#### 缺点：
-  - 如果您的 ISP 封锁了 80 端口，该验证将无法正常工作（这种情况多见于住宅 ISP 和国内一些默认封 80 的机房会这么做）。
-  - 我们不允许您使用此验证方式来颁发通配符证书。
-  - 您如果有多个 Web 服务器，则必须确保该文件在所有这些服务器上都可用。
+#### shortcoming:
+   - If your ISP blocks port 80, the verification will not work properly (this is more common in residential ISPs and some domestic computer rooms that block 80 by default).
+   - We do not allow you to use this authentication method to issue wildcard certificates.
+   - If you have multiple web servers, you must ensure that the file is available on all of them.
 
 </details>
 
-### **TLS ALPN验证**: 
+### **TLS ALPN Challenge**: 
 
 <details>
-<summary>介绍</summary>
+<summary>Introduction</summary>
 
-ACME 中 DNS 验证定义为 `tls-alpn-01`。
+DNS validation in ACME is defined as `tls-alpn-01`.
 
-因为HiCA不支持此验证方式，所以此处不详细介绍。
+Because HiCA does not support this verification method, it will not be described in detail here.
 
-:::danger 警告
-ACME 支持 `tls-alpn-01` 验证，但HiCA不支持。
+:::danger warning
+ACME supports `tls-alpn-01` authentication, but HiCA does not.
 :::
 
 </details>
 
-### **邮箱验证**: 
+### **E-mail verification**: 
 
 <details>
-<summary>介绍</summary>
 
-:::danger 警告
-ACME 不支持邮箱验证（因为无法自动化）。
+<summary>Introduction</summary>
+
+:::danger warning
+ACME does not support email verification (because it cannot be automated).
 :::
 
-选择此验证，CA会向选择邮箱中发送一封邮件，按照要求填写唯一Token即可完成验证。
+Select this verification, the CA will send an email to the selected mailbox, fill in the unique Token as required to complete the verification.
 
-  * 基于域名搭建的域名邮箱
-    *  `admin@<YOUR_DOMAIN>`
-    *  `administrator@<YOUR_DOMAIN>`
-    *  `postmaster@<YOUR_DOMAIN>`
-    *  `webmaster@<YOUR_DOMAIN>`
-    *  `hostmaster@<YOUR_DOMAIN>`
-  * 域名注册时候的WHOIS管理员邮箱
-    * 国际域名因为ICANN合规要求，基本都开了Whois Privacy，现在已经查询不到
-    * CN域名没有遵守Whois Privacy，暂时还可以用WHOIS邮箱
+  * Domain name mailbox built based on domain name
+    * `admin@<YOUR_DOMAIN>`
+    * `administrator@<YOUR_DOMAIN>`
+    * `postmaster@<YOUR_DOMAIN>`
+    * `webmaster@<YOUR_DOMAIN>`
+    * `hostmaster@<YOUR_DOMAIN>`
+  * The WHOIS administrator email address when the domain name was registered
+    * Due to ICANN compliance requirements, international domain names have basically opened Whois Privacy, and now they are no longer available
+    * CN domain names do not comply with Whois Privacy, and WHOIS mailboxes can still be used for the time being
 
 </details>
 
-### 总结
+### Summarize
 
-| 验证方式      | ACME 支持      | HiCA 支持  |
+| Authentication Method | ACME Support | HiCA Support |
 | ------------ | ------------- | --------- |
-| DNS验证      | `dns-01`       | ✔️  |
-| 文件验证      | `http-01`     | ✔️ |
-| TLS ALPN验证 | `tls-alpn-01`  | ❌        |
-| 邮箱验证      | ❌             | ❌        |
+| DNS Verification | `dns-01` | ✔️ |
+| File Authentication | `http-01` | ✔️ |
+| TLS ALPN Authentication | `tls-alpn-01` | ❌ |
+| Email Verification | ❌ | ❌ |
 
-## 我应该选择那种验证方式?
+## Which authentication method should I choose?
 
-您应该先评估您要申请 SSL 的站点是否包括通配符资产，如果包括，则应该考虑 `dns-01` 验证方式。
-如果不包括，应该优先考虑 `http-01` 验证方式；如果服务器 80 端口不通，则应该考虑 `dns-01` 验证方式。
+You should first evaluate whether the site you are applying for SSL includes wildcard assets, and if so, you should consider the `dns-01` authentication method.
+If not included, the `http-01` authentication method should be given priority; if the server port 80 is blocked, the `dns-01` authentication method should be considered.

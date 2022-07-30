@@ -2,17 +2,17 @@
 sidebar_position: 3
 ---
 
-# 申请证书
+# Certificate Issuance
 
-请选择一个验证方式：
+Challange type:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="dns-01" label="DNS 验证" default>
+<TabItem value="dns-01" label="DNS Challenge" default>
 
-## DNS 验证 / `dns-01` 申请方式
+## DNS Challenge / `dns-01`
 
 根据 CA / B Forum 要求，通配符证书（例如 `*.example.com` 需要DNS验证。
 

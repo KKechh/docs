@@ -2,30 +2,30 @@
 sidebar_position: 2
 ---
 
-# 配置我的 DNS 模块 Key
+# DNS Module and DNS Key
 
-通常而言，DNS 模块都是基于 API 去调用的，所以需要配置 API Key 才能自动解析成功。
-如果您不配置 DNS 模块 Key，`acme.sh` 是无法为您签发、续签 SSL 证书的。
+Usually, DNS modules were working via request API, so must provide the API key.
+If you don't provide dns module's key, `acme.sh` can't issuance、renewal ssl certificates for you.
 
 
-请您选择您具体使用的 DNS 服务商，查看配置 API Key 的教程：
+Please select your actual using DNS provider, and see tuturial about how to configure API key:
 
-:::danger 找不到DNS服务商的提示
-如果您在下面找不到您的 DNS 服务商，意味着您的服务商可能出于商业或者技术原因，没有支持 `acme.sh`（例如 `dns.com`、`dns.la`、`juming.com`），建议您联系您的 DNS 服务商寻求帮助。
+:::danger Can't looking out my DNS provider
+If you can't find your dns provider, means your DNS provider didn't support by `acme.sh` (such as `dns.com`、`dns.la`、`juming.com` etc...). May considering for technical reasons or business reasons. we can only suggess you to look help from your DNS provider.
 :::
 
 <details>
 
 <summary>DNSPod(腾讯云、TencentCloud)</summary>
 
-:::tip 获取API Key
+:::tip Get my API Key
 [https://console.dnspod.cn/account/token/token](https://console.dnspod.cn/account/token/token)
 
-登陆自己的 DNSPod 帐户，点击自己头像，选择密钥管理，添加一个密钥，将 ID 和 Token 记录下来：
+Login your DNSPod account, click avatar, click api secrets management, create a new API credential and copy your ID and Token.
 
 ![image](https://user-images.githubusercontent.com/110012832/180937011-b74bfe96-dcd0-4f85-b75c-255ec08e1961.png)
 
-保存好你的DNSPod API Key 和 ID。
+Save your DNSPod API Key + ID。
 :::
 
 
@@ -37,8 +37,8 @@ export DP_Key="DNSPOD API TOKEN KEY"
 
 acme.sh --issue \
   --dns dns_dp \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -50,28 +50,27 @@ acme.sh --issue \
 
 <summary>DNSPod.com(DNSPod国际版)</summary>
 
-:::tip 获取API Key
-[https://console.dnspod.com/account/token/token](https://console.dnspod.com/account/token/token)
+:::tip Get my API Key
+[https://console.dnspod.cn/account/token/token](https://console.dnspod.cn/account/token/token)
 
-登陆自己的 DNSPod 帐户，点击自己头像，选择密钥管理，添加一个密钥，将 ID 和 Token 记录下来：
+Login your DNSPod account, click avatar, click api secrets management, create a new API credential and copy your ID and Token.
 
 ![image](https://user-images.githubusercontent.com/110012832/180937011-b74bfe96-dcd0-4f85-b75c-255ec08e1961.png)
 
-保存好你的DNSPod API Key 和 ID。
+Save your DNSPod API Key + ID。
 :::
-
 
 
 ```js
 // highlight-start
-export DPI_Id="DNSPOD国际 API TOKEN ID"
-export DPI_Key="DNSPOD国际 API TOKEN KEY"
+export DPI_Id="DNSPOD API TOKEN ID"
+export DPI_Key="DNSPOD API TOKEN KEY"
 // highlight-end
 
 acme.sh --issue \
   --dns dns_dpi \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -81,30 +80,30 @@ acme.sh --issue \
 
 <details>
 
-<summary>阿里云(Aliyun)</summary>
+<summary>Alibaba Cloud(Aliyun)</summary>
 
-:::tip 获取API Key
+:::tip Get my API Key
 [https://ram.console.aliyun.com/manage/ak](https://ram.console.aliyun.com/manage/ak)
 
 
-首先在阿里云申请一个 AccessKey，用于 API 操作阿里云服务，可以使用创建子用户的方法（更安全），并且只授权 AliyunDNSFullAccess 权限
+Firstly you'd create an AccessKey at your alibaba cloud account, to access alibabacloud's API. And you can using RAM to create(more secure and recommended!), and grant `AliyunDNSFullAccess` permission only.
 
 ![image](https://user-images.githubusercontent.com/110012832/180936947-ab8469ce-430f-413a-8034-f3455f36807b.png)
 
-保存好你得到的Key和Secret
+Save your Key And Secret.
 :::
 
 
 ```js
 // highlight-start
-export Ali_Key="阿里云API KEY"
-export Ali_Secret="阿里云API Secret"
+export Ali_Key="Alibabacloud API KEY"
+export Ali_Secret="Alibabacloud API Secret"
 // highlight-end
 
 acme.sh --issue \
   --dns dns_ali \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -116,32 +115,32 @@ acme.sh --issue \
 
 <summary>CloudFlare</summary>
 
-:::tip 获取API Key
+:::tip Get my API Key
 [https://dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens)
 
-登录 Cloudflare Dash 后在 API Token 菜单里添加一个 API Token：
+Login Cloudflare Dash and Add an API token at the menu named "API Token":
 
 ![image](https://user-images.githubusercontent.com/110012832/180937088-aec42321-138b-4d86-b38c-f006b4647cab.png)
 
-然后选择 Edit Zone DNS 的模板
+click Edit Zone DNS template:
 
 ![image](https://user-images.githubusercontent.com/110012832/180937112-790c1284-d4a0-4ae7-8987-be342eb0749c.png)
 
-选择你要编辑的域名，也可以加入你服务器的 IP 作为白名单
+Click domain names you wanna edit, and also you can put server IP as whitelist:
 
 ![image](https://user-images.githubusercontent.com/110012832/180937148-3b63bfe4-3361-40e5-bc03-1ca5345e5282.png)
 
-完成后会给你一串字符，把他复制下来，需要填入下方的 CF_Token 参数
+After complete cloudflare gives you a string, copy it and past at `CF_Token` below:
 
 ![image](https://user-images.githubusercontent.com/110012832/180937162-07edc8bd-9e96-47c4-9b57-04bc7a392420.png)
 
-然后进入域名的管理页面，在右侧 API 列找到 Account ID 和 Zone ID 并复制
+And enter domain management, click API at right side, find `Account ID` + `Zone ID`, and copy them.
 
 ![image](https://user-images.githubusercontent.com/110012832/180937183-d1059652-d4d6-4b34-954c-96a0d9823f2e.png)
 
-保存好你的Token、Zone ID和Account ID
+Save your `CF_Token`、`Zone ID` and `Account ID`.
 
-:pushpin:请避免使用Global API，全局API权限过大，容易造成安全问题
+:pushpin:Avoid Global API, unless you need multi-domain SSL.
 
 :::
 
@@ -153,8 +152,8 @@ export CF_Token="API Token"
 
 acme.sh --issue \
   --dns dns_cf \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -166,7 +165,7 @@ acme.sh --issue \
 
 <summary>GoDaddy</summary>
 
-:::tip 获取API Key
+:::tip Get my API Key
 [https://developer.godaddy.com/keys](https://developer.godaddy.com/keys)
 :::
 
@@ -179,8 +178,8 @@ export GD_Secret=""
 
 acme.sh --issue \
   --dns dns_gd \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -193,7 +192,7 @@ acme.sh --issue \
 <summary>HE.net</summary>
 
 :::tip
-直接填入用户名密码，无需API Key
+Username and Password pasted here, no API needed.
 :::
 
 ```js
@@ -204,8 +203,8 @@ export HE_Password=""
 
 acme.sh --issue \
   --dns dns_he \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -225,8 +224,8 @@ export JD_ACCESS_KEY_SECRET=""
 
 acme.sh --issue \
   --dns dns_jd \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -246,8 +245,8 @@ export Hexonet_Password="rolePassword"
 
 acme.sh --issue \
   --dns dns_hexonet \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -259,7 +258,7 @@ acme.sh --issue \
 
 <summary>Amazon Route53</summary>
 
-:::tip 获取API Key
+:::tip Get my API Key
 [https://console.aws.amazon.com/iam/](https://console.aws.amazon.com/iam/)
 :::
 
@@ -272,8 +271,8 @@ export AWS_SECRET_ACCESS_KEY=""
 
 acme.sh --issue \
   --dns dns_aws \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -295,8 +294,8 @@ export AZUREDNS_CLIENTSECRET=""
 
 acme.sh --issue \
   --dns dns_azure \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -315,8 +314,8 @@ export LINODE_API_KEY="CHANGE TO YOUR LINODE_API_KEY"
 
 acme.sh --issue \
   --dns dns_linode \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -335,8 +334,8 @@ export LINODE_V4_API_KEY="CHANGE TO YOUR LINODE_V4_API_KEY"
 
 acme.sh --issue \
   --dns dns_linode_v4 \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -357,8 +356,8 @@ export CLOUDNS_AUTH_PASSWORD="CHANGE TO YOUR CLOUDNS_AUTH_PASSWORD"
 
 acme.sh --issue \
   --dns dns_cloudns \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -379,8 +378,8 @@ export CLOUDDNS_CLIENT_ID="CHANGE TO YOUR CLOUDDNS_CLIENT_ID"
 
 acme.sh --issue \
   --dns dns_clouddns \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -400,8 +399,8 @@ export DYN_Password="secret"
 
 acme.sh --issue \
   --dns dns_dyn \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -421,8 +420,8 @@ export One984HOSTING_Password="CHANGE TO YOUR 1984HOSTING Password"
 
 acme.sh --issue \
   --dns dns_1984hosting \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -444,8 +443,8 @@ export ACMEDNS_SUBDOMAIN="CHANGE TO YOUR ACMEDNS_SUBDOMAIN"
 
 acme.sh --issue \
   --dns dns_acmedns \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -466,8 +465,8 @@ export ACMEPROXY_PASSWORD=""
 
 acme.sh --issue \
   --dns dns_acmeproxy \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -486,8 +485,8 @@ export ACTIVE24_Token="CHANGE TO YOUR Token"
 
 acme.sh --issue \
   --dns dns_active24 \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -506,8 +505,8 @@ export Arvan_Token="CHANGE TO YOUR Token"
 
 acme.sh --issue \
   --dns dns_arvan \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -528,8 +527,8 @@ export AUTODNS_CONTEXT="context"
 
 acme.sh --issue \
   --dns dns_autodns \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -549,8 +548,8 @@ export CN_Password="CHANGE TO YOUR CN Password"
 
 acme.sh --issue \
   --dns dns_cn \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -572,8 +571,8 @@ export CONOHA_IdentityServiceApi=""
 
 acme.sh --issue \
   --dns dns_conoha \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -593,8 +592,8 @@ export CONSTELLIX_Secret=""
 
 acme.sh --issue \
   --dns dns_constellix \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -615,8 +614,8 @@ export CY_OTP_Secret=""
 
 acme.sh --issue \
   --dns dns_cyon \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -635,8 +634,8 @@ export DA_Api_Insecure=1
 
 acme.sh --issue \
   --dns dns_da \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -655,8 +654,8 @@ export DDNSS_Token="CHANGE-TO-YOUR-DDNSS-TOKEN"
 
 acme.sh --issue \
   --dns dns_ddnss \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -676,8 +675,8 @@ export DEDYN_NAME="foobar.dedyn.io"
 
 acme.sh --issue \
   --dns dns_desec \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -697,8 +696,8 @@ export DF_password="(your dyndnsfree.de password)"
 
 acme.sh --issue \
   --dns dns_df \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -717,8 +716,8 @@ export DO_API_KEY="Change to your DigitalOcean KEY"
 
 acme.sh --issue \
   --dns dns_dgon \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -730,7 +729,7 @@ acme.sh --issue \
 
 <summary>DNSimple</summary>
 
-API Key 可在[https://dnsimple.com/user](https://dnsimple.com/user)中获取。
+API Key 可在[https://dnsimple.com/user](https://dnsimple.com/user)中Get my 。
 
 
 ```js
@@ -740,8 +739,8 @@ export DNSimple_OAUTH_TOKEN="CHANGE TO YOUR TOKEN"
 
 acme.sh --issue \
   --dns dns_dnsimple \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -761,8 +760,8 @@ export DO_PW="CHANGE TO YOUR PW"
 
 acme.sh --issue \
   --dns dns_do \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -781,8 +780,8 @@ export DO_LETOKEN="CHANGE TO YOUR Do.DE TOKEN"
 
 acme.sh --issue \
   --dns dns_doapi \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -802,8 +801,8 @@ export DOMENESHOP_Secret="CHANGE TO DOMENESHOP Secret"
 
 acme.sh --issue \
   --dns dns_domeneshop \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -822,8 +821,8 @@ export DH_API_KEY="CHANGE TO YOUR KEY"
 
 acme.sh --issue \
   --dns dns_dreamhost \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -842,8 +841,8 @@ export DuckDNS_Token="CHANGE TO YOUR DuckDNS Token"
 
 acme.sh --issue \
   --dns dns_duckdns \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -863,8 +862,8 @@ export DD_API_Key="xxxxxx"
 
 acme.sh --issue \
   --dns dns_durabledns \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -884,8 +883,8 @@ export Dynu_Secret="Change to your Dynu Secret"
 
 acme.sh --issue \
   --dns dns_dynu \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -903,8 +902,8 @@ export KEY="path/to/keyfile" # Change to your DynV6 private key file here
 
 acme.sh --issue \
   --dns dns_dynv6 \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -924,8 +923,8 @@ export EASYDNS_Token="xxxxxxxxxxxxxxxxxxxxxxxx"
 
 acme.sh --issue \
   --dns dns_easydns \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -945,8 +944,8 @@ export EUSERV_Password="password"
 
 acme.sh --issue \
   --dns dns_euserv \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -966,8 +965,8 @@ export EXOSCALE_SECRET_KEY="Change to your EXOSCALE SECRET KEY"
 
 acme.sh --issue \
   --dns dns_exoscale \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -987,8 +986,8 @@ export FREEDNS_Password="change to your freedns password"
 
 acme.sh --issue \
   --dns dns_freedns \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -1007,8 +1006,8 @@ export GANDI_LIVEDNS_KEY="Change to your Gandi Livedns KEY"
 
 acme.sh --issue \
   --dns dns_gandi_livedns \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -1028,8 +1027,8 @@ export GDNSDK_Password="change to your GDNSDK Password"
 
 acme.sh --issue \
   --dns dns_gdnsdk \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -1050,8 +1049,8 @@ export HETZNER_Token="Change to your HETZNER Token"
 
 acme.sh --issue \
   --dns dns_hetzner \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -1070,8 +1069,8 @@ export HOSTINGDE_APIKEY='xxxxx'
 
 acme.sh --issue \
   --dns dns_hostingde \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -1091,8 +1090,8 @@ export Infoblox_Server="Your-InfobloxServer.com"
 
 acme.sh --issue \
   --dns dns_infoblox \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -1112,8 +1111,8 @@ export INTERNETBS_API_PASSWORD="Change to your INTERNETBS API PASSWORD"
 
 acme.sh --issue \
   --dns dns_internetbs \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -1133,8 +1132,8 @@ export INWX_Password="password"
 
 acme.sh --issue \
   --dns dns_inwx \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```
@@ -1155,8 +1154,8 @@ export ISPC_Api_Insecure=1
 
 acme.sh --issue \
   --dns dns_ispconfig \
-  -d <域名> \
-  -d <额外的域名> \
+  -d <DomainName> \
+  -d <AdditionalDomainName> \
   --days 150 \
   --server https://acme.hi.cn/directory
 ```

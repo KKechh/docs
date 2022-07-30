@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# 证书续期+自动
+# Certificate Renewal
 
 `acme.sh` 证书续期+自动
 

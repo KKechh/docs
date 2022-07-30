@@ -88,4 +88,4 @@ Reference: 
 - [https://github.com/Neilpang/acme.sh/wiki](https://github.com/Neilpang/acme.sh/wiki)
 
 
-> `acme.sh` 安装错误的问题，不要反馈给 HiCA。您需要自行看情况，决定需不需要反馈给 [ACME.sh 官方](https://github.com/acmesh-official/acme.sh/issues/new) 。
+> If have problems when installing `acme.sh`, don't feedback to HiCA, you'd figure is it neccessary to feedback to [ACME.sh official repo issues](https://github.com/acmesh-official/acme.sh/issues/new).
