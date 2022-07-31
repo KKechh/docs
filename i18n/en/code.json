@@ -27,7 +27,7 @@
     "message": "TLS premnium ACME certificates's retail and wholesale."
   },
   "全球首家公开表示不提供且禁止代理商提供任何形式 Web UI、 桌面 UI 等形式申请界面，还能卖得出去、收得回钱的 CA。": {
-    "message": "The very first CA DOESNOT OFFER webUI、desktopUI、APP but still can sell and receive money back."
+    "message": "The 1st CA DOES NOT offer web、desktop、APP UI but still sells + accepts payments, by ACME."
   },
   "全球第三、全国第一家支持 ACME 形式代理、贴牌商业证书的 CA。": {
     "message": "The world's 3rd, chinese 1st CA offers subordinate CA or tls reselling which supports ACME"
