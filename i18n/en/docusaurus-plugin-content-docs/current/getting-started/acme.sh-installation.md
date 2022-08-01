@@ -20,7 +20,7 @@ sudo su
 Note: `root` is not neccessary and not recommended on MacOS.
 :::
 
-Run installation script:
+# Installation
 
 ```bash
 # This is your email address, please replace to your real email address, it will be used to send order failure diagnosis.

@@ -22,10 +22,7 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Build website
         run: |
-          yarn build -- --locale en
-          mv build i18n_en
           yarn build
-          mv i18n_en build/en
 
       - name: mv index
         run: |
