@@ -1,6 +1,7 @@
 {
   "label": "Certificate Management",
   "position": 3,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "Certificate Issuance, Renewal, Revocation Tutorial"

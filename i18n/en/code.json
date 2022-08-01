@@ -416,5 +416,17 @@
   "theme.SearchModal.placeholder": {
     "message": "Search docs",
     "description": "The placeholder of the input of the DocSearch pop-up modal"
+  },
+  "请选择申请时候的验证方式": {
+    "message": "Select challenge type when requesting"
+  },
+  "HTTP": {
+    "message": "HTTP"
+  },
+  "DNS": {
+    "message": "DNS"
+  },
+  "提交": {
+    "message": "提交"
   }
 }

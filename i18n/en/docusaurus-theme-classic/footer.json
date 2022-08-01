@@ -21,7 +21,7 @@
   },
   "link.item.label.服务条款": {
     "message": "Term Of Service",
-    "description": "The label of footer link with label=服务条款 linking to https://www1.hi.cn/EULA/"
+    "description": "The label of footer link with label=服务条款 linking to /EULA"
   },
   "link.item.label.Telegram 群": {
     "message": "Telegram Group",

@@ -5,7 +5,7 @@ sidebar_position: 1
 # Install ACME.sh
 
 :::danger Important notice
-Due to our [TOS](/en/EULA), you need and only could access our service via `ACME.sh`.
+Due to our [TOS](/EULA), you need and only could access our service via `ACME.sh`.
 
 No other ACME clients were allowed. and welcome to report if any organisation、individual providing GUI、webpage、app depends on our service at [report-abuse@corp.hi.cn](mailto:report-abuse@corp.hi.cn).
 :::
@@ -23,6 +23,7 @@ Note: `root` is not neccessary and not recommended on MacOS.
 Run installation script:
 
 ```bash
+# This is your email address, please replace to your real email address, it will be used to send order failure diagnosis.
 curl https://get.acme.sh | sh -s email=my@example.com
 ```
 

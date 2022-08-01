@@ -1,37 +1,38 @@
 ---
-title: 故障诊断
+title: Diagnosis
 ---
 
-# 故障诊断
-![Docusaurus Plushie](../../blog/2022-07-23-welcome/docusaurus-plushie-banner.jpeg)
+# Diagnosis
 
-提供以下您下单时候的信息，我们程序将辅助您找到申请不下来的原因。
+![Docusaurus Plushie](../../../blog/2022-07-23-welcome/docusaurus-plushie-banner.jpeg)
+
+Fill information of your order, our program will help you diagnosis why not issued by yourself.
 
 <form action="https://docs.hi.cn/api/diagnosis" method="POST" target="_blank">
   <div className="DocSearch-Form">
     <input
       className="DocSearch-Input"
-      placeholder="邮箱"
+      placeholder="E-mail"
       type="email"
     ></input>
   </div>
 
-  在[安装 `ACME.sh`](/docs/getting-started/acme.sh-installation#安装)时候填写的邮箱
+  The email when [installation `ACME.sh`](/docs/getting-started/acme.sh-installation#installation)
 
   <div className="DocSearch-Form">
     <input
       className="DocSearch-Input"
-      placeholder="域名"
+      placeholder="Domain"
       type="text"
     ></input>
   </div>
 
-  IP 证书请输入 IP 地址。如果多域名只需输入其中一个
+  Domain or IP address, if UCC please provide any one of them
 
   <div className="DocSearch-Form">
-    <select className="DocSearch-Input" placeholder="验证方式">
+    <select className="DocSearch-Input" placeholder="Challenge type">
       <option>
-        请选择验证方式
+        Please select a challenge type
       </option>
       <option value="http-01">
         HTTP / http-01
@@ -42,9 +43,9 @@ title: 故障诊断
     </select>
   </div>
 
-  需要与您申请时候的验证方式保持一致
+  The challenge type should be the same as when you apply for it
 
   <button type="submit" className="button button--secondary button--lg">
-    提交
+    Submit
   </button>
 </form>
