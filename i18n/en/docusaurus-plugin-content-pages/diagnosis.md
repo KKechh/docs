@@ -16,6 +16,7 @@ Fill information of your order, our program will help you diagnosis why not issu
       type="email"
       name="contact"
       tabindex="1"
+      required
     ></input>
   </div>
 
@@ -28,21 +29,22 @@ Fill information of your order, our program will help you diagnosis why not issu
       type="text"
       name="identifier"
       tabindex="2"
+      required
     ></input>
   </div>
 
   Domain or IP address, if UCC please provide any one of them
 
   <div className="DocSearch-Form">
-    <select className="DocSearch-Input" placeholder="Challenge type" name="challenge" tabindex="3">
+    <select className="DocSearch-Input" placeholder="Challenge type" name="challenge" tabindex="3" required>
       <option>
         Please select a challenge type
       </option>
-      <option value="http-01">
-        HTTP / http-01
-      </option>
       <option value="dns-01">
         DNS / dns-01
+      </option>
+      <option value="http-01">
+        HTTP / http-01
       </option>
     </select>
   </div>
