@@ -14,6 +14,8 @@ Fill information of your order, our program will help you diagnosis why not issu
       className="DocSearch-Input"
       placeholder="E-mail"
       type="email"
+      name="contact"
+      tabindex="1"
     ></input>
   </div>
 
@@ -24,13 +26,15 @@ Fill information of your order, our program will help you diagnosis why not issu
       className="DocSearch-Input"
       placeholder="Domain"
       type="text"
+      name="identifier"
+      tabindex="2"
     ></input>
   </div>
 
   Domain or IP address, if UCC please provide any one of them
 
   <div className="DocSearch-Form">
-    <select className="DocSearch-Input" placeholder="Challenge type">
+    <select className="DocSearch-Input" placeholder="Challenge type" name="challenge" tabindex="3">
       <option>
         Please select a challenge type
       </option>
@@ -45,7 +49,7 @@ Fill information of your order, our program will help you diagnosis why not issu
 
   The challenge type should be the same as when you apply for it
 
-  <button type="submit" className="button button--secondary button--lg">
+  <button type="submit" className="button button--secondary button--lg" tabindex="4">
     Submit
   </button>
 </form>
