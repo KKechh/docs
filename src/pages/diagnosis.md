@@ -7,7 +7,7 @@ title: 故障诊断
 
 提供以下您下单时候的信息，我们程序将辅助您找到申请不下来的原因。
 
-<form action="https://docs.hi.cn/api/diagnosis" method="POST" target="_blank">
+<form action="https://docs.hi.cn/diagnosis" method="POST" target="_blank">
   <div className="DocSearch-Form">
     <input
       className="DocSearch-Input"

@@ -8,7 +8,7 @@ title: Diagnosis
 
 Fill information of your order, our program will help you diagnosis why not issued by yourself.
 
-<form action="https://docs.hi.cn/api/diagnosis" method="POST" target="_blank">
+<form action="https://docs.hi.cn/diagnosis" method="POST" target="_blank">
   <div className="DocSearch-Form">
     <input
       className="DocSearch-Input"
