@@ -7,7 +7,15 @@ sidebar_position: 1
 What's validation for your domains(FQDN), and what type should i use between `dns-01` and `http-01`?
 
 :::tip
-HiCA doesn't support `tls-alpn-01`, but supports `dns-01`、`http-01`.
+HiCA does only support `dns-01`、`http-01` challenge. doesn't support
+- `tls-alpn-01` challenge.
+  
+And those `acme.sh` configure modes：
+- [`DNS alias mode`](https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode),
+- [`DNS manual mode`](https://github.com/acmesh-official/acme.sh/wiki/DNS-manual-mode),
+- [`Stateless mode`](https://github.com/acmesh-official/acme.sh/wiki/Stateless-Mode),
+- `Standalone mode`,
+- `Standalone tls-alpn mode`.
 :::
 
 ## What is validation of FQDN, and why?

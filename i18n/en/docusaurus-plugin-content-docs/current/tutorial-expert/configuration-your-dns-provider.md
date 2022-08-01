@@ -23,7 +23,7 @@ If you can't find your dns provider, means your DNS provider didn't support by `
 
 Login your DNSPod account, click avatar, click api secrets management, create a new API credential and copy your ID and Token.
 
-![image](https://user-images.githubusercontent.com/110012832/180937011-b74bfe96-dcd0-4f85-b75c-255ec08e1961.png)
+![创建 API 弹窗](/docs/dnspod-api-credential-create-prompt.png)
 
 Save your DNSPod API Key + ID。
 :::
@@ -55,7 +55,7 @@ acme.sh --issue \
 
 Login your DNSPod account, click avatar, click api secrets management, create a new API credential and copy your ID and Token.
 
-![image](https://user-images.githubusercontent.com/110012832/180937011-b74bfe96-dcd0-4f85-b75c-255ec08e1961.png)
+![创建 API 弹窗](/docs/dnspod-api-credential-create-prompt.png)
 
 Save your DNSPod API Key + ID。
 :::
@@ -88,7 +88,7 @@ acme.sh --issue \
 
 Firstly you'd create an AccessKey at your alibaba cloud account, to access alibabacloud's API. And you can using RAM to create(more secure and recommended!), and grant `AliyunDNSFullAccess` permission only.
 
-![image](https://user-images.githubusercontent.com/110012832/180936947-ab8469ce-430f-413a-8034-f3455f36807b.png)
+![AlibabaCloud RAM](/docs/alibabacloud-ram-permission-grant-window.png)
 
 Save your Key And Secret.
 :::
@@ -120,23 +120,23 @@ acme.sh --issue \
 
 Login Cloudflare Dash and Add an API token at the menu named "API Token":
 
-![image](https://user-images.githubusercontent.com/110012832/180937088-aec42321-138b-4d86-b38c-f006b4647cab.png)
+![Create your API Token on CloudFlare](/docs/cloudflare-create-api-token-step-1.png)
 
 click Edit Zone DNS template:
 
-![image](https://user-images.githubusercontent.com/110012832/180937112-790c1284-d4a0-4ae7-8987-be342eb0749c.png)
+![Create your API Token on CloudFlare](/docs/cloudflare-create-api-token-step-2.png)
 
 Click domain names you wanna edit, and also you can put server IP as whitelist:
 
-![image](https://user-images.githubusercontent.com/110012832/180937148-3b63bfe4-3361-40e5-bc03-1ca5345e5282.png)
+![Create your API Token on CloudFlare](/docs/cloudflare-create-api-token-step-3.png)
 
 After complete cloudflare gives you a string, copy it and past at `CF_Token` below:
 
-![image](https://user-images.githubusercontent.com/110012832/180937162-07edc8bd-9e96-47c4-9b57-04bc7a392420.png)
+![Create your API Token on CloudFlare](/docs/cloudflare-create-api-token-step-4.png)
 
 And enter domain management, click API at right side, find `Account ID` + `Zone ID`, and copy them.
 
-![image](https://user-images.githubusercontent.com/110012832/180937183-d1059652-d4d6-4b34-954c-96a0d9823f2e.png)
+![Create your API Token on CloudFlare](/docs/cloudflare-create-api-token-step-5.png)
 
 Save your `CF_Token`、`Zone ID` and `Account ID`.
 

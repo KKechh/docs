@@ -23,7 +23,7 @@ sidebar_position: 2
 
 登陆自己的 DNSPod 帐户，点击自己头像，选择密钥管理，添加一个密钥，将 ID 和 Token 记录下来：
 
-![image](https://user-images.githubusercontent.com/110012832/180937011-b74bfe96-dcd0-4f85-b75c-255ec08e1961.png)
+![创建 API 弹窗](/docs/dnspod-api-credential-create-prompt.png)
 
 保存好你的DNSPod API Key 和 ID。
 :::
@@ -55,7 +55,7 @@ acme.sh --issue \
 
 登陆自己的 DNSPod 帐户，点击自己头像，选择密钥管理，添加一个密钥，将 ID 和 Token 记录下来：
 
-![image](https://user-images.githubusercontent.com/110012832/180937011-b74bfe96-dcd0-4f85-b75c-255ec08e1961.png)
+![创建 API 弹窗](/docs/dnspod-api-credential-create-prompt.png)
 
 保存好你的DNSPod API Key 和 ID。
 :::
@@ -89,7 +89,7 @@ acme.sh --issue \
 
 首先在阿里云申请一个 AccessKey，用于 API 操作阿里云服务，可以使用创建子用户的方法（更安全），并且只授权 AliyunDNSFullAccess 权限
 
-![image](https://user-images.githubusercontent.com/110012832/180936947-ab8469ce-430f-413a-8034-f3455f36807b.png)
+![阿里云RAM](/docs/alibabacloud-ram-permission-grant-window.png)
 
 保存好你得到的Key和Secret
 :::
@@ -121,23 +121,23 @@ acme.sh --issue \
 
 登录 Cloudflare Dash 后在 API Token 菜单里添加一个 API Token：
 
-![image](https://user-images.githubusercontent.com/110012832/180937088-aec42321-138b-4d86-b38c-f006b4647cab.png)
+![CloudFlare 平台建立 API 凭据](/docs/cloudflare-create-api-token-step-1.png)
 
 然后选择 Edit Zone DNS 的模板
 
-![image](https://user-images.githubusercontent.com/110012832/180937112-790c1284-d4a0-4ae7-8987-be342eb0749c.png)
+![CloudFlare 平台建立 API 凭据](/docs/cloudflare-create-api-token-step-2.png)
 
 选择你要编辑的域名，也可以加入你服务器的 IP 作为白名单
 
-![image](https://user-images.githubusercontent.com/110012832/180937148-3b63bfe4-3361-40e5-bc03-1ca5345e5282.png)
+![CloudFlare 平台建立 API 凭据](/docs/cloudflare-create-api-token-step-3.png)
 
 完成后会给你一串字符，把他复制下来，需要填入下方的 CF_Token 参数
 
-![image](https://user-images.githubusercontent.com/110012832/180937162-07edc8bd-9e96-47c4-9b57-04bc7a392420.png)
+![CloudFlare 平台建立 API 凭据](/docs/cloudflare-create-api-token-step-4.png)
 
 然后进入域名的管理页面，在右侧 API 列找到 Account ID 和 Zone ID 并复制
 
-![image](https://user-images.githubusercontent.com/110012832/180937183-d1059652-d4d6-4b34-954c-96a0d9823f2e.png)
+![CloudFlare 平台建立 API 凭据](/docs/cloudflare-create-api-token-step-5.png)
 
 保存好你的Token、Zone ID和Account ID
 

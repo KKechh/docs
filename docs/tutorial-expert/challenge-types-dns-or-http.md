@@ -7,7 +7,15 @@ sidebar_position: 1
 什么是 FQDN 验证? 如何选择验证类型? `dns-01` 还是 `http-01` ?
 
 :::tip 提示
-HiCA 不支持 `tls-alpn-01` 验证类型，只支持 `dns-01`、`http-01`。
+HiCA 只支持 `dns-01` 和 `http-01`。不支持如下验证方式：
+- `tls-alpn-01`，
+  
+以及如下 `acme.sh` 的配置方式：
+- [`DNS alias mode`](https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode)，
+- [`DNS manual mode`](https://github.com/acmesh-official/acme.sh/wiki/DNS-manual-mode)，
+- [`Stateless mode`](https://github.com/acmesh-official/acme.sh/wiki/Stateless-Mode)，
+- `Standalone mode`，
+- `Standalone tls-alpn mode`。
 :::
 
 ## 什么是 FQDN 验证，为什么要验证？
