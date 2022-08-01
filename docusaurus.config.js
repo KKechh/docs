@@ -59,7 +59,7 @@ const config = {
           editUrl: ({locale, blogPath}) => {
             const nextVersionBlogDirPath = 'blog';
             if (locale !== 'zh-CN') {
-              return `https://github.com/HiCA-ACME/docs/edit/master/i18n/en/docusaurus-plugin-content-blog/current/${blogPath}`;
+              return `https://github.com/HiCA-ACME/docs/edit/master/i18n/en/docusaurus-plugin-content-blog/${blogPath}`;
             }
             // We want users to submit doc updates to the upstream/next version!
             // Otherwise we risk losing the update on the next release.
