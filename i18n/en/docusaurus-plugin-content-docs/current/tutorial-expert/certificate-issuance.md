@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Certificate Issuance
 
-Challange type:
+## Select a challange type:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

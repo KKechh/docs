@@ -89,7 +89,16 @@ const config = {
             position: 'left',
             label: '教程',
           },
-          { to: '/blog', label: '博客', position: 'left' },
+          {
+            to: '/blog',
+            label: '博客',
+            position: 'left'
+          },
+          {
+            to: '/diagnosis',
+            label: '故障诊断',
+            position: 'left'
+          },
           {
             label: 'Github/HiCA',
             href: 'https://github.com/HiCA-ACME/docs',
@@ -118,6 +127,7 @@ const config = {
       },
       sidebar: {
         hideable: true,
+        sidebarCollapsible: false,
       },
       footer: {
         style: 'dark',

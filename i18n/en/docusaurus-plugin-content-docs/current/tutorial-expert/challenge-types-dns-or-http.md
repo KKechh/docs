@@ -7,7 +7,9 @@ sidebar_position: 1
 What's validation for your domains(FQDN), and what type should i use between `dns-01` and `http-01`?
 
 :::tip
-HiCA does only support `dns-01`、`http-01` challenge. doesn't support
+HiCA does only support `dns-01`、`http-01` challenge.
+
+Doesn't support
 - `tls-alpn-01` challenge.
   
 And those `acme.sh` configure modes：

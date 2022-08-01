@@ -5,7 +5,7 @@ sidebar_position: 1
 # 安装 ACME.sh
 
 :::danger 重要信息
-按照我们的服务条款，您只能使用 `ACME.sh` 来访问 HiCA。
+按照我们的[服务条款](/EULA)，您只能使用 `ACME.sh` 来访问 HiCA。
 
 其他 ACME 客户端请勿尝试！更请不要使用任何机构组织、个人提供的 GUI 工具。欢迎举报： [report-abuse@corp.hi.cn](mailto:report-abuse@corp.hi.cn)。
 :::
@@ -20,15 +20,17 @@ sudo su
 注意：MacOS 推荐不用切换到 root。
 :::
 
-运行安装脚本。
+## 安装
 
 ```bash
+# 此处的邮箱，请填写您的真实邮箱，后续订单故障诊断时候会用到！
 curl https://get.acme.sh | sh -s email=my@example.com
 ```
 
 如果上面官方下载地址失败 或者 太慢，可以选用国内的备用地址：
 
 ```bash
+# 此处的邮箱，请填写您的真实邮箱，后续订单故障诊断时候会用到！
 curl https://gitcode.net/cert/cn-acme.sh/-/raw/master/install.sh?inline=false | sh -s email=my@example.com
 ```
 
@@ -42,7 +44,7 @@ v3.0.3
 ```
 
 
-## 更新 acme.sh
+## 更新
 
 目前由于 acme 协议和 letsencrypt CA 都在频繁的更新，因此 acme.sh 也需要经常更新以保持同步。
 
@@ -72,7 +74,7 @@ acme.sh最好能设置成自动更新，否则会出现api修改后无法更新�
 acme.sh --v
 ```
 
-## 报错处理
+## 调试
 
 **报错需要先开启 debug**
 

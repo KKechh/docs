@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # 申请证书
 
-请选择一个验证方式：
+## 请选择一个验证方式：
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

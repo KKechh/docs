@@ -5,7 +5,7 @@ sidebar_position: 1
 # Install ACME.sh
 
 :::danger Important notice
-Due to our TOS, you need and only could access our service via `ACME.sh`.
+Due to our [TOS](/en/EULA), you need and only could access our service via `ACME.sh`.
 
 No other ACME clients were allowed. and welcome to report if any organisation、individual providing GUI、webpage、app depends on our service at [report-abuse@corp.hi.cn](mailto:report-abuse@corp.hi.cn).
 :::
