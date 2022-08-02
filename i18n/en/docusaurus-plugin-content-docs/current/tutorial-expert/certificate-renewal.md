@@ -4,7 +4,50 @@ sidebar_position: 4
 
 # Certificate Renewal
 
-`acme.sh` certificate renewal + automatic
+---
+sidebar_position: 4
+---
+
+:::note
+The tutorial below, shall be concerned if only you requested certificate by `--dns` mode.
+
+Or if you requested by `--webroot`, no further action is neccessary.
+:::
+
+At first, when you get certificate signed by `acme.sh`, you need to persist your DNS credentials to `~/.acme.sh/dnsapi/dns_**.sh` file.
+For example, `~/.acme.sh/dnsapi/dns_dp.sh` starts with the following lines:
+
+```shell
+#!/bin/bash
+
+# Dnspod.cn Domain api
+#
+# highlight-start
+#DP_Id="1234"
+#
+#DP_Key="sADDsdasdgdsf"
+# highlight-end
+
+REST_API="https://dnsapi.cn"
+```
+
+You need to change it to
+
+```shell
+#!/bin/bash
+
+# Dnspod.cn Domain api
+#
+# highlight-start
+DP_Id="<Change to dns API ID>"
+#
+DP_Key="<Change to dns API Key>"
+# highlight-end
+
+REST_API="https://dnsapi.cn"
+```
+
+Then `acme.sh` will try to renew certificate automatically 30 days before expiration.
 
 :::info Note
 `acme.sh` will automatically add a cron job by default to renew the certificate every 150 days at 1am. You basically do not need to modify the configuration for uninterrupted business.
@@ -22,4 +65,4 @@ crontab -l
 56 * * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
 ````
 
-If cron does not take effect, please go to [Baidu search "How to add scheduled tasks in Linux"](https://www.baidu.com/s?wd=Linux%E6%80%8E%E4%B9%88%E6%B7% BB%E5%8A%A0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1) or [Google search "How to add scheduled tasks in Linux"](https://www .google.com/search?q=Linux%E6%80%8E%E4%B9%88%E6%B7%BB%E5%8A%A0%E5%AE%9A%E6%97%B6%E4%BB %BB%E5%8A%A1). `acme.sh` task is: `"/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null`
+If cron does not take effect, please go to [Google search "How to add scheduled tasks in Linux"](https://www.google.com/search?q=How+to+add+scheduled+tasks+in+Linux). `acme.sh` task is: `"/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null`

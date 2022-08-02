@@ -24,7 +24,7 @@ Note: `root` is not neccessary and not recommended on MacOS.
 
 ```bash
 # This is your email address, please replace to your real email address, it will be used to send order failure diagnosis.
-curl https://get.acme.sh | sh -s email=my@example.com
+curl https://get.acme.sh -s | sh -s
 ```
 
 Note: after installtation, reopen your terminal(if ssh client, choose re-connect) to make your `acme.sh` work.

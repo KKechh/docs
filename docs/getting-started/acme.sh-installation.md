@@ -25,13 +25,13 @@ sudo su
 此处的邮箱，请填写您的真实邮箱，后续 [**订单故障**](/diagnosis) 诊断时候会用到！
 
 ```bash
-curl https://get.acme.sh | sh -s email=my@example.com
+curl https://get.acme.sh -s | sh -s
 ```
 
 **鉴于国内的网络环境，如果上面官方下载地址失败 或者 太慢，可以选用国内的备用地址：**
 
 ```bash
-curl https://gitcode.net/cert/cn-acme.sh/-/raw/master/install.sh?inline=false | sh -s email=my@example.com
+curl https://gitcode.net/cert/cn-acme.sh/-/raw/master/install.sh?inline=false -s | sh -s
 ```
 
 注意：安装完成后，再重新打开命令行（如果是 SSH，选择重新连接），以使acme.sh命令生效。

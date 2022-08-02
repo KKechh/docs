@@ -1,10 +1,10 @@
 {
   "title": {
-    "message": "Blog",
+    "message": "HiCA Press room",
     "description": "The title for the blog used in SEO"
   },
   "description": {
-    "message": "Blog",
+    "message": "HiCA's press room provides ACME and TLS industry newslater",
     "description": "The description for the blog used in SEO"
   },
   "sidebar.title": {

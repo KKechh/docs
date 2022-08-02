@@ -1,18 +1,18 @@
 {
   "HiCA 官网": {
-    "message": "HiCA Official Website"
+    "message": "HiCA Homepage"
   },
   "阅读使用教程 - 15min ⏱️": {
-    "message": "Documentation - 15min ⏱️"
+    "message": "Read Documentation - 15min ⏱️"
   },
   "HiCA是一家纯ACME的数字证书供应商": {
-    "message": "HiCA's TLS certificates can only be enrolled via ACME"
+    "message": "HiCA's certs can only be enrolled via ACME"
   },
   "我们提供：": {
     "message": "We offer:"
   },
   "ACME 公益服务:": {
-    "message": "ACME non-profit service:"
+    "message": "Public ACME service:"
   },
   "全球首家支持IPv4的ACME CA。": {
     "message": "The very first ACME CA which supports IPv4."
@@ -27,7 +27,7 @@
     "message": "TLS premnium ACME certificates's retail and wholesale."
   },
   "全球首家公开表示不提供且禁止代理商提供任何形式 Web UI、 桌面 UI 等形式申请界面，还能卖得出去、收得回钱的 CA。": {
-    "message": "The 1st CA DOES NOT offer web、desktop、APP UI but still sells + accepts payments, by ACME."
+    "message": "The 1st CA DOES NOT offer web, desktop, APP UI but can sells & accepts payments only by ACME."
   },
   "全球第三、全国第一家支持 ACME 形式代理、贴牌商业证书的 CA。": {
     "message": "The world's 3rd, chinese 1st CA offers subordinate CA or tls reselling which supports ACME"
@@ -427,6 +427,6 @@
     "message": "DNS"
   },
   "提交": {
-    "message": "提交"
+    "message": "Submit"
   }
 }

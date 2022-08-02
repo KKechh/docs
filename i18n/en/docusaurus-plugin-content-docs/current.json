@@ -5,19 +5,19 @@
   },
   "sidebar.tutorialSidebar.category.开始上手": {
     "message": "Getting Started",
-    "description": "The label for category Getting Started in sidebar tutorialSidebar"
+    "description": "The label for category 开始上手 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.开始上手.link.generated-index.description": {
-    "message": "Documents for starter",
-    "description": "The generated-index page description for category Getting Started in sidebar tutorialSidebar"
+    "message": "Documents for users first time know HiCA or ACME",
+    "description": "The generated-index page description for category 开始上手 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.证书签发管理": {
     "message": "Certificate Manangement",
-    "description": "The label for category Certificate Manangement in sidebar tutorialSidebar"
+    "description": "The label for category 证书签发管理 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.证书签发管理.link.generated-index.description": {
-    "message": "Certificate issuance、renewal and revocation",
-    "description": "The generated-index page description for category Certificate Manangement in sidebar tutorialSidebar"
+    "message": "Certificate issuance, renewal and revocation",
+    "description": "The generated-index page description for category 证书签发管理 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.开始上手.link.generated-index.title": {
     "message": "Getting started",
