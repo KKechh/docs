@@ -31,7 +31,7 @@ jobs:
       - name: Compress build to zip
         run: |
           cd build/
-          tar -czvf ../dist.tar.gz $(pwd)
+          tar -czvf ../dist.tar.gz ./
           cd ..
 
       - name: Upload to s_singapore1
