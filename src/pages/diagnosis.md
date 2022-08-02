@@ -19,7 +19,7 @@ title: 故障诊断
     ></input>
   </div>
 
-  在[安装 `ACME.sh`](/docs/getting-started/acme.sh-installation#安装)时候填写的邮箱
+  在 [安装 `ACME.sh`](/docs/getting-started/acme.sh-installation#安装) 时候填写的邮箱
 
   <div className="DocSearch-Form">
     <input

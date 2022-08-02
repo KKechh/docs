@@ -22,15 +22,15 @@ sudo su
 
 ## 安装
 
+此处的邮箱，请填写您的真实邮箱，后续 [**订单故障**](/diagnosis) 诊断时候会用到！
+
 ```bash
-# 此处的邮箱，请填写您的真实邮箱，后续订单故障诊断时候会用到！
 curl https://get.acme.sh | sh -s email=my@example.com
 ```
 
-如果上面官方下载地址失败 或者 太慢，可以选用国内的备用地址：
+**鉴于国内的网络环境，如果上面官方下载地址失败 或者 太慢，可以选用国内的备用地址：**
 
 ```bash
-# 此处的邮箱，请填写您的真实邮箱，后续订单故障诊断时候会用到！
 curl https://gitcode.net/cert/cn-acme.sh/-/raw/master/install.sh?inline=false | sh -s email=my@example.com
 ```
 
@@ -43,6 +43,13 @@ https://github.com/acmesh-official/acme.sh
 v3.0.3
 ```
 
+安装过程如果提示如下信息请忽略，因为 HiCA 不支持 `standalone` 模式。
+
+```bash
+It is recommended to install socat first.
+We use socat for standalone server if you use standalone mode.
+If you don't use standalone mode, just ignore this warning.
+```
 
 ## 更新
 

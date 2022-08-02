@@ -37,6 +37,14 @@ https://github.com/acmesh-official/acme.sh
 v3.0.3
 ```
 
+Due to the reason HiCA doesn't support `standalone` mode, please ignore warning occurs like below.
+
+```bash
+It is recommended to install socat first.
+We use socat for standalone server if you use standalone mode.
+If you don't use standalone mode, just ignore this warning.
+```
+
 
 ## Upgrade acme.sh
 

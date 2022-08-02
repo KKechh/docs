@@ -18,12 +18,16 @@ If you can't find your dns provider, means your DNS provider didn't support by `
 
 <summary>DNSPod(腾讯云、TencentCloud)</summary>
 
-:::tip Get my API Key
-[https://console.dnspod.cn/account/token/token](https://console.dnspod.cn/account/token/token)
+<p><a href="https://console.dnspod.cn/account/token/token" className="button button--secondary button--lg text--no-decoration">Get my API Key</a></p>
+
+:::tip Tutorial
 
 Login your DNSPod account, click avatar, click api secrets management, create a new API credential and copy your ID and Token.
 
-![创建 API 弹窗](/docs/dnspod-api-credential-create-prompt.png)
+<p><img srcset="/docs/dnspod-create-api-token-step-1.png 2x"></img></p>
+<p><img srcset="/docs/dnspod-create-api-token-step-2.png 2x"></img></p>
+<p><img srcset="/docs/dnspod-create-api-token-step-3.png 2x"></img></p>
+<p><img srcset="/docs/dnspod-create-api-token-step-4.png 2x"></img></p>
 
 Save your DNSPod API Key + ID。
 :::
@@ -50,12 +54,16 @@ acme.sh --issue \
 
 <summary>DNSPod.com(DNSPod国际版)</summary>
 
-:::tip Get my API Key
-[https://console.dnspod.cn/account/token/token](https://console.dnspod.cn/account/token/token)
+<p><a href="https://console.dnspod.com/account/token/token" className="button button--secondary button--lg text--no-decoration">Get my API Key</a></p>
+
+:::tip Tutorial
 
 Login your DNSPod account, click avatar, click api secrets management, create a new API credential and copy your ID and Token.
 
-![创建 API 弹窗](/docs/dnspod-api-credential-create-prompt.png)
+<p><img srcset="/docs/dnspod-create-api-token-step-1.png 2x"></img></p>
+<p><img srcset="/docs/dnspod-create-api-token-step-2.png 2x"></img></p>
+<p><img srcset="/docs/dnspod-create-api-token-step-3.png 2x"></img></p>
+<p><img srcset="/docs/dnspod-create-api-token-step-4.png 2x"></img></p>
 
 Save your DNSPod API Key + ID。
 :::
@@ -82,9 +90,9 @@ acme.sh --issue \
 
 <summary>Alibaba Cloud(Aliyun)</summary>
 
-:::tip Get my API Key
-[https://ram.console.aliyun.com/manage/ak](https://ram.console.aliyun.com/manage/ak)
+<p><a href="https://ram.console.aliyun.com/manage/ak" className="button button--secondary button--lg text--no-decoration">Get my API Key</a></p>
 
+:::tip Tutorial
 
 Firstly you'd create an AccessKey at your alibaba cloud account, to access alibabacloud's API. And you can using RAM to create(more secure and recommended!), and grant `AliyunDNSFullAccess` permission only.
 
@@ -115,8 +123,9 @@ acme.sh --issue \
 
 <summary>CloudFlare</summary>
 
-:::tip Get my API Key
-[https://dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens)
+<p><a href="https://dash.cloudflare.com/profile/api-tokens" className="button button--secondary button--lg text--no-decoration">Get my API Key</a></p>
+
+:::tip
 
 Login Cloudflare Dash and Add an API token at the menu named "API Token":
 
@@ -165,10 +174,7 @@ acme.sh --issue \
 
 <summary>GoDaddy</summary>
 
-:::tip Get my API Key
-[https://developer.godaddy.com/keys](https://developer.godaddy.com/keys)
-:::
-
+<p><a href="https://developer.godaddy.com/keys" className="button button--secondary button--lg text--no-decoration">Get my API Key</a></p>
 
 ```js
 // highlight-start
@@ -214,7 +220,7 @@ acme.sh --issue \
 
 <details>
 
-<summary>京东云(JDCloud)</summary>
+<summary>JD Cloud</summary>
 
 ```js
 // highlight-start
@@ -258,10 +264,7 @@ acme.sh --issue \
 
 <summary>Amazon Route53</summary>
 
-:::tip Get my API Key
-[https://console.aws.amazon.com/iam/](https://console.aws.amazon.com/iam/)
-:::
-
+<p><a href="https://console.aws.amazon.com/iam/" className="button button--secondary button--lg text--no-decoration">Get my API Key</a></p>
 
 ```js
 // highlight-start

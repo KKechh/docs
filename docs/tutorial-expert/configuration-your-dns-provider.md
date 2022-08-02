@@ -18,14 +18,18 @@ sidebar_position: 2
 
 <summary>DNSPod(腾讯云、TencentCloud)</summary>
 
-:::tip 获取API Key
-[https://console.dnspod.cn/account/token/token](https://console.dnspod.cn/account/token/token)
+<p><a href="https://console.dnspod.cn/account/token/token" className="button button--secondary button--lg text--no-decoration">获取 API Key</a></p>
+
+:::tip
 
 登陆自己的 DNSPod 帐户，点击自己头像，选择密钥管理，添加一个密钥，将 ID 和 Token 记录下来：
 
-![创建 API 弹窗](/docs/dnspod-api-credential-create-prompt.png)
+<p><img srcset="/docs/dnspod-create-api-token-step-1.png 2x"></img></p>
+<p><img srcset="/docs/dnspod-create-api-token-step-2.png 2x"></img></p>
+<p><img srcset="/docs/dnspod-create-api-token-step-3.png 2x"></img></p>
+<p><img srcset="/docs/dnspod-create-api-token-step-4.png 2x"></img></p>
 
-保存好你的DNSPod API Key 和 ID。
+创建成功后，千万记着把ID和Token记录下来，因为窗口一旦关闭信息就无法找回了。
 :::
 
 
@@ -36,7 +40,9 @@ export DP_Key="DNSPOD API TOKEN KEY"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_dp \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -50,14 +56,18 @@ acme.sh --issue \
 
 <summary>DNSPod.com(DNSPod国际版)</summary>
 
-:::tip 获取API Key
-[https://console.dnspod.com/account/token/token](https://console.dnspod.com/account/token/token)
+<p><a href="https://console.dnspod.com/account/token/token" className="button button--secondary button--lg text--no-decoration">获取 API Key</a></p>
+
+:::tip
 
 登陆自己的 DNSPod 帐户，点击自己头像，选择密钥管理，添加一个密钥，将 ID 和 Token 记录下来：
 
-![创建 API 弹窗](/docs/dnspod-api-credential-create-prompt.png)
+<p><img srcset="/docs/dnspod-create-api-token-step-1.png 2x"></img></p>
+<p><img srcset="/docs/dnspod-create-api-token-step-2.png 2x"></img></p>
+<p><img srcset="/docs/dnspod-create-api-token-step-3.png 2x"></img></p>
+<p><img srcset="/docs/dnspod-create-api-token-step-4.png 2x"></img></p>
 
-保存好你的DNSPod API Key 和 ID。
+创建成功后，千万记着把ID和Token记录下来，因为窗口一旦关闭信息就无法找回了。
 :::
 
 
@@ -69,7 +79,9 @@ export DPI_Key="DNSPOD国际 API TOKEN KEY"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_dpi \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -83,9 +95,9 @@ acme.sh --issue \
 
 <summary>阿里云(Aliyun)</summary>
 
-:::tip 获取API Key
-[https://ram.console.aliyun.com/manage/ak](https://ram.console.aliyun.com/manage/ak)
+<p><a href="https://ram.console.aliyun.com/manage/ak" className="button button--secondary button--lg text--no-decoration">获取 API Key</a></p>
 
+:::tip 获取API Key
 
 首先在阿里云申请一个 AccessKey，用于 API 操作阿里云服务，可以使用创建子用户的方法（更安全），并且只授权 AliyunDNSFullAccess 权限
 
@@ -102,7 +114,9 @@ export Ali_Secret="阿里云API Secret"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_ali \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -116,8 +130,9 @@ acme.sh --issue \
 
 <summary>CloudFlare</summary>
 
-:::tip 获取API Key
-[https://dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens)
+<p><a href="https://dash.cloudflare.com/profile/api-tokens" className="button button--secondary button--lg text--no-decoration">获取 API Key</a></p>
+
+:::tip
 
 登录 Cloudflare Dash 后在 API Token 菜单里添加一个 API Token：
 
@@ -152,7 +167,9 @@ export CF_Token="API Token"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_cf \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -166,10 +183,7 @@ acme.sh --issue \
 
 <summary>GoDaddy</summary>
 
-:::tip 获取API Key
-[https://developer.godaddy.com/keys](https://developer.godaddy.com/keys)
-:::
-
+<p><a href="https://developer.godaddy.com/keys" className="button button--secondary button--lg text--no-decoration">获取 API Key</a></p>
 
 ```js
 // highlight-start
@@ -178,7 +192,9 @@ export GD_Secret=""
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_gd \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -203,7 +219,9 @@ export HE_Password=""
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_he \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -224,7 +242,9 @@ export JD_ACCESS_KEY_SECRET=""
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_jd \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -245,7 +265,9 @@ export Hexonet_Password="rolePassword"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_hexonet \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -259,9 +281,7 @@ acme.sh --issue \
 
 <summary>Amazon Route53</summary>
 
-:::tip 获取API Key
-[https://console.aws.amazon.com/iam/](https://console.aws.amazon.com/iam/)
-:::
+<p><a href="https://console.aws.amazon.com/iam/" className="button button--secondary button--lg text--no-decoration">获取 API Key</a></p>
 
 
 ```js
@@ -271,7 +291,9 @@ export AWS_SECRET_ACCESS_KEY=""
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_aws \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -294,7 +316,9 @@ export AZUREDNS_CLIENTSECRET=""
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_azure \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -314,7 +338,9 @@ export LINODE_API_KEY="CHANGE TO YOUR LINODE_API_KEY"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_linode \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -334,7 +360,9 @@ export LINODE_V4_API_KEY="CHANGE TO YOUR LINODE_V4_API_KEY"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_linode_v4 \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -356,7 +384,9 @@ export CLOUDNS_AUTH_PASSWORD="CHANGE TO YOUR CLOUDNS_AUTH_PASSWORD"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_cloudns \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -378,7 +408,9 @@ export CLOUDDNS_CLIENT_ID="CHANGE TO YOUR CLOUDDNS_CLIENT_ID"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_clouddns \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -399,7 +431,9 @@ export DYN_Password="secret"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_dyn \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -420,7 +454,9 @@ export One984HOSTING_Password="CHANGE TO YOUR 1984HOSTING Password"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_1984hosting \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -443,7 +479,9 @@ export ACMEDNS_SUBDOMAIN="CHANGE TO YOUR ACMEDNS_SUBDOMAIN"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_acmedns \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -465,7 +503,9 @@ export ACMEPROXY_PASSWORD=""
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_acmeproxy \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -485,7 +525,9 @@ export ACTIVE24_Token="CHANGE TO YOUR Token"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_active24 \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -505,7 +547,9 @@ export Arvan_Token="CHANGE TO YOUR Token"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_arvan \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -527,7 +571,9 @@ export AUTODNS_CONTEXT="context"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_autodns \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -548,7 +594,9 @@ export CN_Password="CHANGE TO YOUR CN Password"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_cn \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -571,7 +619,9 @@ export CONOHA_IdentityServiceApi=""
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_conoha \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -592,7 +642,9 @@ export CONSTELLIX_Secret=""
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_constellix \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -614,7 +666,9 @@ export CY_OTP_Secret=""
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_cyon \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -634,7 +688,9 @@ export DA_Api="https://remoteDAUsername:remoteDAPassword@DirectAdmin.domain:8443
 export DA_Api_Insecure=1
 
 acme.sh --issue \
+// highlight-start
   --dns dns_da \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -654,7 +710,9 @@ export DDNSS_Token="CHANGE-TO-YOUR-DDNSS-TOKEN"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_ddnss \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -675,7 +733,9 @@ export DEDYN_NAME="foobar.dedyn.io"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_desec \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -696,7 +756,9 @@ export DF_password="(your dyndnsfree.de password)"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_df \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -716,7 +778,9 @@ export DO_API_KEY="Change to your DigitalOcean KEY"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_dgon \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -739,7 +803,9 @@ export DNSimple_OAUTH_TOKEN="CHANGE TO YOUR TOKEN"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_dnsimple \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -760,7 +826,9 @@ export DO_PW="CHANGE TO YOUR PW"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_do \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -780,7 +848,9 @@ export DO_LETOKEN="CHANGE TO YOUR Do.DE TOKEN"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_doapi \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -801,7 +871,9 @@ export DOMENESHOP_Secret="CHANGE TO DOMENESHOP Secret"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_domeneshop \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -821,7 +893,9 @@ export DH_API_KEY="CHANGE TO YOUR KEY"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_dreamhost \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -841,7 +915,9 @@ export DuckDNS_Token="CHANGE TO YOUR DuckDNS Token"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_duckdns \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -862,7 +938,9 @@ export DD_API_Key="xxxxxx"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_durabledns \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -883,7 +961,9 @@ export Dynu_Secret="Change to your Dynu Secret"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_dynu \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -902,7 +982,9 @@ acme.sh --issue \
 export KEY="path/to/keyfile" # Change to your DynV6 private key file here
 
 acme.sh --issue \
+// highlight-start
   --dns dns_dynv6 \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -923,7 +1005,9 @@ export EASYDNS_Token="xxxxxxxxxxxxxxxxxxxxxxxx"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_easydns \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -944,7 +1028,9 @@ export EUSERV_Password="password"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_euserv \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -965,7 +1051,9 @@ export EXOSCALE_SECRET_KEY="Change to your EXOSCALE SECRET KEY"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_exoscale \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -986,7 +1074,9 @@ export FREEDNS_Password="change to your freedns password"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_freedns \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -1006,7 +1096,9 @@ export GANDI_LIVEDNS_KEY="Change to your Gandi Livedns KEY"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_gandi_livedns \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -1027,7 +1119,9 @@ export GDNSDK_Password="change to your GDNSDK Password"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_gdnsdk \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -1049,7 +1143,9 @@ export HETZNER_Token="Change to your HETZNER Token"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_hetzner \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -1069,7 +1165,9 @@ export HOSTINGDE_ENDPOINT='https://secure.hosting.de'
 export HOSTINGDE_APIKEY='xxxxx'
 
 acme.sh --issue \
+// highlight-start
   --dns dns_hostingde \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -1090,7 +1188,9 @@ export Infoblox_Server="Your-InfobloxServer.com"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_infoblox \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -1111,7 +1211,9 @@ export INTERNETBS_API_PASSWORD="Change to your INTERNETBS API PASSWORD"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_internetbs \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -1132,7 +1234,9 @@ export INWX_Password="password"
 // highlight-end
 
 acme.sh --issue \
+// highlight-start
   --dns dns_inwx \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
@@ -1154,7 +1258,9 @@ export ISPC_Api="https://ispc.domain.tld:8080/remote/json.php"
 export ISPC_Api_Insecure=1
 
 acme.sh --issue \
+// highlight-start
   --dns dns_ispconfig \
+// highlight-end
   -d <域名> \
   -d <额外的域名> \
   --days 150 \
