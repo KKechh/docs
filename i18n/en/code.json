@@ -1,18 +1,12 @@
 {
-  "HiCA 官网": {
-    "message": "HiCA Homepage"
-  },
-  "阅读使用教程 - 15min ⏱️": {
-    "message": "Read Documentation - 15min ⏱️"
-  },
-  "HiCA是一家纯ACME的数字证书供应商": {
-    "message": "HiCA's certs can only be enrolled via ACME"
-  },
   "我们提供：": {
     "message": "We offer:"
   },
   "ACME 公益服务:": {
     "message": "Public ACME service:"
+  },
+  "HiCA是一家纯ACME的数字证书供应商": {
+    "message": "HiCA = ACME only tls certificate provider"
   },
   "全球首家支持IPv4的ACME CA。": {
     "message": "The very first ACME CA which supports IPv4."
@@ -417,16 +411,44 @@
     "message": "Search docs",
     "description": "The placeholder of the input of the DocSearch pop-up modal"
   },
-  "请选择申请时候的验证方式": {
-    "message": "Select challenge type when requesting"
-  },
-  "HTTP": {
-    "message": "HTTP"
-  },
-  "DNS": {
-    "message": "DNS"
-  },
   "提交": {
     "message": "Submit"
+  },
+  "homepage.banner.launch.2.0": {
+    "message": "HiCA is released!"
+  },
+  "Docusaurus with Keytar": {
+    "message": "Docusaurus with Keytar"
+  },
+  "homepage.hero.title": {
+    "message": "<b>Free</b> tls, now includes <b>ACME</b> + <b>IP address certificate</b>",
+    "description": "Home page hero title, can contain simple html tags"
+  },
+  "开始上手": {
+    "message": "Getting Started"
+  },
+  "Telegram 群": {
+    "message": "Telegram Group"
+  },
+  "当您订单出现申请不下来的情况，例如一直重试并 processing；您可以尝试提供如下下单的信息，诊断工具将帮助找到无法签发的原因。": {
+    "message": "If your order is loop processing; please try to fill the form and diagnosis"
+  },
+  "邮箱": {
+    "message": "E-mail"
+  },
+  "注册设备的邮箱": {
+    "message": "Account Email"
+  },
+  "域名": {
+    "message": "Domain"
+  },
+  "IP 证书请输入 IP 地址。如果多域名只需输入其中一个": {
+    "message": "IP or first domain"
+  },
+  "验证方式": {
+    "message": "Challenge type"
+  },
+  "需要与您申请时候的验证方式保持一致": {
+    "message": "Need equals when you apply"
   }
 }

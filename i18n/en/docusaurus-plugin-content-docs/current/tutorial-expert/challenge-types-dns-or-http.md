@@ -7,17 +7,21 @@ sidebar_position: 1
 What's validation for your domains(FQDN), and what type should i use between `dns-01` and `http-01`?
 
 :::tip
-HiCA does only support `dns-01`、`http-01` challenge.
+HiCA supports: 
+- :white_check_mark: `dns-01`
+- :white_check_mark: `http-01`.
+:::
 
-Doesn't support
-- `tls-alpn-01` challenge.
+:::caution
+HiCA doesn't support:
+- :x: `tls-alpn-01`.
   
-And those `acme.sh` configure modes：
-- [`DNS alias mode`](https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode),
-- [`DNS manual mode`](https://github.com/acmesh-official/acme.sh/wiki/DNS-manual-mode),
-- [`Stateless mode`](https://github.com/acmesh-official/acme.sh/wiki/Stateless-Mode),
-- `Standalone mode`,
-- `Standalone tls-alpn mode`.
+And those challenge configure methods:
+- :x: [**`DNS alias mode`**](https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode), a.k.a `_acme-challenge.`'s CNAME delegation; due to potential risky about violation of patent ([ACME centralized management system and load balancing method thereof](https://patentimages.storage.googleapis.com/6d/64/3f/b5f66e055c6717/US11316703.pdf)), we disabled our service's the CNAME delegation method.
+- :x: [**`DNS manual mode`**](https://github.com/acmesh-official/acme.sh/wiki/DNS-manual-mode),
+- :x: [**`Stateless mode`**](https://github.com/acmesh-official/acme.sh/wiki/Stateless-Mode),
+- :x: **`Standalone mode`**,
+- :x: **`Standalone tls-alpn mode`**.
 :::
 
 ## What is validation of FQDN, and why?

@@ -5,11 +5,11 @@
   },
   "item.label.教程": {
     "message": "Tutorials",
-    "description": "Navbar item with label Tutorials"
+    "description": "Navbar item with label 教程"
   },
   "item.label.博客": {
     "message": "Blog",
-    "description": "Navbar item with label Blog"
+    "description": "Navbar item with label 博客"
   },
   "item.label.Github/HiCA": {
     "message": "Github/HiCA",
@@ -21,6 +21,6 @@
   },
   "item.label.故障诊断": {
     "message": "Diagnosis",
-    "description": "Navbar item with label Diagnosis"
+    "description": "Navbar item with label 故障诊断"
   }
 }

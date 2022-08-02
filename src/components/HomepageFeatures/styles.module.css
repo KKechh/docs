@@ -7,27 +7,18 @@
 
 @media only screen and (min-width: 960px) {
   .features {
-    display: flex;
-    align-items: center;
     padding: 3rem 5rem;
-    width: 100%;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .features {
-    display: flex;
-    align-items: center;
     padding: 4rem 20rem;
-    width: 100%;
   }
 }
 
 @media only screen and (min-width: 2040px) {
   .features {
-    display: flex;
-    align-items: center;
     padding: 5rem 40rem;
-    width: 100%;
   }
 }

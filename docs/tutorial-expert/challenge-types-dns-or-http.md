@@ -7,17 +7,19 @@ sidebar_position: 1
 什么是 FQDN 验证? 如何选择验证类型? `dns-01` 还是 `http-01` ?
 
 :::tip 提示
-HiCA 只支持 `dns-01` 和 `http-01`。
+HiCA 支持如下验证方式：
+- :white_check_mark: `dns-01`
+- :white_check_mark: `http-01`
+:::
 
-不支持如下验证方式：
-- `tls-alpn-01`，
-  
-以及如下 `acme.sh` 的配置方式：
-- [`DNS alias mode`](https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode)，
-- [`DNS manual mode`](https://github.com/acmesh-official/acme.sh/wiki/DNS-manual-mode)，
-- [`Stateless mode`](https://github.com/acmesh-official/acme.sh/wiki/Stateless-Mode)，
-- `Standalone mode`，
-- `Standalone tls-alpn mode`。
+:::caution  警告
+HiCA 不支持如下验证方式：
+- :x: `tls-alpn-01`，
+-  :x: [**`DNS alias mode`**](https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode)：也就是通过 CNAME 委托 `_acme-challenge.` 域名的模式，考虑到专利侵权的原因(《[一种ACME集中管理系统及其负载均衡方法](https://qxb-img-osscache.qixin.com/patents_pdf_new/6e5447c9df704525ca8dad1f3174149a.pdf)》)，出于可能侵权的顾虑，我们不支持这种方式申请我们的证书，
+-  :x: [**`DNS manual mode`**](https://github.com/acmesh-official/acme.sh/wiki/DNS-manual-mode)：也就是 `acme.sh --issue -d <域名> -d <额外域名> --dns --yes-I-know-dns-manual-mode-enough-go-ahead-please` 类型，
+-  :x: [**`Stateless mode`**](https://github.com/acmesh-official/acme.sh/wiki/Stateless-Mode)
+-  :x: **`Standalone mode`**，
+-  :x: **`Standalone tls-alpn mode`**。
 :::
 
 ## 什么是 FQDN 验证，为什么要验证？
