@@ -4,10 +4,6 @@ sidebar_position: 4
 
 # Certificate Renewal
 
----
-sidebar_position: 4
----
-
 :::note
 The tutorial below, shall be concerned if only you requested certificate by `--dns` mode.
 

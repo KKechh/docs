@@ -1,0 +1,9 @@
+{
+  "label": "DNS 验证",
+  "position": 2,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "配置DNS验证的教程。请注意，通配符证书必须使用DNS验证，无法使用HTTP验证。"
+  }
+}

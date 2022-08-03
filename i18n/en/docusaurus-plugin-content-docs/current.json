@@ -17,10 +17,26 @@
   },
   "sidebar.tutorialSidebar.category.证书签发管理.link.generated-index.description": {
     "message": "Certificate issuance, renewal and revocation",
-    "description": "The generated-index page description for category 证书签发管理 in sidebar tutorialSidebar"
+    "description": "The generated-index page description for category certificate management in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.开始上手.link.generated-index.title": {
     "message": "Getting started",
     "description": "The generated-index page title for category Getting Started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.域名验证": {
+    "message": "Domain challenge",
+    "description": "The label for category domain challenge in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.域名验证.link.generated-index.description": {
+    "message": "How to complete domains' challenges ACME requires?",
+    "description": "The generated-index page description for category 域名验证 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.DNS 验证": {
+    "message": "DNS Challenge",
+    "description": "The label for category DNS challenge in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.DNS 验证.link.generated-index.description": {
+    "message": "Please be aware, wildcard domain can only be validated by dns challenge.",
+    "description": "The generated-index page description for category DNS challenge in sidebar tutorialSidebar"
   }
 }

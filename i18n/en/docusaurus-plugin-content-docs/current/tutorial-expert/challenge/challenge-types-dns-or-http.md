@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 ---
-
 # FQDN Validation
 
 What's validation for your domains(FQDN), and what type should i use between `dns-01` and `http-01`?

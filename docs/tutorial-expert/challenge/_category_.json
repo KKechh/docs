@@ -1,0 +1,9 @@
+{
+  "label": "域名验证",
+  "position": 1,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "如何完成 ACME 要求的域名验证?"
+  }
+}

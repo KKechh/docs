@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Install ACME.sh
+# ACME.sh installation
 
 :::danger Important notice
 Due to our [TOS](/EULA), you need and only could access our service via `ACME.sh`.

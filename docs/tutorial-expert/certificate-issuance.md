@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
 
 ### 签发命令
 
-> 高亮的地方（**包括 `--dns dns_dp`**） 表示 DNS API 的凭据，您需要按照 [配置我的 DNS 模块 Key](configuration-your-dns-provider.md) 来设置）
+> 高亮的地方（**包括 `--dns dns_dp`**） 表示 DNS API 的凭据，您需要按照 [DNS 验证](/docs/category/dns-验证) 来设置）
 
 ```js
 // highlight-start
