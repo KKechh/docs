@@ -91,7 +91,7 @@ export DP_Key=<你的DNSPod的API Key>
 
 </details>
 
-Please refer to [Configure My DNS Module Key](configuration-your-dns-provider.md) for the advanced DNS verification tutorial.
+Please refer to [DNS Challenge](/docs/category/dns-验证) for the advanced DNS verification tutorial.
 
 
 ### **File Challenge (HTTP or HTTPS Validation)**:

@@ -94,7 +94,7 @@ export DP_Key=<你的DNSPod的API Key>
 
 </details>
 
-DNS 验证进阶教程请见 [配置我的 DNS 模块 Key](configuration-your-dns-provider.md)。
+DNS 验证进阶教程请见 [DNS 验证](/docs/category/dns-验证)。
 
 
 ### **文件验证（HTTP 验证或 HTTPS验证）**: 
