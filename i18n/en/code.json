@@ -6,7 +6,7 @@
     "message": "Public ACME service:"
   },
   "HiCA是一家纯ACME的数字证书供应商": {
-    "message": "HiCA = ACME only tls certificate provider"
+    "message": "HiCA is a tls certificate provider based on ACME, purely"
   },
   "全球首家支持IPv4的ACME CA。": {
     "message": "The very first ACME CA which supports IPv4."
@@ -21,7 +21,7 @@
     "message": "TLS premnium ACME certificates's retail and wholesale."
   },
   "全球首家公开表示不提供且禁止代理商提供任何形式 Web UI、 桌面 UI 等形式申请界面，还能卖得出去、收得回钱的 CA。": {
-    "message": "The 1st CA DOES NOT offer web, desktop, APP UI but can sells & accepts payments only by ACME."
+    "message": "The 1st CA offers NO web, desktop, APP UI but can sells & accepts payments by ACME only."
   },
   "全球第三、全国第一家支持 ACME 形式代理、贴牌商业证书的 CA。": {
     "message": "The world's 3rd, chinese 1st CA offers subordinate CA or tls reselling which supports ACME"
@@ -421,7 +421,7 @@
     "message": "Docusaurus with Keytar"
   },
   "homepage.hero.title": {
-    "message": "<b>Free</b> tls, now includes <b>ACME</b> + <b>IP address certificate</b>",
+    "message": "<b>free</b> ssl, with <b>acme</b> + <b>wildcard</b> + <b>ucc</b> + <b>IP</b> + <b>.onion</b> supported",
     "description": "Home page hero title, can contain simple html tags"
   },
   "开始上手": {
@@ -443,12 +443,18 @@
     "message": "Domain"
   },
   "IP 证书请输入 IP 地址。如果多域名只需输入其中一个": {
-    "message": "IP or first domain"
+    "message": "First domain, or the IP address you request"
   },
   "验证方式": {
     "message": "Challenge type"
   },
   "需要与您申请时候的验证方式保持一致": {
     "message": "Need equals when you apply"
+  },
+  "查看“注册设备”教程": {
+    "message": "Tuturial of “Account Registration”"
+  },
+  "请选择验证方式": {
+    "message": "Select a challenge type"
   }
 }

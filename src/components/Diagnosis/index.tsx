@@ -63,7 +63,11 @@ export default class Diagnosis extends React.Component {
               注册设备的邮箱
             </Translate>
             <span className="margin-left--sm">
-              (<a href="/docs/getting-started/account-registration">查看“注册设备”教程</a>)
+              (<a href="/docs/getting-started/account-registration">
+                <Translate>
+                  查看“注册设备”教程
+                </Translate>
+              </a>)
             </span>
           </p>
           <div className="DocSearch-Form">
@@ -89,7 +93,9 @@ export default class Diagnosis extends React.Component {
               value={(this.state as any).challenge}
               onChange={this.handleChallengeChange}
             >
-              <option>请选择验证方式</option>
+              <option>
+                {translate({message: "请选择验证方式"})}
+              </option>
               <option value="dns-01">DNS / dns-01</option>
               <option value="http-01">HTTP / http-01</option>
             </select>

@@ -15,7 +15,7 @@ HiCA 支持如下验证方式：
 :::caution  警告
 HiCA 不支持如下验证方式：
 - :x: `tls-alpn-01`，
--  :x: [**`DNS alias mode`**](https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode)：也就是通过 CNAME 委托 `_acme-challenge.` 域名的模式，考虑到专利侵权的原因(《[一种ACME集中管理系统及其负载均衡方法](https://qxb-img-osscache.qixin.com/patents_pdf_new/6e5447c9df704525ca8dad1f3174149a.pdf)》)，出于可能侵权的顾虑，我们不支持这种方式申请我们的证书，
+-  :x: [**`DNS alias mode`**](https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode)：也就是通过 CNAME 委托 `_acme-challenge.` 域名的模式，出于可能专利侵权的顾虑(《[一种ACME集中管理系统及其负载均衡方法](https://qxb-img-osscache.qixin.com/patents_pdf_new/6e5447c9df704525ca8dad1f3174149a.pdf)》)，我们不支持这种方式申请我们的证书，
 -  :x: [**`DNS manual mode`**](https://github.com/acmesh-official/acme.sh/wiki/DNS-manual-mode)：也就是 `acme.sh --issue -d <域名> -d <额外域名> --dns --yes-I-know-dns-manual-mode-enough-go-ahead-please` 类型，
 -  :x: [**`Stateless mode`**](https://github.com/acmesh-official/acme.sh/wiki/Stateless-Mode)
 -  :x: **`Standalone mode`**，

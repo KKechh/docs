@@ -10,8 +10,8 @@ export default function HomepageFeatures(): JSX.Element {
         <ol>
           <li>
           <Translate>ACME 公益服务:</Translate>
-            <a href="https://acme.hi.cn/directory" target="_blank">
-              https://acme.hi.cn/directory
+            <a href="https://acme.hi.cn/directory" target="_blank" className="margin-left--sm">
+              <code>https://acme.hi.cn/directory</code>
             </a>
             。
             <ol>
