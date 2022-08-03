@@ -20,7 +20,7 @@ The first input domain will become certificate's Common Name (CN). so we suggest
 
 ### Issuance of Certificate
 
-> Highlight **includes `--dns dns_dp`**）were the DNS API credentials. See how to configure your [DNS Module and DNS Key](configuration-your-dns-provider.md).
+> Highlight **includes `--dns dns_dp`**）were the DNS API credentials. See how to configure your [DNS Challenge](/docs/category/dns-验证).
 
 ```js
 // highlight-start
