@@ -84,13 +84,13 @@ HiCA is focused on “Browserless TLS distribution” solution research + campai
 
 :::info **These are certificate limitations (we may offer premnium subscriptions later)**
 
-- Does not support more than 10 sans;
-- Does not support more than one wildcard domain name, but you can request `*.` + `@.` in one certificate;
-- Does not support multiple IP address in one certificate;
-- Does not support mixed wildcard domains + normal domains + IP address;
-- Does not support IDN domain names;
-- Does not support `.ru`、`.by`、`.su` suffixes (due to CAs `DigiCert`、`Sectigo`、`Certum`'s regulation)；
-- IPv6 、`.onion` only support 90 days(due to CAs' limitations）；
+- Payment required to request more than 10 sans;
+- Payment required to request more than 1 wildcard domain name, but `*.` + `@.` is for free;
+- Payment required to request multiple IP address in one certificate;
+- Payment required to request mixed wildcard domains + normal domains + IP address;
+- Payment required to request IDN domain names;
+- Does not support (Purchase included) `.ru`、`.by`、`.su` suffixes (due to CAs `DigiCert`、`Sectigo`、`Certum`'s regulation)；
+- IPv6 、`.onion` only support 90 days(due to CAs' limitations, Purchase included)）；
 
 :::
 

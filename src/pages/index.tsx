@@ -16,11 +16,11 @@ function TopBanner() {
       <div className={styles.topBannerTitle}>
         {"🎉\xa0"}
         <Link
-          to="/blog/Hello-HiCA"
+          to="/blog/2022/07/23/hello-hica"
           className={styles.topBannerTitleText}
         >
           <Translate id="homepage.banner.launch.2.0">
-            HiCA 发布了!
+            你好，HiCA！
           </Translate>
         </Link>
         {"\xa0🥳"}
@@ -66,9 +66,8 @@ function HeroBanner() {
               __html: translate({
                 id: "homepage.hero.title",
                 message:
-                  "<b>免费</b> SSL 证书，现在可以支持 <b>ACME</b> 以及 <b>IP 地址</b>了",
-                description:
-                  "Home page hero title, can contain simple html tags",
+                  "<b>免费</b>SSL, 180天, +<b>ACME</b> +<b>通配符</b> +<b>多域名</b> +<b>IP</b> +<b>.onion</b>...",
+                description: "",
               }),
             }}
           />

@@ -6,7 +6,7 @@
     "message": "Public ACME service:"
   },
   "HiCA是一家纯ACME的数字证书供应商": {
-    "message": "HiCA is a tls certificate provider based on ACME, purely"
+    "message": "HiCA is a pure ACME tls certificate authority(CA)"
   },
   "全球首家支持IPv4的ACME CA。": {
     "message": "The very first ACME CA which supports IPv4."
@@ -415,13 +415,10 @@
     "message": "Submit"
   },
   "homepage.banner.launch.2.0": {
-    "message": "HiCA is released!"
-  },
-  "Docusaurus with Keytar": {
-    "message": "Docusaurus with Keytar"
+    "message": "Hello, HiCA!"
   },
   "homepage.hero.title": {
-    "message": "<b>free</b> ssl, with <b>acme</b> + <b>wildcard</b> + <b>ucc</b> + <b>IP</b> + <b>.onion</b> supported",
+    "message": "<b>free</b> ssl, +<b>ACME</b> +<b>wildcard</b> +<b>UCC</b> +<b>IP</b> +<b>.onion</b> +<b>180 days</b>...",
     "description": "Home page hero title, can contain simple html tags"
   },
   "开始上手": {

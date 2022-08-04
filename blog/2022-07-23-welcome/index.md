@@ -1,6 +1,6 @@
 ---
-slug: Hello-HiCA
-title: 你好世界。你好 HiCA！
+slug: /2022/07/23/hello-hica
+title: 你好, HiCA！
 authors: [sue]
 tags: [HiCA, ACME, 免费证书, 免费SSL, 免费通配符SSL]
 ---

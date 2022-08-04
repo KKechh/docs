@@ -1,6 +1,6 @@
 ---
-slug: Hello-HiCA
-title:  Hello world, Hello HiCA！
+slug: /2022/07/23/hello-hica
+title: Hello, HiCA！
 authors: [sue]
 tags: [HiCA, ACME, free ssl certificate, free ssl, free wildcard ssl]
 ---
