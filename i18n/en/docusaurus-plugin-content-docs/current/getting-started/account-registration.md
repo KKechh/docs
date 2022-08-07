@@ -49,6 +49,8 @@ it means registration is successful.
     ```
     **Reason:**
     Because the `example.com` and etc domains reserved addresseses, which HiCA doesn't accept registration from those.
+
+    If the problem persists with the real email, we recommend you to delete directory `~/.acme.sh/ca/acme.hi.cn/directory` and check is there any email in `~/.acme.sh/account.conf`, if so, please delete the line. Then you can try again.
     
     **Solution:**
     Try your real email address.

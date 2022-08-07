@@ -52,4 +52,6 @@ acme.sh --register-account --accountemail \
     **解决方式：**
     请使用您的真实邮箱。
 
+    如果使用真实邮箱后，问题仍然存在，我们推荐您手工删除 `~/.acme.sh/ca/acme.hi.cn/directory` 文件夹，并检查 `~/.acme.sh/account.conf` 是否存在邮箱，如果有删除对应那一行，然后再重试。
+
 2. 您**不需要**每次申请都执行设备注册，只需在 `acme.sh` 安装成功后**执行成功一次**即可。
