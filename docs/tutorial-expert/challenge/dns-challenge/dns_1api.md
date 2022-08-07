@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 52
 slug: /tutorial-expert/challenge/dns-challenge/dns_hexonet.sh
 ---
 
