@@ -114,7 +114,7 @@ ACME does not support `HTTPS` authentication (:443), only `HTTP` (:80).
 
 #### shortcoming:
    - If your ISP blocks port 80, the verification will not work properly (this is more common in residential ISPs and some domestic computer rooms that block 80 by default).
-   - We do not allow you to use this authentication method to issue wildcard certificates.
+   - We do not allow you to use this challenge type to issue wildcard certificates.
    - If you have multiple web servers, you must ensure that the file is available on all of them.
 
 </details>
@@ -160,14 +160,14 @@ Select this verification, the CA will send an email to the selected mailbox, fil
 
 ### Summarize
 
-| Authentication Method | ACME Support | HiCA Support |
+| challenge type | ACME Support | HiCA Support |
 | ------------ | ------------- | --------- |
 | DNS Verification | `dns-01` | ✔️ |
 | File Authentication | `http-01` | ✔️ |
 | TLS ALPN Authentication | `tls-alpn-01` | ❌ |
 | Email Verification | ❌ | ❌ |
 
-## Which authentication method should I choose?
+## Which challenge type should I choose?
 
-You should first evaluate whether the site you are applying for SSL includes wildcard assets, and if so, you should consider the `dns-01` authentication method.
-If not included, the `http-01` authentication method should be given priority; if the server port 80 is blocked, the `dns-01` authentication method should be considered.
+You should first evaluate whether the site you are applying for SSL includes wildcard assets, and if so, you should consider the `dns-01` challenge type.
+If not included, the `http-01` challenge type should be given priority; if the server port 80 is blocked, the `dns-01` challenge type should be considered.
