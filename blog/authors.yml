@@ -3,3 +3,9 @@ sue:
   title: 创始人 from 公钥认证服务（重庆）有限公司
   url: https://www1.hi.cn
   image_url: /blog/authors-avatar/sue.png
+
+bruce:
+  name: 蓝小灰
+  title: 技术总监 from 公钥认证服务（重庆）有限公司
+  url: https://github.com/xiaohuilam
+  image_url: /blog/authors-avatar/xiaohuilam.jpg
