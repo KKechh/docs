@@ -90,6 +90,16 @@ HiCA 专注于提供 “Browserless TLS distribution” 方案研究 + 推广（
 - (哪怕付费也如此) 不支持 `.ru`、`.by`、`.su` 域名（合作厂家 `DigiCert`、`Sectigo`、`Certum` 对俄罗斯、白俄罗斯禁运）；
 - IPv6 、`.onion` 有效期90天（CA限制，哪怕付费也如此）；
 
+目前 ECDSA 支持以下曲线算法：
+  - `secp256r1`: 使用 `acme.sh --issue -d <您的域名们...> --keylength ec-256 --server https://acme.hi.cn/directory`；
+  - `secp384r1`: 使用 `acme.sh --issue -d <您的域名们...> --keylength ec-384 --server https://acme.hi.cn/directory`；
+  - 其他曲线暂不支持，例如 `secp521r1`。
+
+目前 RSA 支持以下长度：
+  - `rsa 2048`: 默认不带 `--keylength` 或者使用 `acme.sh --issue -d <您的域名们...> --keylength 2048 --server https://acme.hi.cn/directory`；
+  - `rsa 4096`: 使用 `acme.sh --issue -d <您的域名们...> --keylength 4096 --server https://acme.hi.cn/directory`；
+
+注意，只有 rsa 2048 是免费的，其他 keylength / curve 的需求是付费的。
 :::
 
 :::note 以下是**软限制**，只会阻止新下单操作**不会屏蔽**

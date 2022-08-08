@@ -11,6 +11,7 @@ Regarding to our free certificate description, if you try to access the features
 - **More than ** 1 Wildcard;
 - **More than** 10 Multiple domains；
 - Wildcard certificate add UCC domain;
+- RSA 4096 bits;
 - ECC Key format;
 - **Multiple** IP Addresses(IPv4 and IPv6);
 

@@ -124,7 +124,7 @@ SH7jOvH+p7k8CbrYFXFvZOGd5T8axCknS9xSSlfO602wiRR7
 
 :::tip 常见问题
 
-- 签发ECC证书：在命令行最后添加 `--keylength ec-256`（HiCA 暂时不支持，预计 8 月将支持）；
+- 签发ECC证书：在命令行最后添加 `--keylength ec-256`、`--keylength ec-384`（HiCA 的 ECC 证书是收费的，使用、价格介绍请见 [VIP 订阅](premium-subscription.md)）；
 - 对使用 DNS 验证的证书，不设置 DNS 模块的 ApiID 和 Key，将无法签发成功。
 :::
 

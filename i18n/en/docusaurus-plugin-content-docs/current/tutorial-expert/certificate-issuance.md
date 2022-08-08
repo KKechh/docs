@@ -124,7 +124,7 @@ SH7jOvH+p7k8CbrYFXFvZOGd5T8axCknS9xSSlfO602wiRR7
 
 :::tip FAQ
 
-- ECC: append `--keylength ec-256` after your command (temporary does not support, until Oct ends);
+- ECC: append `--keylength ec-256`, `--keylength ec-384` (the ECC presents by HiCA is a paid feature, tutorial and pricing please read [Premium Subscription](premium-subscription.md));
 - For `dns-01` challenge, it won't success if you skipped DNS ApiID + Key setup.
 :::
 
