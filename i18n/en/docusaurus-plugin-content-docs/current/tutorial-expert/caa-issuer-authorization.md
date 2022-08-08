@@ -10,7 +10,7 @@ As for the purpose of this tutorial, we will not recommend to set CAA without an
 
 :::caution
 
-- Due to mechanism of CAA is based on DNS, you may modify the record after you apply it, so please do not be panic to wait its effecting.
+- Due to mechanism of CAA is based on DNS, after you modified CAA record, you apply but still same errors alert, please don't panic because your CAA DNS update request wasn't effective yet.
 - As the same DNS TTL & Cache reason, we also do not recommend to set CAA for newbie.
 
 :::
