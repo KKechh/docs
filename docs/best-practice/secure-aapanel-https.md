@@ -51,6 +51,9 @@ fi
 /bin/cp -rf /root/.acme.sh/$ip/$ip.key /www/server/panel/ssl/privateKey.pem && \
 /bin/cp -rf /root/.acme.sh/$ip/fullchain.cer /www/server/panel/ssl/certificate.pem && \
 echo "True" > /www/server/panel/data/ssl.pl && \
+bt reload && \
+/bin/cp -rf /root/.acme.sh/$ip/$ip.key /www/server/panel/vhost/cert/$ip/privkey.pem && \
+/bin/cp -rf /root/.acme.sh/$ip/fullchain.cer /www/server/panel/vhost/cert/$ip/fullchain.pem && \
 bt reload
 ```
 

@@ -5,7 +5,7 @@ sidebar_position: 1
 # Enable SSL for AAPanel login
 
 :::caution
-This is a best practice for securing your AAPanel installation w/ IPv4. Currently no IPv6 tutorials.
+This is a best practice for securing your AAPanel installation w/ IPv4. And no IPv6 tutorials meantime.
 :::
 
 ## Prerequisites
@@ -27,6 +27,7 @@ If run script directly, it won't reinstall certificate before 180 days expiratio
 > - Certificate backup: `/www/server/panel/ssl/certificate.pem.bak` You may restore by remove the suffix `.bak` in the filename.
 
 #### script code
+
 ```bash
 email="my@example.com"
 ip=$(curl -s -4 ip.sb)
@@ -50,6 +51,9 @@ fi
 /bin/cp -rf /root/.acme.sh/$ip/$ip.key /www/server/panel/ssl/privateKey.pem && \
 /bin/cp -rf /root/.acme.sh/$ip/fullchain.cer /www/server/panel/ssl/certificate.pem && \
 echo "True" > /www/server/panel/data/ssl.pl && \
+bt reload && \
+/bin/cp -rf /root/.acme.sh/$ip/$ip.key /www/server/panel/vhost/cert/$ip/privkey.pem && \
+/bin/cp -rf /root/.acme.sh/$ip/fullchain.cer /www/server/panel/vhost/cert/$ip/fullchain.pem && \
 bt reload
 ```
 
