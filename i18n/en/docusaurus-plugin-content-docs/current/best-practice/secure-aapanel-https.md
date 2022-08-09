@@ -38,23 +38,37 @@ if [ -z "$webroot" ]; then
   exit 1
 fi
 
+export LE_WORKING_DIR=/root/.acme.sh
+
 /bin/cp -rf /www/server/panel/ssl/privateKey.pem /www/server/panel/ssl/privateKey.pem.bak
 /bin/cp -rf /www/server/panel/ssl/certificate.pem /www/server/panel/ssl/certificate.pem.bak
+/bin/cp -rf /www/server/panel/vhost/cert/$ip/privkey.pem /www/server/panel/vhost/cert/$ip/privkey.pem.bak
+/bin/cp -rf /www/server/panel/vhost/cert/$ip/fullchain.pem /www/server/panel/vhost/cert/$ip/fullchain.pem.bak
 
 /root/.acme.sh/acme.sh --register-account \
     --email $email \
     --server https://acme.hi.cn/directory && \
+    \
 /root/.acme.sh/acme.sh --issue \
     -d $ip --webroot $webroot \
     --server https://acme.hi.cn/directory \
     --force && \
+    \
+echo "Install cert for BTPanel" && \
 /bin/cp -rf /root/.acme.sh/$ip/$ip.key /www/server/panel/ssl/privateKey.pem && \
 /bin/cp -rf /root/.acme.sh/$ip/fullchain.cer /www/server/panel/ssl/certificate.pem && \
+    \
 echo "True" > /www/server/panel/data/ssl.pl && \
+    \
 bt reload && \
+    \
+echo "Install cert for site(If exists)" && \
 /bin/cp -rf /root/.acme.sh/$ip/$ip.key /www/server/panel/vhost/cert/$ip/privkey.pem && \
 /bin/cp -rf /root/.acme.sh/$ip/fullchain.cer /www/server/panel/vhost/cert/$ip/fullchain.pem && \
-bt reload
+    \
+bt reload && \
+    \
+echo "成功续期"
 ```
 
 after success, please refresh `https://<IP>:8888` to visit AAPanel via secure https.

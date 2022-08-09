@@ -38,23 +38,37 @@ if [ -z "$webroot" ]; then
   exit 1
 fi
 
+export LE_WORKING_DIR=/root/.acme.sh
+
 /bin/cp -rf /www/server/panel/ssl/privateKey.pem /www/server/panel/ssl/privateKey.pem.bak
 /bin/cp -rf /www/server/panel/ssl/certificate.pem /www/server/panel/ssl/certificate.pem.bak
+/bin/cp -rf /www/server/panel/vhost/cert/$ip/privkey.pem /www/server/panel/vhost/cert/$ip/privkey.pem.bak
+/bin/cp -rf /www/server/panel/vhost/cert/$ip/fullchain.pem /www/server/panel/vhost/cert/$ip/fullchain.pem.bak
 
 /root/.acme.sh/acme.sh --register-account \
     --email $email \
     --server https://acme.hi.cn/directory && \
+    \
 /root/.acme.sh/acme.sh --issue \
     -d $ip --webroot $webroot \
     --server https://acme.hi.cn/directory \
     --force && \
+    \
+echo "复制宝塔面板证书" && \
 /bin/cp -rf /root/.acme.sh/$ip/$ip.key /www/server/panel/ssl/privateKey.pem && \
 /bin/cp -rf /root/.acme.sh/$ip/fullchain.cer /www/server/panel/ssl/certificate.pem && \
+    \
 echo "True" > /www/server/panel/data/ssl.pl && \
+    \
 bt reload && \
+    \
+echo "安装站点证书（如有）" && \
 /bin/cp -rf /root/.acme.sh/$ip/$ip.key /www/server/panel/vhost/cert/$ip/privkey.pem && \
 /bin/cp -rf /root/.acme.sh/$ip/fullchain.cer /www/server/panel/vhost/cert/$ip/fullchain.pem && \
-bt reload
+    \
+bt reload && \
+    \
+echo "成功续期"
 ```
 
 成功后，可以刷新 `https://<你的IP>:8888` 即可通过 HTTPS 安全的访问宝塔面板。
