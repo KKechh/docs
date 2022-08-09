@@ -10,26 +10,29 @@ This is a best practice for securing your AAPanel installation w/ IPv4. Currentl
 
 ## Prerequisites
 
-Perform 1 option from the following:
-- **Individual IP site mode**: Create an IP site in AAPanel site management.
-- **Default server mode**: Set a default site in AAPanel site management.
+* **1**. First of first, please ensure you've got `acme.sh` installed. Otherwise, please read [ACME.sh installation](../getting-started/acme.sh-installation.md).
 
-Then
+* **2**. Perform 1 option from the following:
+  - **Individual IP site mode**: Create an IP site in AAPanel site management.
+  - **Default server mode**: Set a default site in AAPanel site management.
 
-Enable SSL for the site in AAPanel 8888 service, and set the certificate and key from any site's or choose self-signed. refresh `https://<IP>:8888`, ignore browser's certificate warning, continue to visit AAPanel.
+  Then
 
-<img srcset="../../docs/aapanel-enable-https-login.png 2x" />
+* **3**. Enable SSL for the site in AAPanel 8888 service, and set the certificate and key from any site's or choose self-signed. refresh `https://<IP>:8888`, ignore browser's certificate warning, continue to visit AAPanel.
+
+  <img srcset="../../docs/aapanel-enable-https-login.png 2x" />
 
 ## Script
 
-> Following files are backups for AAPanel's certificate, if `bt reload` errors, you may switch back.
-> - Private key backup: `/www/server/panel/ssl/privateKey.pem.bak`, You may restore by remove the suffix `.bak` in the filename.
-> - Certificate backup: `/www/server/panel/ssl/certificate.pem.bak` You may restore by remove the suffix `.bak` in the filename.
-
-If run script directly, it won't reinstall certificate before 180 days expiration. we recommend to run this script and set a auto-renewal job by tutorial "Cronjob".
+If run script directly, it won't reinstall certificate before 180 days expiration. we recommend to run this script and set a auto-renewal job by tutorial "[Cronjob](#cronjob)".
 
 **Don't forget to** change email to your real one!
 
+> In the script defined following filepaths are backups for AAPanel's certificate, if `bt reload` errors, you may switch back.
+> - Private key backup: `/www/server/panel/ssl/privateKey.pem.bak`, You may restore by remove the suffix `.bak` in the filename.
+> - Certificate backup: `/www/server/panel/ssl/certificate.pem.bak` You may restore by remove the suffix `.bak` in the filename.
+
+#### script code
 ```bash
 email="my@example.com"
 ip=$(curl -s -4 ip.sb)
@@ -54,7 +57,7 @@ after success, please refresh `https://<IP>:8888` to visit AAPanel via secure ht
 
 ## Cronjob
 
-You can create a cron job in AAPanel's "Cron" feature.
+You can create a cron job in AAPanel's "Cron" feature, the cron script content, you can copy it from [here](#script-code).
 
 <img srcset="../../docs/aapanel-enable-https-login-crond-auto-renewal-step-1.png 2x" />
 
