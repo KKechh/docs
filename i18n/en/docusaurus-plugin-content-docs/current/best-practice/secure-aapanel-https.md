@@ -16,12 +16,6 @@ This is a best practice for securing your AAPanel installation w/ IPv4. Currentl
   - **Individual IP site mode**: Create an IP site in AAPanel site management.
   - **Default server mode**: Set a default site in AAPanel site management.
 
-  Then
-
-* **3**. Enable SSL for the site in AAPanel 8888 service, and set the certificate and key from any site's or choose self-signed. refresh `https://<IP>:8888`, ignore browser's certificate warning, continue to visit AAPanel.
-
-  <img srcset="../../docs/aapanel-enable-https-login.png 2x" />
-
 ## Script
 
 If run script directly, it won't reinstall certificate before 180 days expiration. we recommend to run this script and set a auto-renewal job by tutorial "[Cronjob](#cronjob)".
