@@ -418,8 +418,7 @@
     "message": "Hello, HiCA!"
   },
   "homepage.hero.title": {
-    "message": "<b>free</b> ssl, +<b>ACME</b> +<b>wildcard</b> +<b>UCC</b> +<b>IP</b> +<b>.onion</b> +<b>180 days</b>...",
-    "description": "Home page hero title, can contain simple html tags"
+    "message": "<b>free</b> ssl, +<b>ACME</b> +<b>wildcard</b> +<b>UCC</b> +<b>IP</b> +<b>.onion</b> +<b>180 days</b>..."
   },
   "开始上手": {
     "message": "Getting Started"
@@ -453,5 +452,8 @@
   },
   "请选择验证方式": {
     "message": "Select a challenge type"
+  },
+  "Docusaurus with Keytar": {
+    "message": "Docusaurus with Keytar"
   }
 }
