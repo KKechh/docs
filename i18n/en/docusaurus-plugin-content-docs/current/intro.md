@@ -17,10 +17,10 @@ The details of definition of ACME, shall read at [RFC8555: Automatic Certificate
 
 ## What is HiCA
 
-HiCA is operated by "PKI(Chongqing) Limited"(公钥认证服务（重庆）有限公司), which founded at Jul 2022.
+HiCA is operated by "PKI (Chongqing) Co., Ltd."(公钥认证服务（重庆）有限公司), which founded at Jul 2022.
 
 <details>
-<summary>More about "PKI(Chongqing) Limited"</summary>
+<summary>More about "PKI (Chongqing) Co., Ltd."</summary>
 
 - Organization Name: <b>公钥认证服务（重庆）有限公司</b>
 - Director: <b>Sue</b>

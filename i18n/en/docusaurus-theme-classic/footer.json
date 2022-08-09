@@ -20,7 +20,7 @@
     "description": "The label of footer link with label=合作申请 linking to https://docs.qq.com/form/page/DY2JIWkF6ZXVJaHhP"
   },
   "link.item.label.服务条款": {
-    "message": "Term Of Service",
+    "message": "End User License Agreement",
     "description": "The label of footer link with label=服务条款 linking to /EULA"
   },
   "link.item.label.Telegram 群": {

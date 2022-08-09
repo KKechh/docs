@@ -1,5 +1,5 @@
 ---
-title: HiCA Terms of Service
+title: End User License Agreement(EULA)
 ---
 
 # HiCA Terms of Service
