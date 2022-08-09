@@ -26,7 +26,7 @@ This is a best practice for securing your AAPanel installation w/ IPv4. Currentl
 
 If run script directly, it won't reinstall certificate before 180 days expiration. we recommend to run this script and set a auto-renewal job by tutorial "[Cronjob](#cronjob)".
 
-**Don't forget to** change email to your real one!
+**Don't forget to** change email line `email="my@example.com"` to your real one!
 
 > In the script defined following filepaths are backups for AAPanel's certificate, if `bt reload` errors, you may switch back.
 > - Private key backup: `/www/server/panel/ssl/privateKey.pem.bak`, You may restore by remove the suffix `.bak` in the filename.
@@ -38,8 +38,13 @@ email="my@example.com"
 ip=$(curl -s -4 ip.sb)
 webroot=$(cat $((grep -r " "$ip /www/server/panel/vhost/nginx/ || grep -r "default_server" /www/server/panel/vhost/nginx/) | grep server_name | awk '{print $1}' | cut -d ':' -f1) | egrep 'root ' | awk '{print $2}' | cut -d ';' -f1)
 
-cp /www/server/panel/ssl/privateKey.pem /www/server/panel/ssl/privateKey.pem.bak
-cp /www/server/panel/ssl/certificate.pem /www/server/panel/ssl/certificate.pem.bak
+if [ -z "$webroot" ]; then
+  echo "Please create an IP site, or set a Default site!"
+  exit 1
+fi
+
+/bin/cp -rf /www/server/panel/ssl/privateKey.pem /www/server/panel/ssl/privateKey.pem.bak
+/bin/cp -rf /www/server/panel/ssl/certificate.pem /www/server/panel/ssl/certificate.pem.bak
 
 /root/.acme.sh/acme.sh --register-account \
     --email $email \
@@ -48,8 +53,9 @@ cp /www/server/panel/ssl/certificate.pem /www/server/panel/ssl/certificate.pem.b
     -d $ip --webroot $webroot \
     --server https://acme.hi.cn/directory \
     --force && \
-cp /root/.acme.sh/$ip/$ip.key /www/server/panel/ssl/privateKey.pem && \
-cp /root/.acme.sh/$ip/fullchain.cer /www/server/panel/ssl/certificate.pem && \
+/bin/cp -rf /root/.acme.sh/$ip/$ip.key /www/server/panel/ssl/privateKey.pem && \
+/bin/cp -rf /root/.acme.sh/$ip/fullchain.cer /www/server/panel/ssl/certificate.pem && \
+echo "True" > /www/server/panel/data/ssl.pl && \
 bt reload
 ```
 
