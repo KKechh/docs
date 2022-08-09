@@ -12,15 +12,15 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_gd.sh
 
 Click `Create New Api Key` button
 
-<img srcset="/docs/godaddy-create-api-token-step-1.png 2x" />
+<img srcset="../../../../docs/godaddy-create-api-token-step-1.png 2x" />
 
 In the dialog, `Name` input box can be left blank. Just make sure `Environment` is set to `Production`
 
-<img srcset="/docs/godaddy-create-api-token-step-2.png 2x" />
+<img srcset="../../../../docs/godaddy-create-api-token-step-2.png 2x" />
 
 In the result page, save your `Key` (`GD_Key`) and `Secret` (`GD_Secret`) to use later.
 
-<img srcset="/docs/godaddy-create-api-token-step-3.png 2x" />
+<img srcset="../../../../docs/godaddy-create-api-token-step-3.png 2x" />
 
 
 :::

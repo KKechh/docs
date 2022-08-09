@@ -22,7 +22,7 @@ You must try sub account here instead!
 
 :::
 
-<img srcset="/docs/huaweicloud-create-subaccount-step-en-0.png 2x"/>
+<img srcset="../../../../docs/huaweicloud-create-subaccount-step-en-0.png 2x"/>
 
 Remember the arrow pointed value(`hica` in the picture), and it is the `HUAWEICLOUD_DomainName` we'd to export
 
