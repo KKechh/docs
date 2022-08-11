@@ -53,7 +53,7 @@ jobs:
           port: 22
           script: |
             cd /www/wwwroot/www1.hi.cn
-            curl -H 'Host: www1.hi.cn' -k https://${{ secrets.SSH_SERVER_ORION_SINGAPORE }}/dist.tar.gz > dist.tar.gz
+            curl -H "https://singapore.www1.hi.cn/dist.tar.gz?_t=$(date +%s)" > dist.tar.gz
 
       - name: Upload to s_guangzhou1
         uses: appleboy/ssh-action@master
