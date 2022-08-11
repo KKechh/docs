@@ -77,10 +77,10 @@ after success, please refresh `https://<IP>:8888` to visit AAPanel via secure ht
 
 You can create a cron job in AAPanel's "Cron" feature, the cron script content, you can copy it from [here](#script-code).
 
-<img srcset="../../docs/aapanel-enable-https-login-crond-auto-renewal-step-1.png 2x" />
+<img srcset="../../../../docs/aapanel-enable-https-login-crond-auto-renewal-step-1.png 2x" />
 
-<img srcset="../../docs/aapanel-enable-https-login-crond-auto-renewal-step-2.png 2x" />
+<img srcset="../../../../docs/aapanel-enable-https-login-crond-auto-renewal-step-2.png 2x" />
 
 After configuration, you can simulate to test, if shows following message, it means auto renewal should work.
 
-<img srcset="../../docs/aapanel-enable-https-login-crond-auto-renewal-step-3.png 2x" />
+<img srcset="../../../../docs/aapanel-enable-https-login-crond-auto-renewal-step-3.png 2x" />
