@@ -64,7 +64,7 @@ jobs:
           port: 22
           script: |
             cd /www/wwwroot/www1.hi.cn
-            curl -H 'Host: www1.hi.cn' -k https://${{ secrets.SSH_SERVER_ORION_SINGAPORE }}/dist.tar.gz > dist.tar.gz
+            curl -H 'Host: www1.hi.cn' -k https://${{ secrets.SSH_SERVER_ORION_CHINA_CHENGDU }}/dist.tar.gz > dist.tar.gz
 
       - name: Uncompress zip to s_singapore1
         uses: appleboy/ssh-action@master
