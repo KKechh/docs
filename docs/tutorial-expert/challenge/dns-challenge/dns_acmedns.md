@@ -7,6 +7,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_acmedns.sh
 
 项目介绍: [https://github.com/joohoi/acme-dns](https://github.com/joohoi/acme-dns)
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export ACMEDNS_UPDATE_URL="https://auth.acme-dns.io"

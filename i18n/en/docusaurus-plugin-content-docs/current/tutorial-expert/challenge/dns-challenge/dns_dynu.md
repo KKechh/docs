@@ -5,6 +5,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_dynu.sh
 
 # Dynu
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export Dynu_ClientId="<Change_to_your_Dynu_Client_ID>"

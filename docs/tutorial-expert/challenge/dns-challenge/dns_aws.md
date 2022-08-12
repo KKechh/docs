@@ -40,6 +40,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_aws.sh
 
 :::
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export AWS_ACCESS_KEY_ID=""

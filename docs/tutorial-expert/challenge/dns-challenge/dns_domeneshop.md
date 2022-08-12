@@ -7,6 +7,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_domeneshop.sh
 
 <p><a href="https://www.domeneshop.no/admin?view=api" className="button button--secondary button--lg text--no-decoration">获取 API Key</a></p>
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export DOMENESHOP_Token="CHANGE TO DOMENESHOP Token"

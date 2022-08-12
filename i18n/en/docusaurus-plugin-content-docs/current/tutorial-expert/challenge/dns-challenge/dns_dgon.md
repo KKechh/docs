@@ -5,6 +5,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_dgon.sh
 
 # DigitalOcean
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export DO_API_KEY="Change to your DigitalOcean KEY"

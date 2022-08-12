@@ -9,6 +9,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_he.sh
 直接填入用户名密码，无需API Key
 :::
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export HE_Username=""

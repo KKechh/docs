@@ -40,6 +40,10 @@ Copy and save the `Access key ID` and `Secret access key`; The export command wi
 
 :::
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export AWS_ACCESS_KEY_ID=""

@@ -5,6 +5,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_cloudns.sh
 
 # CloudNS
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export CLOUDNS_AUTH_ID="CHANGE TO YOUR CLOUDNS_AUTH_ID"

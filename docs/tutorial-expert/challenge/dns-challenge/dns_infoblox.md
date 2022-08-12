@@ -5,6 +5,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_infoblox.sh
 
 # Infoblox
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export Infoblox_Creds=""

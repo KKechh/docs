@@ -19,6 +19,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_dp.sh
 创建成功后，千万记着把ID和Token记录下来，因为窗口一旦关闭信息就无法找回了。
 :::
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 #highlight-start
 export DP_Id="DNSPOD API TOKEN ID"

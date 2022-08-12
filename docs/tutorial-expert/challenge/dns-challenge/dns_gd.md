@@ -25,6 +25,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_gd.sh
 
 :::
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export GD_Key=""

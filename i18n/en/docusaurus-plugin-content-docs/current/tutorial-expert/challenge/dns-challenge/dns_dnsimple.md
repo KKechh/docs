@@ -7,6 +7,9 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_dnsimple.sh
 
 <p><a href="https://dnsimple.com/user" className="button button--secondary button--lg text--no-decoration">Get API Key</a></p>
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
 
 ```bash
 # highlight-start

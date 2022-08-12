@@ -7,6 +7,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_freedns.sh
 
 直接修改成用户密码，无需 API Key
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export FREEDNS_User="<change_to_your_freedns_username>"

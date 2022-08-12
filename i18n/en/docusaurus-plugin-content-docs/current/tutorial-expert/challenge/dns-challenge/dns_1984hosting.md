@@ -5,6 +5,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_1984hosting.sh
 
 # 1984hosting
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export One984HOSTING_Username="CHANGE TO YOUR 1984HOSTING Username"

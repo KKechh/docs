@@ -5,6 +5,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_internetbs.sh
 
 # Internetbs
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export INTERNETBS_API_KEY="Change to your INTERNETBS API KEY"

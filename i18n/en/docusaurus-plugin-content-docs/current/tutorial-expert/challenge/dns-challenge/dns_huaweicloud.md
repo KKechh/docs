@@ -37,7 +37,12 @@ Input username, check password and click `Next` button
 Check on `power_user` and `admin`, click `Create user` button
 
 ![](/docs/huaweicloud-create-subaccount-step-en-4.png)
-success
+
+Success
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
 
 ```bash
 #highlight-start

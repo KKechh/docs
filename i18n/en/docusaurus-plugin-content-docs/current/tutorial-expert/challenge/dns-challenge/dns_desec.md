@@ -5,6 +5,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_desec.sh
 
 # Desec
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export DEDYN_TOKEN="Your DEDYN TOKEN"

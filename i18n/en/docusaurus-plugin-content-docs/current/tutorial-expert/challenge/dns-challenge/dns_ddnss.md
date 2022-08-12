@@ -5,6 +5,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_ddnss.sh
 
 # Ddnss
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export DDNSS_Token="CHANGE-TO-YOUR-DDNSS-TOKEN"

@@ -5,6 +5,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_euserv.sh
 
 # EU Serv
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 Provide your username and password directly, Api Key is not neccessary.
 
 ```bash

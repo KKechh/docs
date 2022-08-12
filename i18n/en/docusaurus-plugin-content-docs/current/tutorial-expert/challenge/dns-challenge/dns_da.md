@@ -5,6 +5,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_da.sh
 
 # DirectAdmin
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export DA_Api="https://remoteDAUsername:remoteDAPassword@DirectAdmin.domain:8443"

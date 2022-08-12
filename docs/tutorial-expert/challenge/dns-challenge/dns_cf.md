@@ -7,6 +7,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_cf.sh
 
 <p><a href="https://dash.cloudflare.com/profile/api-tokens" className="button button--secondary button--lg text--no-decoration">获取 API Key</a></p>
 
+:::caution 
+
+如果您需要申请多域名，我们推荐您使用 `Global API Key`，而不是 `Zone API Key`。
+
+:::
+
 :::note 获取 API Key 教程
 
 登录 Cloudflare Dash 后在 API Token 菜单获取 `Global API Key`:
@@ -14,14 +20,14 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_cf.sh
 ![CloudFlare 平台获取 Global 凭据](/docs/cloudflare-get-global-key.png)
 :::
 
-:::caution 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
 
-如果您需要申请多域名，我们推荐您使用 `Global API Key`，而不是 `Zone API Key`。
-:::
+<AccountConfCacheTip />
 
 ```bash
 # highlight-start
-export CF_Token="API Token"
+export CF_Email="<Cloudflare_Account_Email>"
+export CF_Key="<Cloudflare_Global_API_Key>"
 # highlight-end
 
 acme.sh --issue \

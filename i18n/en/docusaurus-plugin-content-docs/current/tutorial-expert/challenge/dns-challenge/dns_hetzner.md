@@ -6,6 +6,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_hetzner.sh
 # Hetzner
 You can get your API Key at [Hetzner](https://dns.hetzner.com/settings/api-token)'s page.
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export HETZNER_Token="Change to your HETZNER Token"

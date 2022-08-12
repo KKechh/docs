@@ -7,6 +7,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_freedns.sh
 
 Provide your username and password directly, Api Key is not neccessary.
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export FREEDNS_User="<change_to_your_freedns_username>"

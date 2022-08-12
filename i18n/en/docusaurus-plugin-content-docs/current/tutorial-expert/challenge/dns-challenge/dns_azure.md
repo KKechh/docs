@@ -5,6 +5,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_azure.sh
 
 # Azure
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export AZUREDNS_SUBSCRIPTIONID=""

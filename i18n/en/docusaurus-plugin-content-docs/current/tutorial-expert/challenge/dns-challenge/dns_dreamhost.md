@@ -7,6 +7,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_dreamhost.sh
 
 <p><a href="https://panel.dreamhost.com/?tree=home.api" className="button button--secondary button--lg text--no-decoration">Get API Key</a></p>
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export DH_API_KEY="CHANGE TO YOUR KEY"

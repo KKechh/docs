@@ -7,6 +7,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_easydns.sh
 
 <p><a href="http://docs.sandbox.rest.easydns.net/beta_signup.php" className="button button--secondary button--lg text--no-decoration">Get API Key</a></p>
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export EASYDNS_Key="xxxxxxxxxxxxxxxxxxxxxxxx"

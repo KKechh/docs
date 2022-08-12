@@ -5,6 +5,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_jd.sh
 
 # JD Cloud
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export JD_ACCESS_KEY_ID=""

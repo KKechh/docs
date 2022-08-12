@@ -5,6 +5,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_autodns.sh
 
 # Auto DNS
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export AUTODNS_USER="<username>"

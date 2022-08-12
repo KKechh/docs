@@ -5,6 +5,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_linode.sh
 
 # Linode
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export LINODE_API_KEY="CHANGE TO YOUR LINODE_API_KEY"

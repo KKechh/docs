@@ -5,6 +5,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_df.sh
 
 # DF
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export DF_user="(your dyndnsfree.de username)"

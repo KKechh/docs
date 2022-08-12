@@ -5,6 +5,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_doapi.sh
 
 # Do.DE
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export DO_LETOKEN="CHANGE TO YOUR Do.DE TOKEN"

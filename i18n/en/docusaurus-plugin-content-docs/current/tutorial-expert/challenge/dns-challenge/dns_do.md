@@ -5,6 +5,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_do.sh
 
 # Domain-Offensive / Resellerinterface / Domainrobot
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export DO_PID="CHANGE TO YOUR PID"

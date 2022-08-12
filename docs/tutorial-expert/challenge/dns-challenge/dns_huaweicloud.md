@@ -36,6 +36,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_huaweicloud.sh
 ![](/docs/huaweicloud-create-subaccount-step-4.png)
 创建成功
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 #highlight-start
 export HUAWEICLOUD_Username="<子账户用户名>" # 子账户用户名

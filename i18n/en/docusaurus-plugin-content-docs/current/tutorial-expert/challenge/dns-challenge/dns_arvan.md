@@ -39,6 +39,9 @@ Apikey XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 Consider that the word “A” in Apikey should be entered capitalized.
 :::
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
 
 ```bash
 # highlight-start

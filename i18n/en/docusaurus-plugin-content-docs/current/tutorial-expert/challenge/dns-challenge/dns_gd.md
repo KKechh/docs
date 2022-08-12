@@ -22,8 +22,11 @@ In the result page, save your `Key` (`GD_Key`) and `Secret` (`GD_Secret`) to use
 
 <img srcset="../../../../docs/godaddy-create-api-token-step-3.png 2x" />
 
-
 :::
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
 
 ```bash
 # highlight-start

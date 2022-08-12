@@ -6,6 +6,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_hetzner.sh
 # Hetzner
 API Key 可以在 [Hetzner](https://dns.hetzner.com/settings/api-token) 的页面找到。
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export HETZNER_Token="Change to your HETZNER Token"

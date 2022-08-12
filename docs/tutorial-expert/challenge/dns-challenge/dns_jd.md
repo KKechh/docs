@@ -5,6 +5,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_jd.sh
 
 # 京东云(JDCloud)
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export JD_ACCESS_KEY_ID=""

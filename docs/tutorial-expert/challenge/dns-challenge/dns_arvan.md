@@ -40,6 +40,12 @@ Consider that the word “A” in Apikey should be entered capitalized.
 :::
 
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export Arvan_Token="<CHANGE_TO_YOUR_TOKEN>"

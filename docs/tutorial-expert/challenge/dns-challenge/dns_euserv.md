@@ -7,6 +7,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_euserv.sh
 
 直接提供用户密码，无需 API Key。
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export EUSERV_Username="username"

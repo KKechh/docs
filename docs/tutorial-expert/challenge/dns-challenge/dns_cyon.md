@@ -5,6 +5,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_cyon.sh
 
 # Cyon
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export CY_Username=""

@@ -19,6 +19,9 @@ we suggest you to use RAM(subaccount w/ API credential) instead by grant `Aliyun
 保存好你得到的Key和Secret
 :::
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
 
 ```bash
 #highlight-start

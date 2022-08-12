@@ -6,6 +6,10 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_acmeproxy.sh
 
 # ACME PROXY
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export ACMEPROXY_ENDPOINT=""

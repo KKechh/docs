@@ -7,6 +7,12 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_gandi_livedns.sh
 
 <p><a href="https://account.gandi.net/zh-hans/users/digitalsign/security" className="button button--secondary button--lg text--no-decoration">获取 API Key</a></p>
 
+
+
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 # highlight-start
 export GANDI_LIVEDNS_KEY="Change to your Gandi Livedns KEY"

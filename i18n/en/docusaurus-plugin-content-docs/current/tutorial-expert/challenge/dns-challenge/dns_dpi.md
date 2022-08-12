@@ -20,6 +20,10 @@ Save the `Token ID` and `Token Key`.
 You must save the `Token ID` and `Token Key`, because you have nowehere to recovery it.
 :::
 
+import AccountConfCacheTip from './_account_conf_cache_tip.md';
+
+<AccountConfCacheTip />
+
 ```bash
 #highlight-start
 export DP_Id="DNSPOD API TOKEN ID"
