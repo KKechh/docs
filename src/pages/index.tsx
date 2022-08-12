@@ -89,8 +89,8 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title}, ${siteConfig.tagline}`}
-      description="Description will go into a meta tag in <head />"
+      title={`${translate({message: 'homepage.banner.launch.2.0'})} - ${translate({message: siteConfig.title})}`}
+      description={translate({message: siteConfig.tagline})}
     >
       <main>
         <TopBanner />
