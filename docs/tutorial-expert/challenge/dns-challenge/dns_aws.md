@@ -23,7 +23,7 @@ slug: /tutorial-expert/challenge/dns-challenge/dns_aws.sh
 
 在界面上，执行：
 - 设置权限选择 `直接附加现有策略`；
-- 筛选策略输入 `AmazonRoute53ResolverFullAccess`；并勾选这个策略；
+- 筛选策略输入 `AmazonRoute53FullAccess`；并勾选这个策略；
 - 点击 `下一步：标签` 按钮；
 
 ![aws-create-api-credential-step-4.png](/docs/aws-create-api-credential-step-4.png)
