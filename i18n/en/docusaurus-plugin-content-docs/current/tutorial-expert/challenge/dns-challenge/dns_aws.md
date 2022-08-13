@@ -23,7 +23,7 @@ First, click the `Add users` button;
 
 At the window, execute:
 - Set the permission selection to `Attach existing policies directly`;
-- Filter the policy input `AmazonRoute53ResolverFullAccess`; and check the policy;
+- Filter the policy input `AmazonRoute53FullAccess`; and check the policy;
 - Click the `Next: Tags` button;
 
 ![aws-create-api-credential-step-4.png](/docs/aws-create-api-credential-step-en-4.png)
