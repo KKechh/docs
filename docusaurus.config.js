@@ -170,6 +170,10 @@ const config = {
             title: 'More',
             items: [
               {
+                label: 'HiCA vs Let\'s Encrypt',
+                href: '/hica-vs-letsencrypt',
+              },
+              {
                 label: '官网 Repo',
                 href: 'https://github.com/HiCA-ACME/docs',
               },
