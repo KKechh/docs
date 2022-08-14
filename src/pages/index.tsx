@@ -19,8 +19,8 @@ function TopBanner() {
           to="/blog/2022/07/23/hello-hica"
           className={styles.topBannerTitleText}
         >
-          <Translate id="homepage.banner.launch.2.0">
-            你好，HiCA！
+          <Translate>
+            你好, HiCA!
           </Translate>
         </Link>
         {"\xa0🥳"}
@@ -89,7 +89,7 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`${translate({message: 'homepage.banner.launch.2.0'})} - ${translate({message: siteConfig.title})}`}
+      title={`${translate({message: '你好, HiCA!'})} - ${translate({message: siteConfig.title})}`}
       description={translate({message: siteConfig.tagline})}
     >
       <main>
