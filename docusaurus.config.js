@@ -162,7 +162,7 @@ const config = {
               },
               {
                 label: 'Wechat 群',
-                href: 'https://www1.hi.cn/upload/wx-qun.jpeg',
+                href: '/wechat-group',
               },
             ],
           },
