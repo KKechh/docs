@@ -47,7 +47,7 @@ HiCA is focused on “Browserless TLS distribution” solution research + campai
 **Advantages**
 
 - Provide 180 days certificates via ACME(mostly vendor provide 90 days certificates);
-- Provide IPv4 or IPv6 certificates(no other CA provide by ACME);
+- Provide IPv4 or IPv6 certificates(no other CAs which has ability of ACME + IP);
 - Provide China accelerated OCSP/CRL(better performance, TLS handshake will be faster);
 - Support multi-year certificates(subscription payment or pay once);
 
