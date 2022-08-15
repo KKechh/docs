@@ -10,8 +10,8 @@ If it's your first time to use, we recommend your reading shall starts from [sta
 
 ## What is ACME
 
-ACME (rfc**8555**) was a PKIX standard drafted by ISRG(Internet security research group), which defined a serial about certificate validation(challenge)、issuance、renewal updates、revocation and etc... protocols, can be used to management certificate's lifecycle.
-The feature of ACME is automatic, humancost reducement and security+stablity enhancement.
+ACME (rfc**8555**) was a PKIX standard drafted by ISRG(Internet security research group), which defined a series of protocol to validate certificate(challenge)、to issue、to renew and to revoke, etc... it can be used to manage certificate's lifecycle.
+The feature of ACME is automatic, humancost reducing and security+stablity enhancing.
 
 The details of definition of ACME, shall read at [RFC8555: Automatic Certificate Management Environment (ACME)](https://tools.ietf.org/html/rfc8555).
 
