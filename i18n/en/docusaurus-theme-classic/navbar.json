@@ -18,9 +18,5 @@
   "item.label.Github/ACME.sh": {
     "message": "Github/ACME.sh",
     "description": "Navbar item with label Github/ACME.sh"
-  },
-  "item.label.故障诊断": {
-    "message": "Diagnosis",
-    "description": "Navbar item with label 故障诊断"
   }
 }

@@ -99,11 +99,6 @@ const config = {
             position: 'left'
           },
           {
-            to: '/diagnosis',
-            label: '故障诊断',
-            position: 'left'
-          },
-          {
             label: 'Github/HiCA',
             href: 'https://github.com/HiCA-ACME/docs',
             position: 'right',
