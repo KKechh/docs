@@ -10,8 +10,8 @@ If it's your first time to use, we recommend your reading shall starts from [sta
 
 ## What is ACME
 
-ACME (rfc**8555**) was a PKIX standard drafted by ISRG(Internet security research group), which defined a serial about certificate validation(challenge)、issuance、renewal updates、revocation and etc... protocols, can be used to management certificate's lifecycle.
-The feature of ACME is automatic, humancost reducement and security+stablity enhancement.
+ACME (rfc**8555**) was a PKIX standard drafted by ISRG(Internet security research group), which defined a series of protocol to validate certificate(challenge)、to issue、to renew and to revoke, etc... it can be used to manage certificate's lifecycle.
+The feature of ACME is automatic, humancost reducing and security+stablity enhancing.
 
 The details of definition of ACME, shall read at [RFC8555: Automatic Certificate Management Environment (ACME)](https://tools.ietf.org/html/rfc8555).
 
@@ -47,7 +47,7 @@ HiCA is focused on “Browserless TLS distribution” solution research + campai
 **Advantages**
 
 - Provide 180 days certificates via ACME(mostly vendor provide 90 days certificates);
-- Provide IPv4 or IPv6 certificates(no other CA provide by ACME);
+- Provide IPv4 or IPv6 certificates(no other CAs which has ability of ACME + IP);
 - Provide China accelerated OCSP/CRL(better performance, TLS handshake will be faster);
 - Support multi-year certificates(subscription payment or pay once);
 
