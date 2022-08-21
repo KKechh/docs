@@ -78,7 +78,7 @@ acme.sh --upgrade  --auto-upgrade  0
 acme.sh最好能设置成自动更新，否则会出现api修改后无法更新证书的情况，也可以选择一段时间更新一次。总之遇到证书突然无法更新多半是acme.sh版本问题，尝试下更新版本，然后再尝试更新证书，一般都能解决
 
 ```bash
-acme.sh --v
+acme.sh -v
 ```
 
 ## 调试
