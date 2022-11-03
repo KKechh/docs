@@ -29,6 +29,12 @@
   "物联网安全解决方案。": {
     "message": "IoT security solutions."
   },
+  "高级 SSL": {
+    "message": "Advanced SSL"
+  },
+  "365天!": {
+    "message": "365 days"
+  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"

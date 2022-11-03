@@ -177,6 +177,18 @@ html[data-theme='dark'] .topBannerTitleText {
   color: var(--ifm-color-primary);
 }
 
+.indexCtas2ndBtn {
+  margin-left: 36px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.indexCtas a svg {
+  height: 1.5em;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
 @media only screen and (max-width: 768px) {
   .hero {
     padding-left: 20px;

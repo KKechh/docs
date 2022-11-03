@@ -5,7 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Translate, { translate } from "@docusaurus/Translate";
 
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import HomepageFeatures from "../components/HomepageFeatures";
 
@@ -19,18 +19,14 @@ function TopBanner() {
           to="/blog/2022/07/23/hello-hica"
           className={styles.topBannerTitleText}
         >
-          <Translate>
-            你好, HiCA!
-          </Translate>
+          <Translate>你好, HiCA!</Translate>
         </Link>
         {"\xa0🥳"}
       </div>
       <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap" }}>
         <div style={{ flex: 1, whiteSpace: "nowrap" }}>
           <div className={styles.topBannerDescription}>
-            <Translate>
-              {siteConfig.tagline}
-            </Translate>
+            <Translate>{siteConfig.tagline}</Translate>
           </div>
         </div>
         <div
@@ -76,8 +72,38 @@ function HeroBanner() {
           <Link className="button button--primary" to="/docs/intro">
             <Translate>开始上手</Translate>
           </Link>
-          <Link className="button button--secondary" to="https://t.me/+O20ETkdFppVhN2Q1">
+          <Link
+            className={`button button--secondary ${styles.indexCtas2ndBtn}`}
+            to="https://t.me/+O20ETkdFppVhN2Q1"
+          >
             <Translate>Telegram 群</Translate>
+          </Link>
+          <Link
+            className="button button--info"
+            to="https://www.quantumca.com.cn/?__utm-source=hica-docs"
+          >
+          <svg
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M512.5632 913.3056a28.8768 28.8768 0 0 1-20.48-48.896l462.9504-477.5936-224.6656-224.4096H281.6a28.8768 28.8768 0 0 1 0-57.7024h460.8a28.7744 28.7744 0 0 1 20.48 8.448l252.9792 252.9792a28.8256 28.8256 0 0 1 0.3584 40.448l-482.4064 497.92a28.7744 28.7744 0 0 1-21.0944 8.8064z"
+              fill="#019A46"
+            ></path>
+            <path
+              d="M511.5904 913.3056a28.7744 28.7744 0 0 1-20.48-8.8064L8.1408 406.5792a28.8768 28.8768 0 0 1 0-40.448L261.4272 113.152a28.8256 28.8256 0 0 1 40.96 40.96L69.3248 386.816 532.48 864.4096a28.8256 28.8256 0 0 1-20.48 48.896z"
+              fill="#11AA66"
+            ></path>
+            <path
+              d="M719.9232 397.7216a28.8256 28.8256 0 0 0-40.96-1.1264L512 563.8144 344.7808 396.5952a28.928 28.928 0 0 0-40.96 40.96l185.344 185.344a28.672 28.672 0 0 0 22.5792 10.5984 28.928 28.928 0 0 0 20.8896-8.7552c0.6144-0.6656 1.0752-1.3824 1.6384-2.0992l185.3952-185.344a28.8256 28.8256 0 0 0 0.256-39.5776z"
+              fill="#F2CB51"
+            ></path>
+          </svg>
+            <Translate>高级 SSL</Translate>
+            <span className="badge badge--secondary margin-left--sm">
+              <Translate>365天!</Translate>
+            </span>
           </Link>
         </div>
       </div>
@@ -89,8 +115,10 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`${translate({message: '你好, HiCA!'})} - ${translate({message: siteConfig.title})}`}
-      description={translate({message: siteConfig.tagline})}
+      title={`${translate({ message: "你好, HiCA!" })} - ${translate({
+        message: siteConfig.title,
+      })}`}
+      description={translate({ message: siteConfig.tagline })}
     >
       <main>
         <TopBanner />
