@@ -161,9 +161,11 @@ html[data-theme='dark'] .topBannerTitleText {
   color: black;
 }
 
+/*
 .indexCtas a:last-of-type {
   margin: 20px 36px;
 }
+*/
 
 .indexCtasGitHubButtonWrapper {
   display: flex;
@@ -178,9 +180,7 @@ html[data-theme='dark'] .topBannerTitleText {
 }
 
 .indexCtas2ndBtn {
-  margin-left: 36px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 36px;
 }
 
 .indexCtas a svg {
