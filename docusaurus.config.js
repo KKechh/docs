@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'HiCA 官网',
+  title: 'HiCA 官网 | 上海帝熙',
   tagline: 'HiCA是一家纯ACME的数字证书供应商',
   url: 'https://www.hi.cn',
   baseUrl: '/',
