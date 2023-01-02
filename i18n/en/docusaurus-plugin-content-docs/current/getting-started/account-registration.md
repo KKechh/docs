@@ -9,7 +9,6 @@ sidebar_position: 2
 
 :::note Important
 You must change the highlight line into your real email address, or you **CAN'T**:
-- use the [`diagnosis`](/diagnosis) tool
 - get notifiactions when renew your certificate (including failure)
 - revoke your certificate (requires email confirmation)
 :::
